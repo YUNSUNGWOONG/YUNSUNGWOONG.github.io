@@ -38,7 +38,7 @@ typora-root-url: ../
 
 # image
 
-<img src="./images/2021-10-13-experiment/9901B0445BBD8A9924.png" alt="9901B0445BBD8A9924"  />
+<img src="../images/2021-10-13-experiment/9901B0445BBD8A9924.png" alt="9901B0445BBD8A9924"  />
 
 
 
