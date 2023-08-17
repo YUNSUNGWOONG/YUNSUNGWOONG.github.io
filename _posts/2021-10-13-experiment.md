@@ -91,6 +91,13 @@ print(x, y, z)
 
 [네이버블로그(yhon89e)](https://blog.naver.com/yhon89e)
 
+[티스토리블로그(#파이썬)](https://jack-channel-python.tistory.com/)
+
+[Velog블로그(#C-series)](https://velog.io/@2170004487z)
+
+[Blex블로그(#CS지식)](https://blex.me/@2170004487z)
+
+[Steemit블로그(#경제#경영#정책)](https://steemit.com/@yunsungwoong)
 
 
 
