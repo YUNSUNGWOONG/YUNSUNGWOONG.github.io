@@ -20,7 +20,7 @@ title                    : "Jack_Smith_Machine_Learning"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "YUNSUNGWOONG"
-description              : "Jack_Smith_Machine_Learning"
+description              : ""
 url                      : "https://YUNSUNGWOONG.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -104,10 +104,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "YUN SUNG WOOONG"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  bio              : "기억보다는 기록을.. 추구하는 머신러닝 기록 블로그입니다."
+  location         : "Daegu-City, Korea"
   email            :
   links:
     - label: "Email"
