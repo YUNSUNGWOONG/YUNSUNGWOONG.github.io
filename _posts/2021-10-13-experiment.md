@@ -74,9 +74,60 @@ print(x, y, z)
 
 
 
+```python
+# Python program to find H.C.F of two numbers
+
+# define a function
+def compute_hcf(x, y):
+
+# choose the smaller number
+    if x > y:
+        smaller = y
+    else:
+        smaller = x
+    for i in range(1, smaller+1):
+        if((x % i == 0) and (y % i == 0)):
+            hcf = i 
+    return hcf
+
+num1 = 54 
+num2 = 24
+
+print("The H.C.F. is", compute_hcf(num1, num2))
 ```
+
+```markdown
 코드를 감쌀 경우 백틱을 써서 감쌉니다.
 ```
+
+```python
+# Python Program to find the L.C.M. of two input number
+
+def compute_lcm(x, y):
+
+   # choose the greater number
+   if x > y:
+       greater = x
+   else:
+       greater = y
+
+   while(True):
+       if((greater % x == 0) and (greater % y == 0)):
+           lcm = greater
+           break
+       greater += 1
+
+   return lcm
+
+num1 = 54
+num2 = 24
+
+print("The L.C.M. is", compute_lcm(num1, num2))
+```
+
+
+
+
 
 
 
