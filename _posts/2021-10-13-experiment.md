@@ -3,7 +3,7 @@ layout: single
 title:  "실험실페이지"
 author: cotes
 date: 2019-08-09 20:55:00 +0800
-tags: [getting started]
+categories: [getting started]
 typora-root-url: ../
 ---
 
@@ -38,7 +38,7 @@ typora-root-url: ../
 
 # image
 
-<img src="../images/2021-10-13-experiment/9901B0445BBD8A9924.png" alt="9901B0445BBD8A9924"  />
+![9901B0445BBD8A9924](/images/2021-10-13-experiment/9901B0445BBD8A9924.png)
 
 
 
