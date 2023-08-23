@@ -7,13 +7,101 @@ categories: [getting started]
 typora-root-url: ../
 tag: markdown
 toc: true
+author_profile: false
+sidebar: 
+    nav: "docs"
+search: false
 ---
+
+
+
+# Notices: 블럭 속의 텍스트에 대해 관심을 불러일으킵니다.
+**[공지사항]**[지킬블로그 신규 업데이트 안내 드립니다. default](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/){: .notice}   
+<br>
+
+**[공지사항]**[지킬블로그 신규 업데이트 안내 드립니다. primary](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/){: .notice--primary}   
+<br>
+
+**[공지사항]**[지킬블로그 신규 업데이트 안내 드립니다. info](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/){: .notice--info}   
+<br>
+
+**[공지사항]**[지킬블로그 신규 업데이트 안내 드립니다. default](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/){: .notice--warning}  
+<br>
+
+**[공지사항]**[지킬블로그 신규 업데이트 안내 드립니다. info](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/){: .notice--success}   
+<br>
+
+**[공지사항]**[지킬블로그 신규 업데이트 안내 드립니다. info](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/){: .notice--danger}   
+<br>
+
+<div class="notice">
+공지사항입니다. - default
+<ul>
+    <li>김밥</li>
+    <li>떡볶이</li>
+    <li>순대</li>
+</ul>
+</div>
+
+<div class="notice--primary">
+공지사항입니다. - primary
+<ul>
+    <li>참깨라면</li>
+    <li>짜빠구리</li>
+    <li>신라면</li>
+</ul>
+<ol>
+    <li>이불개기</li>
+    <li>청소하기</li>
+    <li>아침먹기</li>
+</ol>
+</div>
+
+<div class="notice--info">
+공지사항입니다. - info
+<ul>
+    <li>유즈카페</li>
+    <li>커피특별시</li>
+    <li>키아누카페</li>
+</ul>
+</div>
+
+<div class="notice--warning">
+공지사항입니다. - warning
+<ul>
+    <li>수소</li>
+    <li>헬륨</li>
+    <li>리튬</li>
+</ul>
+</div>
+
+<div class="notice--success">
+공지사항입니다. - success
+<ul>
+    <li>아메리카노</li>
+    <li>미숫가루</li>
+    <li>라임티</li>
+</ul>
+</div>
+
+<div class="notice--danger">
+공지사항입니다. - danger
+<ul>
+    <li>돈코츠라멘</li>
+    <li>미소라멘</li>
+    <li>열라면</li>
+</ul>
+</div>
+
+[토스 기술 블로그, 토스 테크](https://toss.tech/){: .btn .btn--danger}
+
+[직방 기술 블로그](https://medium.com/zigbang){: .btn .btn--primary .btn--x-large}
 
 
 # '-': unordered list
 
 - content-(1)
-- content-(2)
+- content-(2) 
 - content-(3)
 
 
@@ -43,6 +131,9 @@ toc: true
 ![9901B0445BBD8A9924](/images/2021-10-13-experiment/9901B0445BBD8A9924.png)
 
 
+
+# 유튜브 동영상
+{% include video id="q0P3TSoVNDM" provider="youtube" %}
 
 # quote(인용문)
 
