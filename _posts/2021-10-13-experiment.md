@@ -5,6 +5,8 @@ author: cotes
 date: 2019-08-09 20:55:00 +0800
 categories: [getting started]
 typora-root-url: ../
+tag: markdown
+toc: true
 ---
 
 
@@ -126,6 +128,15 @@ print("The L.C.M. is", compute_lcm(num1, num2))
 ```
 
 
+
+- Category: 포스팅의 주제에 대한 분류
+- Tag: 포스팅에서 사용한 언어에 대한 분류(사용한 언어가 없을 경우, CS라고 분류)
+
+> <만약 여러 언어를 태깅할 경우>
+>
+> python과 c/cpp를 태깅할 경우:
+>
+> tags: [python, c/cpp]
 
 
 
