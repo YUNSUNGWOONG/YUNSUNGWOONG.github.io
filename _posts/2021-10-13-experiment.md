@@ -16,7 +16,8 @@ search: false
 
 
 # Notices: 블럭 속의 텍스트에 대해 관심을 불러일으킵니다.
-**[공지사항]**[지킬블로그 신규 업데이트 안내 드립니다. default](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/){: .notice}   
+**[공지사항]**<br><br>
+[지킬블로그 신규 업데이트 안내 드립니다. default](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/){: .notice}   
 <br>
 
 **[공지사항]**[지킬블로그 신규 업데이트 안내 드립니다. primary](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/){: .notice--primary}   
