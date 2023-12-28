@@ -1,3 +1,6 @@
+# JackSmith-c.github.io
+기억보다는 기록을 추구하는 나의 코딩일지
+
 # [Minimal Mistakes Jekyll theme](https://mmistakes.github.io/minimal-mistakes/)
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE)
