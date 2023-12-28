@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "449bfc05abb6841f",
+        "id": "beb56d954cf6d39e",
         "type": "tabs",
         "children": [
           {
-            "id": "7a6b7c822f73a159",
+            "id": "25bda92fbf4803db",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "README.md"
+              }
             }
           }
         ]
@@ -138,9 +146,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7a6b7c822f73a159",
+  "active": "25bda92fbf4803db",
   "lastOpenFiles": [
+    "_posts/2023-12-28-mylatexandmathjax.md",
+    "_posts/2023-12-28-mylatexandmathjax",
+    "_posts/2023-12-28-mysyntax.md",
+    "_posts/2023-12-29-myjupyterapplication.md",
+    "_posts/2023-12-29-mylab.md",
+    "_posts/2023-12-29-mysyntax.md",
     "README.md",
+    "_posts/2023-12-29-mylab.md.md",
+    "_posts",
+    "새 폴더",
     "CHANGELOG.md"
   ]
 }
