@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "[MyLab]주피터 활용해보기"
 ---
 
