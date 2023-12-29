@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "[MyLab]Latex와 MathJax"
+title:  "[MyLab]주피터 활용해보기"
 ---
 
 
