@@ -1,6 +1,10 @@
 ---
 layout: single
 title:  "[MyLab]주피터 활용해보기"
+categories: 
+    - 2023-12
+tags:
+    - mylab
 ---
 
 

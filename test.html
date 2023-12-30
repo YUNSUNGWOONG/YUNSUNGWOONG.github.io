@@ -8,115 +8,183 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background: #0c1022;
+            background: #f8f8f8;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
         }
 
-        .border-blur {
-            position: absolute;
-            width: 300px;
-            height: 400px;
-            background: transparent;
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            filter: blur(50px);
+        .class-link {
+            color: #333333;
+            text-decoration: none;
+            text-align: center;
         }
 
-        .box {
+        .class-link:hover {
+            color: #ffbb00;
+        }
+
+
+        /* From here you can start to copy */
+
+        /* 404 page */
+
+        .jc-elevator {
+            background: #f8f8f8;
+            width: 340px;
+            height: 430px;
             position: relative;
-            width: 300px;
-            height: 400px;
-            background: rgba(0, 0, 0, 0.75);
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-left: 4px solid #43464B;
+            border-right: 4px solid #43464B;
+            border-top: 4px solid #43464B;
+            border-bottom: 1px solid #43464B;
+        }
+
+        .jc-floor {
+            position: relative;
+            top: 3%;
+            left: 40%;
+            background: #f8f8f8;
+            height: 30px;
+            width: 20%;
+            border: 2px solid #43464B;
+        }
+
+        .jc-floor h3 {
+            color: #36b079;
+            position: relative;
+            top: -42%;
+            text-align: center;
+            font: 25px;
+        }
+
+        .jc-doors {
+            z-index: 1;
+            background: #ffffff;
+            width: 250px;
+            height: 370px;
+            position: absolute;
+            bottom: 0;
+            left: 12%;
             overflow: hidden;
+            border-left: 4px solid #43464B;
+            border-right: 4px solid #43464B;
+            border-top: 4px solid #43464B;
         }
 
-        .border-blur::before,
-        .border-blur::after {
-            border-radius: 50%;
-            height: 400px !important;
-            width: 500px !important;
-        }
-
-        .box::after,
-        .border-blur::after {
-            content: "";
+        .jc-doors:before {
+            content: '';
+            background: #f8f8f8;
+            border-right: 2px solid #abb7b2;
+            width: 125px;
+            height: 370px;
             position: absolute;
-            width: 500px;
-            height: 500px;
-            background-image: conic-gradient(transparent,
-                    transparent,
-                    transparent,
-                    #d400d4);
-            animation: animate 4s linear infinite;
-            animation-delay: -2s;
+            top: 0;
+            left: 0;
+            animation: left 1s linear .5s forwards;
         }
 
-        .box::before,
-        .border-blur::before {
-            content: "";
+        .jc-doors:after {
+            content: '';
+            background: #f8f8f8;
+            border-left: 2px solid #abb7b2;
+            width: 125px;
+            height: 370px;
             position: absolute;
-            width: 500px;
-            height: 500px;
-            background-image: conic-gradient(transparent,
-                    transparent,
-                    transparent,
-                    #00ccff);
-            animation: animate 4s linear infinite;
+            top: 0;
+            right: 0;
+            animation: right 1s linear .5s forwards;
         }
 
-        @keyframes animate {
+        .jc-doors div {
+            position: relative;
+            z-index: -1;
+            top: 20%;
+            color: #333333;
+            text-align: center;
+            line-height: 2;
+        }
+
+        .jc-doors div:nth-child(1) {
+            font-size: 30px;
+        }
+
+        .jc-doors div:nth-child(2) {
+            font-size: 12px;
+        }
+
+        .jc-switch {
+            position: absolute;
+            background: #dadfe1;
+            top: 45%;
+            left: 89.1%;
+            height: 50px;
+            width: 30px;
+            border: 2px solid #abb7b7;
+        }
+
+        .jc-switch a:nth-child(1) {
+            position: absolute;
+            top: 15%;
+            left: 12%;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #36b079;
+        }
+
+        .jc-switch a:nth-child(2) {
+            content: '';
+            position: absolute;
+            bottom: 15%;
+            left: 12%;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #37b079;
+        }
+
+        @keyframes left {
             0% {
-                transform: rotate(0deg);
+                left: 0;
             }
 
             100% {
-                transform: rotate(360deg);
+                left: -48%;
             }
         }
 
-        .box span {
-            position: absolute;
-            inset: 5px;
-            border-radius: 16px;
-            background: #0c1022;
-            z-index: 1;
-        }
+        @keyframes right {
+            0% {
+                right: 0;
+            }
 
-        .box h2 {
-            position: relative;
-            z-index: 2;
-            color: #fff;
-            font-family: Montserrat;
-            font-size: 10em;
+            100% {
+                right: -48%;
+            }
         }
     </style>
 </head>
 
-<body>
-    <div class="box">
-        <span></span>
-        <h2>01</h2>
+<body style="margin-top:250px;">
+    <div class="jc-elevator">
+        <div id="myBtn" class="jc-floor">
+            <h3>404</h3>
+        </div>
+        <div id="doors" class="jc-doors">
+
+            <div>Ops... <br>Wrong floor</div>
+            <div>Designed by <a class="class-link" href="https://www.ruliweb.it">RuLiweb</a></div>
+        </div>
+
+        <div class="jc-switch">
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
     </div>
-    <div class="border-blur"></div>
 </body>
 
 </html>
