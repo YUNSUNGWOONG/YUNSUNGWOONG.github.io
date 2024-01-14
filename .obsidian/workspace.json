@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "_posts/2024-01-013-codinglog(17).md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "e4fbf6cc374c351a",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "_posts/2024-01-013-codinglog(17).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "_posts/2024-01-013-codinglog(17).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "_posts/2024-01-013-codinglog(17).md"
               }
             }
           }
@@ -148,6 +149,8 @@
   },
   "active": "25bda92fbf4803db",
   "lastOpenFiles": [
+    "README.md",
+    "_posts/2024-01-013-codinglog(17).md",
     "images/image-removebg-preview (1).png",
     "images/image-20231229020950861.png",
     "images/image-20231229020916675.png",
@@ -159,7 +162,6 @@
     "_posts/2023-12-29-myjupyterapplication.md",
     "_posts/2023-12-29-mylab.md",
     "_posts/2023-12-29-mysyntax.md",
-    "README.md",
     "_posts/2023-12-29-mylab.md.md",
     "_posts",
     "CHANGELOG.md"
