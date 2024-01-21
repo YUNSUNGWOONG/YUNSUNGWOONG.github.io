@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "beb56d954cf6d39e",
+        "id": "70ff9f5a5ee8974c",
         "type": "tabs",
         "children": [
           {
-            "id": "25bda92fbf4803db",
+            "id": "c27262310cef0476",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-01-013-codinglog(17).md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-01-013-codinglog(17).md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-01-013-codinglog(17).md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-01-013-codinglog(17).md"
+                "file": "README.md"
               }
             }
           }
@@ -147,9 +147,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "25bda92fbf4803db",
+  "active": "c27262310cef0476",
   "lastOpenFiles": [
+    "_posts/2024-01-18-codinglog(20).md",
+    "images/README/preview(20240116).png",
+    "images/README",
+    "CHANGELOG.md",
+    "2.md",
     "README.md",
+    "screenshot.png",
+    "screenshot-layouts.png",
     "_posts/2024-01-013-codinglog(17).md",
     "images/image-removebg-preview (1).png",
     "images/image-20231229020950861.png",
@@ -163,7 +170,6 @@
     "_posts/2023-12-29-mylab.md",
     "_posts/2023-12-29-mysyntax.md",
     "_posts/2023-12-29-mylab.md.md",
-    "_posts",
-    "CHANGELOG.md"
+    "_posts"
   ]
 }
