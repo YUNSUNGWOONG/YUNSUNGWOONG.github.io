@@ -1,0 +1,1236 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>코딩일지(2024-01-14) | CodingLog(by JackSmith-c)</title>
+<meta name="description" content="목요일 4번 문제">
+
+
+  <meta name="author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+  <meta property="article:author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="CodingLog(by JackSmith-c)">
+<meta property="og:title" content="코딩일지(2024-01-14)">
+<meta property="og:url" content="http://localhost:4000/2024-01/codinglog(18)/">
+
+
+  <meta property="og:description" content="목요일 4번 문제">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-01-14T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/2024-01/codinglog(18)/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "YUNSUNGWOONG(JackSmith)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="CodingLog(by JackSmith-c) Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+  onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+</noscript>
+
+
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+<body
+  class="layout--single">
+  <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/002.png" alt="CodingLog(by JackSmith-c)"></a>
+        
+        <a class="site-title" href="/">
+          CodingLog(by JackSmith-c)
+          <span class="site-subtitle">My CodingDiary</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+
+
+        div.clock {
+            position: fixed;
+            top: -22%;
+            left: 0;
+            display: flex;
+            height: 100%;
+            padding: 17px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Awesome Border Animation.css */
+        .border-blur {
+            position: absolute;
+            width: 300px;
+            height: 250px;
+            background: transparent;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: blur(50px);
+        }
+
+        .box {
+            position: relative;
+            width: 206px;
+            height: 135px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .border-blur::before,
+        .border-blur::after {
+            border-radius: 50%;
+            height: 338px !important;
+            width: 215px !important;
+        }
+
+        .box::after,
+        .border-blur::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #fc9e28);
+            /*#d400d4*/
+            animation: animate 4s linear infinite;
+            animation-delay: -2s;
+        }
+
+        .box::before,
+        .border-blur::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #0abf03);
+            /*#00ccff*/
+            animation: animate 4s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box span {
+            position: absolute;
+            inset: 13px;
+            border-radius: 22px;
+            background: #141010;
+            z-index: 1;
+        }
+
+        .box div {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="box">
+            <span></span>
+            <div id="time"></div>
+            <div id="date"></div>
+        </div>
+        <div class="border-blur"></div>
+    </div>
+
+
+</body>
+<script>
+    function setClock() {
+        var dateInfo = new Date();
+        var hour = modifyNumber(dateInfo.getHours());
+        var min = modifyNumber(dateInfo.getMinutes());
+        var sec = modifyNumber(dateInfo.getSeconds());
+        var year = dateInfo.getFullYear();
+        var month = dateInfo.getMonth() + 1; //monthIndex를 반환해주기 때문에 1을 더해준다.
+        var date = dateInfo.getDate();
+        document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec;
+        document.getElementById("date").innerHTML = year + "-" + month + "-" + date;
+    }
+    function modifyNumber(time) {
+        if (parseInt(time) < 10) {
+            return "0" + time;
+        }
+        else
+            return time;
+    }
+    window.onload = function () {
+        setClock();
+        setInterval(setClock, 1000); //1초마다 setClock 함수 실행
+    }
+</script>
+
+</html>
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .tiktok li {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .tiktok li::before {
+        position: absolute;
+        content: '';
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        width: 25px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu-parent {
+        position: fixed;
+        top: 40%;
+        left: 0;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .sidemenu ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        filter: drop-shadow(0 2px 3px #00000054);
+      }
+
+      .sidemenu li {
+        width: 70px;
+        height: 70px;
+        background-color: var(--clr);
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .sidemenu li::before {
+        position: absolute;
+        content: '';
+        background-color: var(--clr);
+        width: 25.3px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu i {
+        height: 60px !important;
+        width: 60px !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        position: absolute;
+      }
+
+      .sidemenu span {
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 600;
+        white-space: nowrap;
+        position: absolute;
+        transform: translateX(60px);
+        padding-left: 10px;
+        color: transparent;
+      }
+
+      .sidemenu li:hover {
+        width: 240px;
+      }
+
+      .sidemenu li:hover span {
+        color: #fff;
+      }
+
+      /* .fa-n:before {
+            font-family: Arial;
+            font-weight: bold;
+            content: 'N';
+        } */
+    </style>
+  </head>
+
+  <body>
+    <ul class="sidemenu sidemenu-parent">
+      <a href="https://github.com/JackSmith-c">
+        <li class="sidemenu" style="--clr: #9b59b6">
+          <i class="fa-brands fa-github sidemenu"></i>
+          <span>Github</span>
+        </li>
+      </a>
+      <a href="https://blog.naver.com/yhon89">
+        <li class="sidemenu" style="--clr: #30ae48">
+          <!-- <i class="fa-brands fa-tiktok sidemenu"></i> -->
+          <i class="fa-solid fa-n sidemenu"></i>
+          <span>Naver</span>
+        </li>
+      </a>
+      <a href="https://www.instagram.com/seongung64/">
+        <li class="sidemenu" style="--clr: #dd2a7b">
+          <i class="fa-brands fa-instagram sidemenu"></i>
+          <span>instagram</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu"
+            style="background: linear-gradient(90deg, rgba(0, 242, 234, 1) 0%, rgba(6, 0, 4, 1) 50%, rgba(255, 0, 79, 1) 100%) !important;">
+            <i class="fa-brands fa-tiktok sidemenu"></i>
+            <span>TikTok</span>
+        </li> -->
+      <a href="https://www.youtube.com/channel/UCB4Xq3yWVgdzujvkxeY_MyA">
+        <li class="sidemenu" style="--clr: #ff0000">
+          <i class="fa-brands fa-youtube sidemenu"></i>
+          <span>youtube</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu" style="--clr: #4fce5d">
+            <i class="fa-brands fa-whatsapp sidemenu"></i>
+            <span class="sidemenu">whatsapp</span>
+        </li> -->
+    </ul>
+  </body>
+</html>
+
+  <div class="initial-content">
+    
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#2024-01" itemprop="item"><span itemprop="name">2024 01</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">코딩일지(2024-01-14)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p></a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Kyungpook National University<br />Department of Electronic Engineering</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Suwon, Gyeonggi-do</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="코딩일지(2024-01-14)">
+    <meta itemprop="description" content="목요일 4번 문제">
+    <meta itemprop="datePublished" content="2024-01-14T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/2024-01/codinglog(18)/" class="u-url" itemprop="url">코딩일지(2024-01-14)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-01-14T00:00:00+09:00">2024-01-14</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#목요일-4번-문제">목요일 4번 문제</a></li><li><a href="#금요일-5번문제">금요일 5번문제</a><ul><li><a href="#ci1-파일에서-데이터-읽기와-성적총합계산하기">CI(1): 파일에서 데이터 읽기와 성적총합계산하기</a></li><li><a href="#참조데이터출력하기">참조)데이터출력하기</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="목요일-4번-문제">목요일 4번 문제</h2>
+
+<div style="text-align:center;">
+    <img src="http://localhost:4000/images/2024-01-14-codinglog(18)/image-20240114211406939.png" alt="image-20231230154210231" style="zoom:110%;" />
+</div>
+
+<p>위 코드는 “f2.txt”파일에 있는 단어들을 동적할당된 이차원배열에서 받아가지고 qsort()를 써서 값을 오름차순으로 재배열 하는 문제이다.</p>
+
+<p>이때 compare()함수를 구현해주어야 하는데, 이게 생각보다 성가시다ㅜㅠ.</p>
+
+<p>그래서 이 부분에 대해서만 집중적으로 정리해보려고 한다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">strcmp</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="p">)</span><span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="p">)</span><span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>코드리뷰: 여기서 <code class="language-plaintext highlighter-rouge">a</code>와 <code class="language-plaintext highlighter-rouge">b</code>는 비교될 두 요소를 가리키는 포인터입니다. 이 비교함수는 문자열 포인터들의 배열을 정렬하는데 사용됩니다.</p>
+
+<p>1.<code class="language-plaintext highlighter-rouge">const char **a</code> 와 <code class="language-plaintext highlighter-rouge">const char **b</code>로 형변환하여 문자열 포인터를 가리키는 포인터로 캐스팅합니다. 이는 <code class="language-plaintext highlighter-rouge">qsort</code> 함수에서 제공되는 요소들이 <code class="language-plaintext highlighter-rouge">const void *</code>형태로 전달되기 떄문입니다.</p>
+
+<p>2.<code class="language-plaintext highlighter-rouge">strcmp(*(const char*)a, *(const **)b)</code>를 통해 두 문자열을 비교합니다.</p>
+
+<p>여기서 <code class="language-plaintext highlighter-rouge">*(const char **)a</code>와 <code class="language-plaintext highlighter-rouge">*(const char**)b</code>는 각각 <code class="language-plaintext highlighter-rouge">a</code>와 <code class="language-plaintext highlighter-rouge">b</code>가 가리키는 문자열 나타냅니다.</p>
+
+<p>3.<code class="language-plaintext highlighter-rouge">strcmp</code>함수의 결과에 따라 비교 결과를 반환합니다. <code class="language-plaintext highlighter-rouge">strcmp</code>의 반환값이 양수이면 <code class="language-plaintext highlighter-rouge">a</code>가 <code class="language-plaintext highlighter-rouge">b</code>보다 크다는 것을 의미하고, <code class="language-plaintext highlighter-rouge">a</code>가 <code class="language-plaintext highlighter-rouge">b</code>보다 작다는 것을 의미합니다. 만약 두 문자열이 같으면 0을 반환합니다.</p>
+
+<blockquote>
+  <p>이렇게 구성된 <code class="language-plaintext highlighter-rouge">compare</code>함수는 <code class="language-plaintext highlighter-rouge">qsort</code>함수에 전달되어 배열의 정렬을 수행합니다. 함수가 제대로 동작하려면 배열의 각 요소가 문자열을 가리키는 포인터여야 합니다. 이러한 형태의 함수를 사용하는 것은 포인터를 활용하여 배열의 요소를 정렬하는 일반적인 방법 중 하나입니다.</p>
+</blockquote>
+
+<h2 id="금요일-5번문제">금요일 5번문제</h2>
+
+<p>일단 학생정보를 파일에서 읽어와서 <code class="language-plaintext highlighter-rouge">Student</code>구조체의 배열을 생성하는 프로그램을 작성해보자.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">snum</span><span class="p">;</span>         <span class="c1">// 학번</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>    <span class="c1">// 이름</span>
+    <span class="kt">double</span> <span class="n">score1</span><span class="p">;</span>    <span class="c1">// 점수1</span>
+    <span class="kt">double</span> <span class="n">score2</span><span class="p">;</span>    <span class="c1">// 점수2</span>
+    <span class="kt">double</span> <span class="n">quiz</span><span class="p">;</span>      <span class="c1">// 퀴즈 점수</span>
+<span class="p">}</span> <span class="n">Student</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Student</code>구조체는 학생의 정보를 나타냅니다. 학번(<code class="language-plaintext highlighter-rouge">snum</code>), 이름(<code class="language-plaintext highlighter-rouge">name</code>), 점수1(<code class="language-plaintext highlighter-rouge">score1</code>), 점수2(<code class="language-plaintext highlighter-rouge">score2</code>), 퀴즈점수(<code class="language-plaintext highlighter-rouge">quiz</code>)를 저장할 수 있습니다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">readFromFile</span><span class="p">(</span><span class="n">Student</span><span class="o">**</span> <span class="n">student</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">n</span><span class="p">,</span> <span class="kt">FILE</span> <span class="o">*</span><span class="n">file_import</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 학생 구조체 배열 동적 할당</span>
+    <span class="o">*</span><span class="n">student</span> <span class="o">=</span> <span class="p">(</span><span class="n">Student</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="o">*</span><span class="n">n</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">Student</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">student</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"메모리를 할당할 수 없습니다."</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 파일에서 학생 정보 읽기</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="o">*</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">fscanf</span><span class="p">(</span><span class="n">file_import</span><span class="p">,</span> <span class="s">"%s %lf %lf %lf"</span><span class="p">,</span>
+            <span class="p">(</span><span class="o">*</span><span class="n">student</span><span class="p">)[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">,</span>
+            <span class="o">&amp;</span><span class="p">(</span><span class="o">*</span><span class="n">student</span><span class="p">)[</span><span class="n">i</span><span class="p">].</span><span class="n">score1</span><span class="p">,</span>
+            <span class="o">&amp;</span><span class="p">(</span><span class="o">*</span><span class="n">student</span><span class="p">)[</span><span class="n">i</span><span class="p">].</span><span class="n">score2</span><span class="p">,</span>
+            <span class="o">&amp;</span><span class="p">(</span><span class="o">*</span><span class="n">student</span><span class="p">)[</span><span class="n">i</span><span class="p">].</span><span class="n">quiz</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">readFromFile</code>함수는 파일에서 학생정보를 읽어와서 <code class="language-plaintext highlighter-rouge">Student</code> 배열을 할당하고 채워넣는 역할을 합니다. <code class="language-plaintext highlighter-rouge">fscanf</code>함수를 사용하여 파일에서 이름과 점수들을 읽어옵니다.</p>
+
+<p>이떄, 이 함수는 <code class="language-plaintext highlighter-rouge">Student** student</code>를 받아들이고 있는 걸 볼수가 있습니다. 이것은 <code class="language-plaintext highlighter-rouge">Student</code>구조체의 이중 포인터로, 동적으로 할당된 배열을 함수에 전달하고 해당 배열을 채우기 위해 사용됩니다.</p>
+
+<p>만약 함수의 인자를 <code class="language-plaintext highlighter-rouge">Student* student</code>로 변경하면 함수 내에서 할당된 메모리의 주소를 수정하는 것이 아니라, 복사본에 작업을 수행하게 됩니다.</p>
+
+<blockquote>
+  <p>따라서 함수의 인자를 <code class="language-plaintext highlighter-rouge">Student** student</code>로 유지하여 주소를 전달받아 배열을 채우는 방식을 유지하는 것이 올바릅니다. 함수 호출 시에 <code class="language-plaintext highlighter-rouge">&amp;students</code>와 같이 이중 포인터의 주소를 전달하게 되면, 함수 내에서 해당 주소에 접근하여 배열을 채울 수 있습니다.</p>
+</blockquote>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 파일 열기</span>
+    <span class="kt">FILE</span><span class="o">*</span> <span class="n">file_import</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"f5.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">file_import</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"파일을 열 수 없습니다."</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+    <span class="n">fscanf</span><span class="p">(</span><span class="n">file_import</span><span class="p">,</span> <span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">);</span>
+
+    <span class="c1">// 학생 구조체 배열 선언</span>
+    <span class="n">Student</span><span class="o">*</span> <span class="n">students</span><span class="p">;</span>
+
+    <span class="c1">// readFromFile 함수 호출하여 배열 채우기</span>
+    <span class="n">readFromFile</span><span class="p">(</span><span class="o">&amp;</span><span class="n">students</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">);</span>
+
+    <span class="c1">// 이제 'students' 배열은 학생 정보로 채워짐</span>
+
+    <span class="c1">// 예시: 첫 번째 학생의 정보 출력</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"첫 번째 학생 정보:</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"이름: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">name</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"점수 1: %.2lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">score1</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"점수 2: %.2lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">score2</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"퀴즈 점수: %.2lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">quiz</span><span class="p">);</span>
+
+    <span class="c1">// 할당된 메모리 해제</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">students</span><span class="p">);</span>
+
+    <span class="c1">// 파일 닫기</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">file_import</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">main</code>함수에서는 파일을 열고, <code class="language-plaintext highlighter-rouge">readFromFile</code>함수를 호출하여 학생정보를 읽어오고 출력합니다. 마지막으로 할당된 메모리를 해제하고 파일을 닫습니다.</p>
+
+<blockquote>
+  <p>main부에서 직접참조(&amp;)를 한번써서 보내면, 함수 구현부에서 이중역참조를 써줘야 하고!</p>
+
+  <p>main부에서 직접참조(&amp;)를 안써서 보내면, 함수 구현부에서 단일역참조를 써주면 된다.</p>
+
+  <p>(직접참조(&amp;)를 써주는 경우는 포인터 배열을 써줘야하는 경우뿐이다.)</p>
+</blockquote>
+
+<h3 id="ci1-파일에서-데이터-읽기와-성적총합계산하기">CI(1): 파일에서 데이터 읽기와 성적총합계산하기</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define _CRT_SECURE_NO_WARNINGS
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">snum</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+    <span class="kt">double</span> <span class="n">score1</span><span class="p">;</span> <span class="c1">// 실수형으로 변경하여 부동 소수점 형태의 점수 저장</span>
+    <span class="kt">double</span> <span class="n">score2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">quiz</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">totalScore</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Student</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">readFromFile</span><span class="p">(</span><span class="n">Student</span><span class="o">**</span> <span class="n">student</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">n</span><span class="p">,</span> <span class="kt">FILE</span><span class="o">*</span> <span class="n">file_import</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 학생 구조체 배열 동적 할당</span>
+    <span class="o">*</span><span class="n">student</span> <span class="o">=</span> <span class="p">(</span><span class="n">Student</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="o">*</span><span class="n">n</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">Student</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">student</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"메모리를 할당할 수 없습니다."</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 파일에서 학생 정보 읽기</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="o">*</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">fscanf</span><span class="p">(</span><span class="n">file_import</span><span class="p">,</span> <span class="s">"%s %lf %lf %lf"</span><span class="p">,</span>
+            <span class="p">(</span><span class="o">*</span><span class="n">student</span><span class="p">)[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">,</span>
+            <span class="o">&amp;</span><span class="p">(</span><span class="o">*</span><span class="n">student</span><span class="p">)[</span><span class="n">i</span><span class="p">].</span><span class="n">score1</span><span class="p">,</span>
+            <span class="o">&amp;</span><span class="p">(</span><span class="o">*</span><span class="n">student</span><span class="p">)[</span><span class="n">i</span><span class="p">].</span><span class="n">score2</span><span class="p">,</span>
+            <span class="o">&amp;</span><span class="p">(</span><span class="o">*</span><span class="n">student</span><span class="p">)[</span><span class="n">i</span><span class="p">].</span><span class="n">quiz</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">calculateTotalScore</span><span class="p">(</span><span class="n">Student</span><span class="o">*</span> <span class="n">students</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">totalScore</span> <span class="o">=</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">score1</span> <span class="o">+</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">score2</span> <span class="o">+</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">quiz</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 파일 열기</span>
+    <span class="kt">FILE</span><span class="o">*</span> <span class="n">file_import</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"f5.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">file_import</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"파일을 열 수 없습니다."</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+    <span class="n">fscanf</span><span class="p">(</span><span class="n">file_import</span><span class="p">,</span> <span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">);</span>
+
+    <span class="c1">// 학생 구조체 배열 선언</span>
+    <span class="n">Student</span><span class="o">*</span> <span class="n">students</span><span class="p">;</span>
+
+    <span class="c1">// 파일에서 데이터 읽기</span>
+    <span class="n">readFromFile</span><span class="p">(</span><span class="o">&amp;</span><span class="n">students</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">,</span> <span class="n">file_import</span><span class="p">);</span>
+
+    <span class="c1">//성적의 합계 계산</span>
+    <span class="n">calculateTotalScore</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"첫 번째 학생 정보:</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"이름: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">name</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"점수 1: %.2lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">score1</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"점수 2: %.2lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">score2</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"퀴즈 점수: %.2lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">quiz</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"총합: %.2lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">totalScore</span><span class="p">);</span>
+    
+    <span class="c1">// 할당된 메모리 해제</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">students</span><span class="p">);</span>
+
+    <span class="c1">// 파일 닫기</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">file_import</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="참조데이터출력하기">참조)데이터출력하기</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">printData</span><span class="p">(</span><span class="n">Student</span><span class="o">*</span> <span class="n">students</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d %s %.1f %.1f %.1f %.1f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> 
+            <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">snum</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">,</span> 
+               <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">score1</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">score2</span><span class="p">,</span> 
+               <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">quiz</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">totalScore</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>코드리뷰: 데이터를 출력할때에는 다음과 같이 일반적으로 출력할 수 있다. 그러면 입력에 대한 코드와 비교를 해보면 입력(fscanf())에서는</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fscanf</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s">"%s %f %f %f"</span><span class="p">,</span> 
+                <span class="p">(</span><span class="o">*</span><span class="n">students</span><span class="p">)[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">,</span> 
+                <span class="o">&amp;</span><span class="p">(</span><span class="o">*</span><span class="n">students</span><span class="p">)[</span><span class="n">i</span><span class="p">].</span><span class="n">score1</span><span class="p">,</span> 
+                <span class="o">&amp;</span><span class="p">(</span><span class="o">*</span><span class="n">students</span><span class="p">)[</span><span class="n">i</span><span class="p">].</span><span class="n">score2</span><span class="p">,</span>
+               	<span class="o">&amp;</span><span class="p">(</span><span class="o">*</span><span class="n">students</span><span class="p">)[</span><span class="n">i</span><span class="p">].</span><span class="n">quiz</span><span class="p">);</span>
+    <span class="err">}</span>
+</code></pre></div></div>
+
+<p>다음과 같이 문자열에 대해서는 따로 직접참조(&amp;)를 붙여주지 않는다. 왜냐하면 문자열을 저장하는 경우에는 그 자체로 주소값을 반환해버리기 때문이다. 그 외에 나머지 int형이나 float형에 대해서는 주소값 얻으려면 무조건 직접참조(&amp;)를 붙여줘야 한다. 근데 이거랑 비교해보면, 출력할때를 봤을때 문자열을 출력한다고 해서 간접참조(*)를 일일이 붙여주냐? 또 그것도 아니라는 거다. 이런 면에서 C언에서도 살짝 비논리적인 부분이 없지 않아 있는 것 같다. 아니 많은 것 같다. (C언어는 억까가 많은 언어다ㄷㄷ)</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#c" class="page__taxonomy-item p-category" rel="tag">C</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#2024-01" class="page__taxonomy-item p-category" rel="tag">2024-01</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-01-14T00:00:00+09:00">2024-01-14</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%BD%94%EB%94%A9%EC%9D%BC%EC%A7%80%282024-01-14%29%20http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2818%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2818%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2818%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024-01/codinglog(17)/" class="pagination--pager" title="코딩일지(2024-01-13)
+">이전</a>
+    
+    
+      <a href="/2024-01/codinglog(19)/" class="pagination--pager" title="코딩일지(2024-01-15)
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(37)/" rel="permalink">코딩일지(2024-02-22)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-22T00:00:00+09:00">2024-02-22</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오늘 드디어 파이레이서에 학습을 시켰다!!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(36)/" rel="permalink">코딩일지(2024-02-08)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-08T00:00:00+09:00">2024-02-08</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">스로틀링 문제를 해결중이다.
+config.py코드 둘러보기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(35)/" rel="permalink">코딩일지(2024-02-04)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-04T00:00:00+09:00">2024-02-04</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">dcworks..너란 녀석.. 어렵다..
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(34)/" rel="permalink">코딩일지(2024-02-03)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-03T00:00:00+09:00">2024-02-03</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">캐글에 가입해보았다!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+  </div>
+
+  
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 YUNSUNGWOONG(JackSmith). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

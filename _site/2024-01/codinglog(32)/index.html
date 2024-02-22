@@ -1,0 +1,1168 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>코딩일지(2024-01-31) | CodingLog(by JackSmith-c)</title>
+<meta name="description" content="오늘! 학습까지만이라도 시켜보자!">
+
+
+  <meta name="author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+  <meta property="article:author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="CodingLog(by JackSmith-c)">
+<meta property="og:title" content="코딩일지(2024-01-31)">
+<meta property="og:url" content="http://localhost:4000/2024-01/codinglog(32)/">
+
+
+  <meta property="og:description" content="오늘! 학습까지만이라도 시켜보자!">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-01-31T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/2024-01/codinglog(32)/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "YUNSUNGWOONG(JackSmith)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="CodingLog(by JackSmith-c) Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+  onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+</noscript>
+
+
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+<body
+  class="layout--single">
+  <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/002.png" alt="CodingLog(by JackSmith-c)"></a>
+        
+        <a class="site-title" href="/">
+          CodingLog(by JackSmith-c)
+          <span class="site-subtitle">My CodingDiary</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+
+
+        div.clock {
+            position: fixed;
+            top: -22%;
+            left: 0;
+            display: flex;
+            height: 100%;
+            padding: 17px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Awesome Border Animation.css */
+        .border-blur {
+            position: absolute;
+            width: 300px;
+            height: 250px;
+            background: transparent;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: blur(50px);
+        }
+
+        .box {
+            position: relative;
+            width: 206px;
+            height: 135px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .border-blur::before,
+        .border-blur::after {
+            border-radius: 50%;
+            height: 338px !important;
+            width: 215px !important;
+        }
+
+        .box::after,
+        .border-blur::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #fc9e28);
+            /*#d400d4*/
+            animation: animate 4s linear infinite;
+            animation-delay: -2s;
+        }
+
+        .box::before,
+        .border-blur::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #0abf03);
+            /*#00ccff*/
+            animation: animate 4s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box span {
+            position: absolute;
+            inset: 13px;
+            border-radius: 22px;
+            background: #141010;
+            z-index: 1;
+        }
+
+        .box div {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="box">
+            <span></span>
+            <div id="time"></div>
+            <div id="date"></div>
+        </div>
+        <div class="border-blur"></div>
+    </div>
+
+
+</body>
+<script>
+    function setClock() {
+        var dateInfo = new Date();
+        var hour = modifyNumber(dateInfo.getHours());
+        var min = modifyNumber(dateInfo.getMinutes());
+        var sec = modifyNumber(dateInfo.getSeconds());
+        var year = dateInfo.getFullYear();
+        var month = dateInfo.getMonth() + 1; //monthIndex를 반환해주기 때문에 1을 더해준다.
+        var date = dateInfo.getDate();
+        document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec;
+        document.getElementById("date").innerHTML = year + "-" + month + "-" + date;
+    }
+    function modifyNumber(time) {
+        if (parseInt(time) < 10) {
+            return "0" + time;
+        }
+        else
+            return time;
+    }
+    window.onload = function () {
+        setClock();
+        setInterval(setClock, 1000); //1초마다 setClock 함수 실행
+    }
+</script>
+
+</html>
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .tiktok li {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .tiktok li::before {
+        position: absolute;
+        content: '';
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        width: 25px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu-parent {
+        position: fixed;
+        top: 40%;
+        left: 0;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .sidemenu ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        filter: drop-shadow(0 2px 3px #00000054);
+      }
+
+      .sidemenu li {
+        width: 70px;
+        height: 70px;
+        background-color: var(--clr);
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .sidemenu li::before {
+        position: absolute;
+        content: '';
+        background-color: var(--clr);
+        width: 25.3px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu i {
+        height: 60px !important;
+        width: 60px !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        position: absolute;
+      }
+
+      .sidemenu span {
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 600;
+        white-space: nowrap;
+        position: absolute;
+        transform: translateX(60px);
+        padding-left: 10px;
+        color: transparent;
+      }
+
+      .sidemenu li:hover {
+        width: 240px;
+      }
+
+      .sidemenu li:hover span {
+        color: #fff;
+      }
+
+      /* .fa-n:before {
+            font-family: Arial;
+            font-weight: bold;
+            content: 'N';
+        } */
+    </style>
+  </head>
+
+  <body>
+    <ul class="sidemenu sidemenu-parent">
+      <a href="https://github.com/JackSmith-c">
+        <li class="sidemenu" style="--clr: #9b59b6">
+          <i class="fa-brands fa-github sidemenu"></i>
+          <span>Github</span>
+        </li>
+      </a>
+      <a href="https://blog.naver.com/yhon89">
+        <li class="sidemenu" style="--clr: #30ae48">
+          <!-- <i class="fa-brands fa-tiktok sidemenu"></i> -->
+          <i class="fa-solid fa-n sidemenu"></i>
+          <span>Naver</span>
+        </li>
+      </a>
+      <a href="https://www.instagram.com/seongung64/">
+        <li class="sidemenu" style="--clr: #dd2a7b">
+          <i class="fa-brands fa-instagram sidemenu"></i>
+          <span>instagram</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu"
+            style="background: linear-gradient(90deg, rgba(0, 242, 234, 1) 0%, rgba(6, 0, 4, 1) 50%, rgba(255, 0, 79, 1) 100%) !important;">
+            <i class="fa-brands fa-tiktok sidemenu"></i>
+            <span>TikTok</span>
+        </li> -->
+      <a href="https://www.youtube.com/channel/UCB4Xq3yWVgdzujvkxeY_MyA">
+        <li class="sidemenu" style="--clr: #ff0000">
+          <i class="fa-brands fa-youtube sidemenu"></i>
+          <span>youtube</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu" style="--clr: #4fce5d">
+            <i class="fa-brands fa-whatsapp sidemenu"></i>
+            <span class="sidemenu">whatsapp</span>
+        </li> -->
+    </ul>
+  </body>
+</html>
+
+  <div class="initial-content">
+    
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#2024-01" itemprop="item"><span itemprop="name">2024 01</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">코딩일지(2024-01-31)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p></a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Kyungpook National University<br />Department of Electronic Engineering</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Suwon, Gyeonggi-do</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="코딩일지(2024-01-31)">
+    <meta itemprop="description" content="오늘! 학습까지만이라도 시켜보자!">
+    <meta itemprop="datePublished" content="2024-01-31T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/2024-01/codinglog(32)/" class="u-url" itemprop="url">코딩일지(2024-01-31)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-01-31T00:00:00+09:00">2024-01-31</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#오늘-학습까지만이라도-시켜보자">오늘! 학습까지만이라도 시켜보자!</a><ul><li><a href="#일단-piracer의-바퀴제어까지는-성공했다">일단 PiRacer의 바퀴제어까지는 성공했다.</a><ul><li><a href="#트러블슈팅">트러블슈팅</a></li></ul></li><li><a href="#이제-calibrate-donkeycar를-접근해보자링크">이제 Calibrate Donkeycar를 접근해보자!(링크)</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="오늘-학습까지만이라도-시켜보자">오늘! 학습까지만이라도 시켜보자!</h1>
+
+<h2 id="일단-piracer의-바퀴제어까지는-성공했다">일단 PiRacer의 바퀴제어까지는 성공했다.</h2>
+
+<p>일단 교수님 도움으로 차량을 원격으로 구동시키는 것까지 끝냈다.</p>
+
+<p>추가적으로 배터리의 상태라던가 이런것들 알아보고 싶어 chatGPT로 찾아봤더니 <b>vcgencmd</b>라는 모듈이 있다는 것을 알았다.(<a href="https://www.elinux.org/RPI_vcgencmd_usage">링크</a>)</p>
+
+<p>이 모듈로 다음 정보등을 알 수 있었다.</p>
+
+<ol>
+  <li>메모리 정보</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pi@raspberrypi:~ <span class="nv">$ </span>vcgencmd get_mem arm <span class="o">&amp;&amp;</span> vcgencmd get_mem gpu
+<span class="nv">arm</span><span class="o">=</span>948M
+<span class="nv">gpu</span><span class="o">=</span>76M
+</code></pre></div></div>
+
+<ol>
+  <li>동작 온도</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pi@raspberrypi:~ <span class="nv">$ </span>vcgencmd measure_temp
+<span class="nv">temp</span><span class="o">=</span>43.8<span class="s1">'C
+</span></code></pre></div></div>
+
+<ol>
+  <li>동작 클럭 속도</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pi@raspberrypi:~ <span class="nv">$ </span><span class="k">for </span>clock <span class="k">in </span>arm core h264 isp v3d uart pwm emmc pixel vec hdmi dpi<span class="p">;</span> <span class="k">do</span> <span class="se">\ </span>                                                         
+  <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="nv">$clock</span><span class="s2">:</span><span class="se">\t</span><span class="si">$(</span>vcgencmd measure_clock <span class="nv">$clock</span><span class="si">)</span><span class="s2">"</span><span class="p">;</span> <span class="se">\</span>
+<span class="k">done
+</span>arm:	frequency<span class="o">(</span>48<span class="o">)=</span>1800457088
+core:	frequency<span class="o">(</span>1<span class="o">)=</span>500000992
+h264:	frequency<span class="o">(</span>28<span class="o">)=</span>0
+isp:	frequency<span class="o">(</span>45<span class="o">)=</span>0
+v3d:	frequency<span class="o">(</span>46<span class="o">)=</span>499987808
+uart:	frequency<span class="o">(</span>22<span class="o">)=</span>48001464
+pwm:	frequency<span class="o">(</span>25<span class="o">)=</span>107143064
+emmc:	frequency<span class="o">(</span>50<span class="o">)=</span>249987312
+pixel:	frequency<span class="o">(</span>29<span class="o">)=</span>81000000
+vec:	frequency<span class="o">(</span>10<span class="o">)=</span>0
+hdmi:	frequency<span class="o">(</span>9<span class="o">)=</span>120010256
+dpi:	frequency<span class="o">(</span>4<span class="o">)=</span>0
+</code></pre></div></div>
+
+<h3 id="트러블슈팅">트러블슈팅</h3>
+
+<p>위 vcgencmd명령어를 사용할때 계속 문제가 생겼던 것이 있다.</p>
+
+<p>예를 들어 <code class="language-plaintext highlighter-rouge">vcgencmd version</code>를 치면 버전정보만 떠야 하는데 쓸데없이 앞에 에러가 하나 붙어서 나왔다.</p>
+
+<p>(그래도 다행히 아예 안나오는 문제는 아니었다.)</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">env</span><span class="o">)</span> pi@raspberrypi:~/mycar <span class="nv">$ </span>vcgencmd version
+ERROR: ld.so: object <span class="s1">'/usr/lib/arm-linux-gnueabihf/libatomic.so.1'</span> from LD_PRELOAD cannot be preloaded <span class="o">(</span>cannot open shared object file<span class="o">)</span>: ignored.
+Mar 17 2023 10:50:39 
+Copyright <span class="o">(</span>c<span class="o">)</span> 2012 Broadcom
+version 82f3750a65fadae9a38077e3c2e217ad158c8d54 <span class="o">(</span>clean<span class="o">)</span> <span class="o">(</span>release<span class="o">)</span> <span class="o">(</span>start<span class="o">)</span>
+</code></pre></div></div>
+
+<p>위에서 ERROR가 하나 뜨고 그 아래에는 내가 원하는 정보들이 나왔다.</p>
+
+<blockquote>
+  <p>ERROR: ld.so: object ‘/usr/lib/arm-linux-gnueabihf/libatomic.so.1’ from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.</p>
+</blockquote>
+
+<p>그래서 다음과 같이 위 경로에 실제로 파일이 있는지를 확인해보았다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> /usr/lib/arm-linux-gnueabihf/libatomic.so.1
+</code></pre></div></div>
+
+<p>그러자 없다고 해서 그냥 깔았다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>libatomic1
+</code></pre></div></div>
+
+<p>근데 읭?? 이미 깔려있다는 모순적인 상황이 발생했다. 그래서 그러면 이미 깔려있는 그 파일이 어디에 있는지 수소문 해서 찾아보았다.(find명령어를 쓰면 해당 파일이 어디에 있는지 알아서 찾아준다. 다만 시간이 좀 걸린다)</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>find / <span class="nt">-name</span> libatomic.so.1
+</code></pre></div></div>
+
+<p>그리고 결과로 나온 경로에 들어가보니 여기에 있었다.</p>
+
+<p><img src="/images/2024-01-31-codinglog(32)/image-20240131143353946.png" alt="image-20240131143353946" /></p>
+
+<p>그래서 나는 시스템 상의 환경변수를 바꿔주는 방식으로 해서 vcgencmd 명령어가 해당 파일을 찾아올때 그 경로는 환경변수 상에서 바꿔줄까 하다가 괜히 잘못 건드리는게 아닌가 싶어 그냥 해당 명령어가 원하는 대로 해당 경로에 디렉토리를 만들어주고(<code class="language-plaintext highlighter-rouge">sudo mkdir arm-linux-gnueabihf</code>) 위 경로에 있었던 파일을 카피해서 내가 만들어둔 폴더에 붙여넣기 해주었다.</p>
+
+<p>그랬더니 오류는 정상적으로 잡혔다.</p>
+
+<hr />
+
+<p>문제가 생겼다.</p>
+
+<p>차량 앞바퀴의 회전을 시키기 위해서는 pull-bar를 제어하는 모터에 문제가 생긴것 같다.</p>
+
+<p>기본적으로 뒷바퀴는 앞으로 갔다 뒤로 갔다의 역할만 수행한다.</p>
+
+<p>이 모터는 hobbywing사의 Quic WP 1625 듀얼 브러시라고 한다.(<a href="https://www.hobbywing.com/en/products/quicrun-wp-1625-brushed53.html">링크</a>)</p>
+
+<p><img src="/images/2024-01-31-codinglog(32)/image-20240131172646693.png" alt="image-20240131172646693" /></p>
+
+<p>근데 다행히 앞뒤로 제대로 쓰로틀링후 동작을 하는 것으로 보아 이거 문제는 아니고, 문제는 풀바를 제어하는</p>
+
+<p>앞바퀴 제어 모터인, SPT 17HV-180 6Kg Waterproof Servo 25T였다. 줄여서 SPT Servo 라고도 한다.(<a href="https://ko.aliexpress.com/i/1005004968209650.html?gatewayAdapt=glo2kor">링크</a>)</p>
+
+<p><img src="/images/2024-01-31-codinglog(32)/image-20240131173005371.png" alt="image-20240131173005371" /></p>
+
+<p>근데 내가 아까 PWM을 세팅하는 테스트를 진행하다가 호기심에 강제로 모터부분을 돌려보았다.</p>
+
+<p>근데 이것때문인지, 이후 모터가 스스로 덜덜거리면서 조금 돌더니 멈췄다(이때 죽어버린것 같다ㅜ..)</p>
+
+<p>그래서 지금 해결책을 찾고 있다. 모터를 원래 초기값을 되돌릴 수 있는지, 해결방안을 모색하고 있다. 정안되면 알리익스프레스에서 구매해야 한다ㅜㅠ.일단 최대한 해보고 안되면 빨리 사야겠다.</p>
+
+<p>고장을 코드상으로 해결할 수 있는 방법을 찾아보다가, 나처럼 덜덜거리는 문제가 발생했었을때 해결책을 제시한 블로그가 있었다(<a href="https://blog.naver.com/dokkosam/221387857799">링크</a>).</p>
+
+<p><img src="/images/2024-01-31-codinglog(32)/image-20240131175940813.png" alt="image-20240131175940813" /></p>
+
+<p>일단 예전에 아두이노 샀을때 딸려왔던 학습용 서보모터로 코드를 돌려보고 나서, 동키카 차량에 있는 서보모터를 나의 아두이노에 연결해서 돌려보아야 겠다.</p>
+
+<h2 id="이제-calibrate-donkeycar를-접근해보자링크">이제 Calibrate Donkeycar를 접근해보자!(<a href="https://www.waveshare.com/wiki/DonkeyCar_for_Pi-Calibrate_DonkeyCar">링크</a>)</h2>
+
+<p>아래는 위 Calibrate Donkeycar페이지에 대한 내용을 번역하면서 공부해보려고 한다.</p>
+
+<blockquote>
+  <p>Donkeycar가 회전성공여부를 확인하려면 HW와 SW 모두에서 자동차를 칼리브레이트(보정)해야 한다.</p>
+
+  <p>조립할 때 앞바퀴를 앞쪽으로 유지하십시오. 풀바(pull-bars)의 길이를 조정해야 합니다.</p>
+</blockquote>
+
+<p><img src="/images/2024-01-31-codinglog(32)/image-20240131153626597.png" alt="image-20240131153626597" /></p>
+
+<p>pull-bar는 PWM세팅을 어떻게 하냐에 따라 다른 동작결과를 보여주었다.</p>
+
+<p>서보모터를 회전시키면 그에따라 풀바가 동작하게 되고, 풀바가 움직이면서 좌회전,우회전으로 회전시킬수가 있다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 가상환경 실행</span>
+<span class="nb">source</span> ~/workspace/dcworks/env/bin/activate
+<span class="c"># 차량에 접근</span>
+<span class="nb">cd </span>mycar/
+<span class="c"># 스티어링 서보(모터) 회전 테스트 실행</span>
+donkey calibrate <span class="nt">--channel</span> 0 <span class="nt">--bus</span><span class="o">=</span>1
+</code></pre></div></div>
+
+<p>스티어링 서보가 회저하는지확인하기 위해 위 명령어를 취해주고 100과 600을 각각 입력해주었다.</p>
+
+<p><img src="/images/2024-01-31-codinglog(32)/image-20240131154705593.png" alt="image-20240131154705593" /></p>
+
+<p>서보가 중앙위치로 회전하도록 값을 조정하고 그 값을 기억해두어야 한다. 예를 들어, 값 330이 작동하고 서보가 중앙에 유지될 수 있다면 이를 기준으로 -100인 230과 +100인 430이 서보가 맨 왼쪽과 맨 오른쪽으로 회전할 수 있도록 할 수 있는지 테스트할 수가 있다.</p>
+
+<p>그런 다음 맨 왼쪽 데이터와 맨 오른쪽 데이터를 얻은 후에는 config.py 파일을 수정하고, 다음 속성을 변경할수가 있다.</p>
+
+<ul>
+  <li>STEERING_LEFT_PWM</li>
+  <li>STEERING_RIGHT_PWM</li>
+</ul>
+
+<p>근데 이때 스티어링 서보가 너무 크게 또는 너무 작게 회전하도록 설정할수는 없다.</p>
+
+<p><img src="/images/2024-01-31-codinglog(32)/image-20240201155507809.png" alt="image-20240201155507809" /></p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#python" class="page__taxonomy-item p-category" rel="tag">python</a><span class="sep">, </span>
+    
+      <a href="/tags/#shell" class="page__taxonomy-item p-category" rel="tag">shell</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#2024-01" class="page__taxonomy-item p-category" rel="tag">2024-01</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-01-31T00:00:00+09:00">2024-01-31</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%BD%94%EB%94%A9%EC%9D%BC%EC%A7%80%282024-01-31%29%20http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2832%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2832%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2832%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024-01/codinglog(31)/" class="pagination--pager" title="코딩일지(2024-01-30)
+">이전</a>
+    
+    
+      <a href="/2024-02/codinglog(33)/" class="pagination--pager" title="코딩일지(2024-02-01)
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(37)/" rel="permalink">코딩일지(2024-02-22)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-22T00:00:00+09:00">2024-02-22</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오늘 드디어 파이레이서에 학습을 시켰다!!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(36)/" rel="permalink">코딩일지(2024-02-08)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-08T00:00:00+09:00">2024-02-08</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">스로틀링 문제를 해결중이다.
+config.py코드 둘러보기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(35)/" rel="permalink">코딩일지(2024-02-04)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-04T00:00:00+09:00">2024-02-04</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">dcworks..너란 녀석.. 어렵다..
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(34)/" rel="permalink">코딩일지(2024-02-03)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-03T00:00:00+09:00">2024-02-03</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">캐글에 가입해보았다!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+  </div>
+
+  
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 YUNSUNGWOONG(JackSmith). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

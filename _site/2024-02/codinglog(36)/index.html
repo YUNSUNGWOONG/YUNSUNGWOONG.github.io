@@ -1,0 +1,1412 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>코딩일지(2024-02-08) | CodingLog(by JackSmith-c)</title>
+<meta name="description" content="스로틀링 문제를 해결중이다. config.py코드 둘러보기">
+
+
+  <meta name="author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+  <meta property="article:author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="CodingLog(by JackSmith-c)">
+<meta property="og:title" content="코딩일지(2024-02-08)">
+<meta property="og:url" content="http://localhost:4000/2024-02/codinglog(36)/">
+
+
+  <meta property="og:description" content="스로틀링 문제를 해결중이다. config.py코드 둘러보기">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-02-08T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/2024-02/codinglog(36)/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "YUNSUNGWOONG(JackSmith)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="CodingLog(by JackSmith-c) Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+  onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+</noscript>
+
+
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+<body
+  class="layout--single">
+  <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/002.png" alt="CodingLog(by JackSmith-c)"></a>
+        
+        <a class="site-title" href="/">
+          CodingLog(by JackSmith-c)
+          <span class="site-subtitle">My CodingDiary</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+
+
+        div.clock {
+            position: fixed;
+            top: -22%;
+            left: 0;
+            display: flex;
+            height: 100%;
+            padding: 17px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Awesome Border Animation.css */
+        .border-blur {
+            position: absolute;
+            width: 300px;
+            height: 250px;
+            background: transparent;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: blur(50px);
+        }
+
+        .box {
+            position: relative;
+            width: 206px;
+            height: 135px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .border-blur::before,
+        .border-blur::after {
+            border-radius: 50%;
+            height: 338px !important;
+            width: 215px !important;
+        }
+
+        .box::after,
+        .border-blur::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #fc9e28);
+            /*#d400d4*/
+            animation: animate 4s linear infinite;
+            animation-delay: -2s;
+        }
+
+        .box::before,
+        .border-blur::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #0abf03);
+            /*#00ccff*/
+            animation: animate 4s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box span {
+            position: absolute;
+            inset: 13px;
+            border-radius: 22px;
+            background: #141010;
+            z-index: 1;
+        }
+
+        .box div {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="box">
+            <span></span>
+            <div id="time"></div>
+            <div id="date"></div>
+        </div>
+        <div class="border-blur"></div>
+    </div>
+
+
+</body>
+<script>
+    function setClock() {
+        var dateInfo = new Date();
+        var hour = modifyNumber(dateInfo.getHours());
+        var min = modifyNumber(dateInfo.getMinutes());
+        var sec = modifyNumber(dateInfo.getSeconds());
+        var year = dateInfo.getFullYear();
+        var month = dateInfo.getMonth() + 1; //monthIndex를 반환해주기 때문에 1을 더해준다.
+        var date = dateInfo.getDate();
+        document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec;
+        document.getElementById("date").innerHTML = year + "-" + month + "-" + date;
+    }
+    function modifyNumber(time) {
+        if (parseInt(time) < 10) {
+            return "0" + time;
+        }
+        else
+            return time;
+    }
+    window.onload = function () {
+        setClock();
+        setInterval(setClock, 1000); //1초마다 setClock 함수 실행
+    }
+</script>
+
+</html>
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .tiktok li {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .tiktok li::before {
+        position: absolute;
+        content: '';
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        width: 25px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu-parent {
+        position: fixed;
+        top: 40%;
+        left: 0;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .sidemenu ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        filter: drop-shadow(0 2px 3px #00000054);
+      }
+
+      .sidemenu li {
+        width: 70px;
+        height: 70px;
+        background-color: var(--clr);
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .sidemenu li::before {
+        position: absolute;
+        content: '';
+        background-color: var(--clr);
+        width: 25.3px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu i {
+        height: 60px !important;
+        width: 60px !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        position: absolute;
+      }
+
+      .sidemenu span {
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 600;
+        white-space: nowrap;
+        position: absolute;
+        transform: translateX(60px);
+        padding-left: 10px;
+        color: transparent;
+      }
+
+      .sidemenu li:hover {
+        width: 240px;
+      }
+
+      .sidemenu li:hover span {
+        color: #fff;
+      }
+
+      /* .fa-n:before {
+            font-family: Arial;
+            font-weight: bold;
+            content: 'N';
+        } */
+    </style>
+  </head>
+
+  <body>
+    <ul class="sidemenu sidemenu-parent">
+      <a href="https://github.com/JackSmith-c">
+        <li class="sidemenu" style="--clr: #9b59b6">
+          <i class="fa-brands fa-github sidemenu"></i>
+          <span>Github</span>
+        </li>
+      </a>
+      <a href="https://blog.naver.com/yhon89">
+        <li class="sidemenu" style="--clr: #30ae48">
+          <!-- <i class="fa-brands fa-tiktok sidemenu"></i> -->
+          <i class="fa-solid fa-n sidemenu"></i>
+          <span>Naver</span>
+        </li>
+      </a>
+      <a href="https://www.instagram.com/seongung64/">
+        <li class="sidemenu" style="--clr: #dd2a7b">
+          <i class="fa-brands fa-instagram sidemenu"></i>
+          <span>instagram</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu"
+            style="background: linear-gradient(90deg, rgba(0, 242, 234, 1) 0%, rgba(6, 0, 4, 1) 50%, rgba(255, 0, 79, 1) 100%) !important;">
+            <i class="fa-brands fa-tiktok sidemenu"></i>
+            <span>TikTok</span>
+        </li> -->
+      <a href="https://www.youtube.com/channel/UCB4Xq3yWVgdzujvkxeY_MyA">
+        <li class="sidemenu" style="--clr: #ff0000">
+          <i class="fa-brands fa-youtube sidemenu"></i>
+          <span>youtube</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu" style="--clr: #4fce5d">
+            <i class="fa-brands fa-whatsapp sidemenu"></i>
+            <span class="sidemenu">whatsapp</span>
+        </li> -->
+    </ul>
+  </body>
+</html>
+
+  <div class="initial-content">
+    
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#2024-02" itemprop="item"><span itemprop="name">2024 02</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">코딩일지(2024-02-08)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p></a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Kyungpook National University<br />Department of Electronic Engineering</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Suwon, Gyeonggi-do</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="코딩일지(2024-02-08)">
+    <meta itemprop="description" content="스로틀링 문제를 해결중이다.config.py코드 둘러보기">
+    <meta itemprop="datePublished" content="2024-02-08T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/2024-02/codinglog(36)/" class="u-url" itemprop="url">코딩일지(2024-02-08)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-08T00:00:00+09:00">2024-02-08</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#스로틀링-문제를-해결중이다">스로틀링 문제를 해결중이다.</a><ul><li><a href="#configpy코드-둘러보기">config.py코드 둘러보기</a></li><li><a href="#그래서-지금-launchjson파일을-보고-있다">그래서 지금 launch.json파일을 보고 있다.</a></li><li><a href="#미니콘다로-가상환경-구축을-다시-진행해보자">미니콘다로 가상환경 구축을 다시 진행해보자.</a></li><li><a href="#동키카-doc">동키카 DOC</a><ul><li><a href="#경로선-추적기">경로(선) 추적기</a></li><li><a href="#donkey-command-line-utilities">Donkey Command-line Utilities</a><ul><li><a href="#1create-car">1.Create Car</a></li><li><a href="#2find-car">2.Find Car</a></li><li><a href="#3calibrate-car-차량-보정하기">3.Calibrate Car (차량 보정하기)</a></li><li><a href="#4clean-data-in-tub">4.Clean data in Tub</a></li><li><a href="#5train-the-model">5.Train the model</a></li><li><a href="#6make-movie-from-tub">6.Make Movie from Tub</a></li><li><a href="#7plot-predictions">7.Plot Predictions</a></li><li><a href="#8tub-histogram">8.Tub Histogram</a></li><li><a href="#9joystic-wizard조이스틱-생성기">9.Joystic Wizard(조이스틱 생성기)</a></li><li><a href="#10visualize-cnn-filter-activations">10.Visualize CNN filter activations</a></li><li><a href="#11show-models-database">11.Show Models database</a></li><li><a href="#12donkey-ui">12.Donkey UI</a></li></ul></li><li><a href="#configpy파일-분석하기">config.py파일 분석하기</a></li><li><a href="#trainpy파일-분석하기">train.py파일 분석하기</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="스로틀링-문제를-해결중이다">스로틀링 문제를 해결중이다.</h1>
+<h2 id="configpy코드-둘러보기">config.py코드 둘러보기</h2>
+
+<p>이전까지는 Pi-Racer에서 뒤로가기, 즉 후전을 하지 못했었는데, 성준이 형이 드디어 해결했다.</p>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240208181639081.png" alt="image-20240208181639081" /></p>
+
+<p>위와 같이 THROTTLE_REVERSE_PWM속성에 속성값을 220(기본값)에서 10~50사이로 조정해봤더니, 후전이 구현되는 것을 확인하였다.</p>
+
+<p>원래 이걸로 학습데이터를 수집하고 학습결과로 “pilot.h5”모델을 export해야 하는데, 아직 그렇게 못했다.</p>
+
+<p>그래서 일단은 트레이닝을 어떻게 시키는지에 대해 알아보는 중이다.</p>
+
+<h2 id="그래서-지금-launchjson파일을-보고-있다">그래서 지금 launch.json파일을 보고 있다.</h2>
+
+<p>우리가 실행에 사용해야 할 파일들이 뭔지 파악해보고 있다.</p>
+
+<p>그리고 이거를 보고 알게 된것이 있는데, 우리가 보통 shell상에서 주행을 시작할때, 다음과 같이 명령어를 떄린다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">drive</span>
+</code></pre></div></div>
+
+<p>위 명령어를 해석하면 다음과 같다.</p>
+
+<p><b>python</b> -&gt; python패키지 관리자를 통해서 실행하려는 파일을 앞에 적는다. 그러면 관리자가 해당 파일(여기서는 manage.py)을 파이썬 인터프리터에 넣어서 돌리게 된다.</p>
+
+<p><b>manage.py</b> -&gt; 패키지관리자가 실행해야 할 목적이 되는 파일명이다. 여기서는 manage.py를 넣었다. 이를 통해 해당 파일을 실행할 수 있다.</p>
+
+<p><b>drive</b> -&gt; python 패키지 관리자는 파일명 뒤에 있는 것을 무조건 상수(args)로 인식한다.</p>
+
+<p>그래서 위 조건을 launch.json에 vscode상의 버튼으로 구현해본다면 다음과 같다.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"donkeycar_sim_2 drive"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"python"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"request"</span><span class="p">:</span><span class="s2">"launch"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"program"</span><span class="p">:</span><span class="s2">"${workspaceFolder}/app/donkeycar_sim_2/manage.py"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${workspaceFolder}/app/donkeycar_sim_2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"drive"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"console"</span><span class="p">:</span><span class="s2">"integratedTerminal"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre></div></div>
+
+<p>그 외에 좀더 보다가 알게 된것이, main이 되는 워크스페이스(dcworks)을 vscode상에서 열었을때, 이상하게  가상환경을 담당하는 env 디렉토리가 사라진 것이었다. 파일탐색기로 들어가면 존재했음에도 불구하고 말이다.</p>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240208192323100.png" alt="image-20240208192323100" /></p>
+
+<p>그래서 env파일을 편집하기 위해 env로 폴더열기를 해서 기본이 되는 루트위치를 바꿔놨다.</p>
+
+<p>뭐… 이상한 삽질하다가, 지금은 다른 삽질 중이다.</p>
+
+<h2 id="미니콘다로-가상환경-구축을-다시-진행해보자">미니콘다로 가상환경 구축을 다시 진행해보자.</h2>
+
+<p>미니콘다에다가 가상환경을 테스트해볼려고 시험중이다.</p>
+
+<p>나는 home 디렉토리(C:\Users\1) 안에 있는 miniconda3에서 가상환경에 접근해보았다.</p>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240208223447414.png" alt="image-20240208223447414" /></p>
+
+<p>위와 같이 env안에 donkey라는 디렉토리가 있다. 여기에는 너무 다양한 디렉토리가 있지만, 나중에 다시 미니콘다에다가 작업을 하는 경우가 또 있을 것 같다. 이걸로 작업 시도중이다.</p>
+
+<p>지금 뒤져보다가 한가지 알게 된것이 일단,</p>
+
+<p><code class="language-plaintext highlighter-rouge">Lib</code>에는 디렉토리 형태로(패키지형태라 해야하나?) 라이브러리 파일들이 정리되어 있는 것을 보았고,</p>
+
+<p><code class="language-plaintext highlighter-rouge">Library</code>에는 <code class="language-plaintext highlighter-rouge">bin</code>,<code class="language-plaintext highlighter-rouge">include</code>,<code class="language-plaintext highlighter-rouge">lib</code>,<code class="language-plaintext highlighter-rouge">ssl</code>라는 총 네개의 디렉토리가 있었다. 잘은 모르겠는데, openssl이라는 파일들이 많이 있었다. 그래서 조금 찾아봤다.</p>
+
+<blockquote>
+  <p>OpenSSL은 TLS와 SSL의 오픈소스 구현판이라 한다. 이 프로그램은 암호화 기능과 유틸리티 함수들이 들어가 있다고 한다. 그리고 C언어로 작성되어 있다고 한다.</p>
+
+  <p>참고로 TLS와 SSL은 데이터 통신에 쓰이는 프로토콜 일종이다. 그냥 이정도만 알아두자.</p>
+</blockquote>
+
+<p>일단 그렇다 한다ㅋㅋ</p>
+
+<p>그리고 이렇게 가상환경을 확인해보았으면 이번에는 프로젝트를 가져와보는 코드들을 리뷰해보자.</p>
+
+<p>(사실 이거는 예전에 1월30일자 코딩일지에 기록했던 내용들이다.)</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>donkey<span class="o">)</span> C:<span class="se">\U</span>sers<span class="se">\1</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>위와 같이 가상환경에 접속후 홈디렉토리에 들어간 이후,</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>projects
+<span class="nb">cd </span>projects
+git clone https://github.com/autorope/donkeycar
+<span class="nb">cd </span>donkeycar
+git checkout main
+pip <span class="nb">install</span> <span class="nt">-e</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>이후 버전충돌 문제를 아래와 같이 해결했다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span><span class="nv">h5py</span><span class="o">==</span>2.10.0 <span class="nv">packaging</span><span class="o">==</span>20.9 <span class="nv">wrapt</span><span class="o">==</span>1.12.1
+conda <span class="nb">install</span> <span class="nt">-c</span> conda-forge h5py
+</code></pre></div></div>
+
+<p>마지막으로 동키카 프로젝트에서 사용할 나의 작업용 동키카를 하나 생성해주었다.</p>
+
+<p>찾아보니 mycar는 총 두가지 템플릿 중 하나를 설치할 수 있다고 한다. 그래서 나는 고민하다가,</p>
+
+<p>두개를 깔아보자고 생각했다. 아래와 같이 말이다.</p>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240208232319913.png" alt="image-20240208232319913" /></p>
+
+<p>1.딥러닝 템플릿 동키카</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>donkey createcar <span class="nt">--template</span><span class="o">=</span>path_follow <span class="nt">--path</span> ~/projects/cars/car_dl
+</code></pre></div></div>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240208232501954.png" alt="image-20240208232501954" /></p>
+
+<p>2.컴퓨터비전 템플릿 동키카</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>donkey createcar <span class="nt">--template</span><span class="o">=</span>cv_control <span class="nt">--path</span> ~/projects/cars/car_cv
+</code></pre></div></div>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240208232522896.png" alt="image-20240208232522896" /></p>
+
+<p>이후 car_cv에 들어가서 <code class="language-plaintext highlighter-rouge">python manage.py drive</code> 명령어를 쳐주었다. 참고로 python은 패키지 관리자를 뜻하고, manage.py를 실행을 목표로 하는 파일대상, drive는 여기에 먹일 인수(args)이다.</p>
+
+<p>근데 다음과 같은 오류가 떴다.</p>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240208233033011.png" alt="image-20240208233033011" /></p>
+
+<p>이때 <code class="language-plaintext highlighter-rouge">pip install cv2</code>를 쓰니 오류가 떠서, <code class="language-plaintext highlighter-rouge">conda install -c conda-forge opencv</code>를 썼다. 그러니 이슈를 해결했다.</p>
+
+<p>이후,</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda update <span class="nt">-n</span> base <span class="nt">-c</span> defaults conda
+conda <span class="nb">install</span> <span class="nt">-c</span> conda-forge <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>이 부분은 포기했다. 일단 doc를 보기로 했다.</p>
+
+<hr />
+
+<h2 id="동키카-doc">동키카 DOC</h2>
+
+<p>이전에 이 config.py가 기본값이라는 것을 알고 있었고, myconfig.py는 어떻게 쓰는지 몰랐는지 이번에 DOC를 보면서 알게 되었다. 다음 내용을 보자.</p>
+
+<blockquote>
+  <p>새 버전의 당나귀차로 업데이트할 때는 애플리케이션 폴더를 새로 고쳐야 합니다. 동일한 명령으로 이 작업을 수행할 수 있지만 –overwrite를 추가하여 myconfig.py 파일을 지우지 않도록 합니다.</p>
+</blockquote>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>donkey createcar <span class="nt">--template</span><span class="o">=</span>cv_control <span class="nt">--path</span><span class="o">=</span>~/mycar <span class="nt">--overwrite</span>
+</code></pre></div></div>
+
+<p>어쨋든 config.py는 그냥 그대로 두고, myconfig.py를 편집후 덮어쓰기(overwrite)를 하는 방식으로 작업을 해야 한다고 한다.</p>
+
+<h3 id="경로선-추적기">경로(선) 추적기</h3>
+
+<blockquote>
+  <p>내장된 알고리즘으로 하여금 Pi-Camera를 사용하여 선을 추적하여 따라갈 수 있다고 한다.</p>
+
+  <p>기본적으로 노란색 선으로 조정되어 있지만 어찌어찌 조정하면 추적하는 색상을 구성할 수 있다고 한다.</p>
+
+  <p>더 나아가 알고리즘의 다른 많은 측면도 조정할 수 있다고 한다. 아래는 알고리즘에 대한 설명과 구성값을 사용하는 방법에 대한 내용이라 한다. 값 자체는 뒤에 나열되어 설명되어 있다고 한다.</p>
+</blockquote>
+
+<h3 id="donkey-command-line-utilities">Donkey Command-line Utilities</h3>
+
+<h4 id="1create-car">1.Create Car</h4>
+
+<pre><code class="language-sheell">donkey createcar --path &lt;dir&gt; [--overwrite] [--template &lt;donkey2&gt;]
+</code></pre>
+
+<h4 id="2find-car">2.Find Car</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span><span class="nb">env</span><span class="o">)</span> C:<span class="se">\U</span>sers<span class="se">\1\D</span>ocuments<span class="se">\d</span>cworks<span class="se">\l</span>ibrary<span class="se">\d</span>onkeycar&gt;donkey findacar
+________             ______                   _________
+___  __ <span class="se">\_</span>______________  /___________  __    __  ____/_____ ________
+__  / / /  __ <span class="se">\_</span>  __ <span class="se">\_</span>  //_/  _ <span class="se">\_</span>  / / /    _  /    _  __ <span class="sb">`</span>/_  ___/
+_  /_/ // /_/ /  / / /  ,&lt;  /  __/  /_/ /     / /___  / /_/ /_  /
+/_____/ <span class="se">\_</span>___//_/ /_//_/|_| <span class="se">\_</span>__/_<span class="se">\_</span>_, /      <span class="se">\_</span>___/  <span class="se">\_</span>_,_/ /_/
+                                 /____/
+
+using donkey v5.0.dev3 ...
+Usage: The available commands are:
+<span class="o">[</span><span class="s1">'createcar'</span>, <span class="s1">'findcar'</span>, <span class="s1">'calibrate'</span>, <span class="s1">'tubclean'</span>, <span class="s1">'tubplot'</span>, <span class="s1">'tubhist'</span>, <span class="s1">'makemovie'</span>, <span class="s1">'createjs'</span>, <span class="s1">'cnnactivations'</span>, <span class="s1">'update'</span>, <span class="s1">'train'</span>, <span class="s1">'models'</span>, <span class="s1">'ui'</span><span class="o">]</span>
+</code></pre></div></div>
+
+<h4 id="3calibrate-car-차량-보정하기">3.Calibrate Car (차량 보정하기)</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>donkey calibrate <span class="nt">--channel</span> &lt;0-15 channel <span class="nb">id</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h4 id="4clean-data-in-tub">4.Clean data in Tub</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>donkey tubclean &lt;folder containing tubs&gt;
+</code></pre></div></div>
+
+<h4 id="5train-the-model">5.Train the model</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>donkey train <span class="nt">--tub</span><span class="o">=</span>&lt;tub_path&gt; <span class="o">[</span><span class="nt">--config</span><span class="o">=</span>&lt;config.py&gt;] <span class="o">[</span><span class="nt">--model</span><span class="o">=</span>&lt;model path&gt;] <span class="o">[</span><span class="nt">--type</span><span class="o">=(</span>linear|categorical|inferred<span class="o">)]</span> <span class="o">[</span><span class="nt">--transfer</span><span class="o">=</span>&lt;transfer model path&gt;]
+</code></pre></div></div>
+
+<h4 id="6make-movie-from-tub">6.Make Movie from Tub</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>donkey makemovie <span class="nt">--tub</span><span class="o">=</span>&lt;tub_path&gt; <span class="o">[</span><span class="nt">--out</span><span class="o">=</span>&lt;tub_movie.mp4&gt;] <span class="o">[</span><span class="nt">--config</span><span class="o">=</span>&lt;config.py&gt;] <span class="o">[</span><span class="nt">--model</span><span class="o">=</span>&lt;model path&gt;] <span class="o">[</span><span class="nt">--model_type</span><span class="o">=(</span>linear|categorical|inferred|rnn|imu|behavior|localizer|3d<span class="o">)]</span> <span class="o">[</span><span class="nt">--start</span><span class="o">=</span>0] <span class="o">[</span><span class="nt">--end</span><span class="o">=</span><span class="nt">-1</span><span class="o">]</span> <span class="o">[</span><span class="nt">--scale</span><span class="o">=</span>2] <span class="o">[</span><span class="nt">--salient</span><span class="o">]</span>
+</code></pre></div></div>
+
+<h4 id="7plot-predictions">7.Plot Predictions</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>donkey tubplot <span class="nt">--tub</span><span class="o">=</span>&lt;tub_path&gt; <span class="nt">--model</span><span class="o">=</span>&lt;model_path&gt; <span class="o">[</span><span class="nt">--limit</span><span class="o">=</span>&lt;end_index&gt;] <span class="o">[</span><span class="nt">--type</span><span class="o">=</span>&lt;model_type&gt;] 
+</code></pre></div></div>
+
+<h4 id="8tub-histogram">8.Tub Histogram</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>donkey tubhist <span class="nt">--tub</span><span class="o">=</span>&lt;tub_path&gt; <span class="nt">--record</span><span class="o">=</span>&lt;record_name&gt; <span class="nt">--out</span><span class="o">=</span>&lt;output_filename&gt;
+</code></pre></div></div>
+
+<h4 id="9joystic-wizard조이스틱-생성기">9.Joystic Wizard(조이스틱 생성기)</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>donkey createjs
+</code></pre></div></div>
+
+<h4 id="10visualize-cnn-filter-activations">10.Visualize CNN filter activations</h4>
+
+<p><b>Usage:</b></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>donkey cnnactivations <span class="o">[</span><span class="nt">--tub</span><span class="o">=</span>&lt;data_path&gt;] <span class="o">[</span><span class="nt">--model</span><span class="o">=</span>&lt;path to model&gt;]
+</code></pre></div></div>
+
+<p><b>Example:</b></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>donkey cnnactivations <span class="nt">--model</span> models/model.h5 <span class="nt">--image</span> data/tub/1_cam-image_array_.jpg
+</code></pre></div></div>
+
+<h4 id="11show-models-database">11.Show Models database</h4>
+
+<blockquote>
+  <p>Note: This is only available in donkeycar &gt;= 4.3.1</p>
+</blockquote>
+
+<p><b>Usage:</b></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>donkey models <span class="o">[</span><span class="nt">--group</span><span class="o">]</span> 
+</code></pre></div></div>
+
+<h4 id="12donkey-ui">12.Donkey UI</h4>
+
+<blockquote>
+  <p>Note: This section only applies to version &gt;= 4.2.0</p>
+</blockquote>
+
+<hr />
+
+<h3 id="configpy파일-분석하기">config.py파일 분석하기</h3>
+
+<p>현재 donkey-gym(가상환경)에 대한 부분을 분석중이다.</p>
+
+<p>일단 <b>이전</b> donkey-gym부분에 대한 코드이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">DONKEY_GYM</span> <span class="o">=</span> <span class="bp">True</span>   
+<span class="n">DONKEY_SIM_PATH</span> <span class="o">=</span> <span class="sh">"</span><span class="s">C:</span><span class="se">\\</span><span class="s">Users</span><span class="se">\\</span><span class="s">1</span><span class="se">\\</span><span class="s">DonkeySimWin</span><span class="se">\\</span><span class="s">donkey_sim.exe</span><span class="sh">"</span> 
+<span class="c1">#"/home/tkramer/projects/sdsandbox/sdsim/build/DonkeySimLinux/donkey_sim.x86_64" when racing on virtual-race-league use "remote", or user "remote" when you want to start the sim manually first.
+</span><span class="n">DONKEY_GYM_ENV_NAME</span> <span class="o">=</span> <span class="sh">"</span><span class="s">donkey-generated-roads-v0</span><span class="sh">"</span> 
+<span class="c1"># ("donkey-generated-track-v0"|"donkey-generated-roads-v0"|"donkey-warehouse-v0"|"donkey-avc-sparkfun-v0")
+</span></code></pre></div></div>
+
+<p>그리고 <b>이후</b> donkey-gym부분에 대한 코드이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">DONKEY_GYM</span> <span class="o">=</span> <span class="bp">True</span>
+ 
+ <span class="c1"># DONKEY_SIM_PATH = "/home/tkramer/projects/sdsandbox/sdsim/build/DonkeySimLinux/donkey_sim.x86_64" when racing on virtual-race-league use "remote", or user "remote" when you want to start the sim manually first.
+</span> <span class="nf">if </span><span class="p">(</span><span class="n">platform</span><span class="p">.</span><span class="nf">system</span><span class="p">()</span> <span class="o">==</span> <span class="sh">'</span><span class="s">Windows</span><span class="sh">'</span><span class="p">):</span>
+     <span class="c1">#dspath = "C:\\Users\\1\\DonkeySimWin\\donkey_sim.exe"
+</span>     <span class="n">dspath</span> <span class="o">=</span> <span class="sh">"</span><span class="s">~/DonkeySimWin/donkey_sim.exe</span><span class="sh">"</span>
+     <span class="n">dspath</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">abspath</span><span class="p">(</span><span class="n">dspath</span><span class="p">)</span>
+     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">exists</span><span class="p">(</span><span class="n">dspath</span><span class="p">):</span>
+         <span class="n">dspath</span> <span class="o">=</span> <span class="sh">"</span><span class="s">../../../../../DonkeySimWin/donkey_sim.exe</span><span class="sh">"</span>
+         <span class="n">dspath</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">abspath</span><span class="p">(</span><span class="n">dspath</span><span class="p">)</span>
+     <span class="n">DONKEY_SIM_PATH</span> <span class="o">=</span> <span class="n">dspath</span>
+ <span class="nf">elif </span><span class="p">(</span><span class="n">platform</span><span class="p">.</span><span class="nf">system</span><span class="p">()</span> <span class="o">==</span> <span class="sh">'</span><span class="s">Darwin</span><span class="sh">'</span><span class="p">):</span>
+     <span class="n">dspath</span> <span class="o">=</span> <span class="sh">"</span><span class="s">~/Applications/donkey_sim.app/Contents/MacOS/donkey_sim</span><span class="sh">"</span>
+     <span class="n">dspath</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">expanduser</span><span class="p">(</span><span class="n">dspath</span><span class="p">)</span>
+     <span class="n">dspath</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">abspath</span><span class="p">(</span><span class="n">dspath</span><span class="p">)</span>
+     <span class="n">DONKEY_SIM_PATH</span> <span class="o">=</span> <span class="n">dspath</span>
+ <span class="k">else</span><span class="p">:</span> <span class="c1"># 'Linux'
+</span>     <span class="n">dspath</span> <span class="o">=</span> <span class="sh">"</span><span class="s">~/donkey_sim</span><span class="sh">"</span>
+     <span class="n">dspath</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">expanduser</span><span class="p">(</span><span class="n">dspath</span><span class="p">)</span>
+     <span class="n">dspath</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">abspath</span><span class="p">(</span><span class="n">dspath</span><span class="p">)</span>
+     <span class="n">DONKEY_SIM_PATH</span> <span class="o">=</span> <span class="n">dspath</span>
+ 
+ <span class="n">DONKEY_GYM_ENV_NAME</span> <span class="o">=</span> <span class="sh">"</span><span class="s">donkey-generated-track-v0</span><span class="sh">"</span> 
+ <span class="c1"># ("donkey-generated-track-v0"|"donkey-generated-roads-v0"|"donkey-warehouse-v0"|"donkey-avc-sparkfun-v0")
+</span></code></pre></div></div>
+
+<p>위 코드를 보았을때 나는 한가지 의문이 들었던게 있었다.</p>
+
+<p>왜 굳이 dspath라는 변수를 하나 더 써서 변화된 값을 받아들일까?
+나중에 생각해보고 알게 된 것이 최종적인 경로설정을 잡아주기 위함인 것이었다.</p>
+
+<p>뭔말이냐면, 말 그대로 DONKEY_SIM_PATH는 상수로서 한번 값을 넣으면 그 값울 쭉~ 사용하는 것이다.</p>
+
+<p>그리고 여기서 한가지 알아둘게, <b><code class="language-plaintext highlighter-rouge">DONKEY_GYM_ENV_NAME</code></b>는 나의 차량이 처음 어떤 경기장에 놓이게 할지를 설정하는 거다. 아래와 같다.</p>
+
+<ol>
+  <li>donkey-generated-track-v0</li>
+</ol>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240209115239018.png" alt="image-20240209115239018" /></p>
+
+<ol>
+  <li>donkey-generated-roads-v0</li>
+</ol>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240209115329986.png" alt="image-20240209115329986" /></p>
+
+<ol>
+  <li>donkey-warehouse-v0</li>
+</ol>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240209115205671.png" alt="image-20240209115205671" /></p>
+
+<ol>
+  <li>donkey-avc-sparkfun-v0</li>
+</ol>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240209115402924.png" alt="image-20240209115402924" /></p>
+
+<p>만약 config.py파일에 <code class="language-plaintext highlighter-rouge">DONKEY_GYM_ENV_NAME = "donkey-generated-roads-v0"</code>이라 있을지라도, myconfig.py파일에 <code class="language-plaintext highlighter-rouge">DONKEY_GYM_ENV_NAME = "donkey-avc-sparkfun-v0"</code>이라고 되어 있으면, config.py파일에 myconfig.py파일의 내용들이 덮어씌어지게 된다. 즉 override되는 것이었다.</p>
+
+<p>이런 원리로 동작하므로 config.py파일은 건드리지 말고 myconfig.py파일만 건드리자.</p>
+
+<p>이왕 이런 원리로 동작하는 걸 알게 되었으니 myconfig.py파일에 있는 다른 코드들도 주석을 해제해보았다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GYM_CONF</span> <span class="o">=</span> <span class="p">{</span> <span class="sh">"</span><span class="s">body_style</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">bare</span><span class="sh">"</span><span class="p">,</span>
+			<span class="sh">"</span><span class="s">body_rgb</span><span class="sh">"</span> <span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span>
+            <span class="sh">"</span><span class="s">car_name</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">JackSmith</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">font_size</span><span class="sh">"</span> <span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>그러더니 아래와 같이 나의 차체가 바뀌었다. 차 이름도 바뀌었고 말이다.</p>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240209120723599.png" alt="image-20240209120723599" /></p>
+
+<p>이번에는 조금 더 바꿔보았다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GYM_CONF</span> <span class="o">=</span> <span class="p">{</span> <span class="sh">"</span><span class="s">body_style</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">car01</span><span class="sh">"</span><span class="p">,</span>
+			<span class="sh">"</span><span class="s">body_rgb</span><span class="sh">"</span> <span class="p">:</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+            <span class="sh">"</span><span class="s">car_name</span><span class="sh">"</span> <span class="p">:</span> <span class="sh">"</span><span class="s">SungWoong</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">font_size</span><span class="sh">"</span> <span class="p">:</span> <span class="mi">50</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240209121056199.png" alt="image-20240209121056199" /></p>
+
+<p>config.py파일은 여기까지 보고 이제 train.py파일을 보고 있다.</p>
+
+<h3 id="trainpy파일-분석하기">train.py파일 분석하기</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+</span><span class="sh">"""</span><span class="s">
+Scripts to train a keras model using tensorflow.
+Basic usage should feel familiar: train.py --tubs data/ --model models/mypilot.h5
+
+Usage:
+    train.py [--tubs=tubs] (--model=&lt;model&gt;)
+    [--type=(linear|inferred|tensorrt_linear|tflite_linear)]
+    [--comment=&lt;comment&gt;]
+
+Options:
+    -h --help              Show this screen.
+</span><span class="sh">"""</span>
+
+<span class="kn">from</span> <span class="n">docopt</span> <span class="kn">import</span> <span class="n">docopt</span>
+<span class="kn">import</span> <span class="n">donkeycar</span> <span class="k">as</span> <span class="n">dk</span>
+<span class="kn">from</span> <span class="n">donkeycar.pipeline.training</span> <span class="kn">import</span> <span class="n">train</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="nf">docopt</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
+    <span class="n">cfg</span> <span class="o">=</span> <span class="n">dk</span><span class="p">.</span><span class="nf">load_config</span><span class="p">()</span>
+    <span class="n">tubs</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="sh">'</span><span class="s">--tubs</span><span class="sh">'</span><span class="p">]</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="sh">'</span><span class="s">--model</span><span class="sh">'</span><span class="p">]</span>
+    <span class="n">model_type</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="sh">'</span><span class="s">--type</span><span class="sh">'</span><span class="p">]</span>
+    <span class="n">comment</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="sh">'</span><span class="s">--comment</span><span class="sh">'</span><span class="p">]</span>
+    <span class="nf">train</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">tubs</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">model_type</span><span class="p">,</span> <span class="n">comment</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="nf">main</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>이 train.py는 텐서플로우를 사용하여 케라스 모델을 훈련시키는 스크립트라고 나와있는 것 같다.</p>
+
+<p>기본 사용을 위한 명령어는 다음과 같다고 나와 있다.</p>
+
+<blockquote>
+  <p>train.py –tubs data/ –model models/mypilot2.h5</p>
+</blockquote>
+
+<p>근데 이상하게 작동이 안되고 꺼져 버려서 <a href="https://docs.donkeycar.com/guide/deep_learning/train_autopilot/#train-a-model">공식문서</a>를 보았더니 이렇게 하라고 나와있었다.</p>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240209194859462.png" alt="image-20240209194859462" /></p>
+
+<blockquote>
+  <p>donkey train –tub ./data –model ./models/mypilot.h5</p>
+</blockquote>
+
+<p>그러더니 아래와 같이 훈련을 작동시킬 수 있었다.</p>
+
+<p><img src="/images/2024-02-08-codinglog(36)/image-20240209194043369.png" alt="image-20240209194043369" /></p>
+
+<p>20분 정도 학습을 시켰는데 진행상황이 <code class="language-plaintext highlighter-rouge">Epoch:10/100</code>이었다. 충격적이었다. 계산해보면, 대략 10배의 시간을 쏟아야 한다는 계산이 나오고 그러면 총 200분, 즉 3시간 20분이 걸린다는 계산이 나온다.</p>
+
+<p>이미 models라는 파일 있고 그안에 h5파일이 만들어져 있기에 여기서 학습을 중단하기로 했다.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#python" class="page__taxonomy-item p-category" rel="tag">python</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#2024-02" class="page__taxonomy-item p-category" rel="tag">2024-02</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-02-08T00:00:00+09:00">2024-02-08</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%BD%94%EB%94%A9%EC%9D%BC%EC%A7%80%282024-02-08%29%20http%3A%2F%2Flocalhost%3A4000%2F2024-02%2Fcodinglog%2836%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2024-02%2Fcodinglog%2836%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2024-02%2Fcodinglog%2836%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024-02/codinglog(35)/" class="pagination--pager" title="코딩일지(2024-02-04)
+">이전</a>
+    
+    
+      <a href="/2024-02/codinglog(37)/" class="pagination--pager" title="코딩일지(2024-02-22)
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(37)/" rel="permalink">코딩일지(2024-02-22)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-22T00:00:00+09:00">2024-02-22</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오늘 드디어 파이레이서에 학습을 시켰다!!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(35)/" rel="permalink">코딩일지(2024-02-04)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-04T00:00:00+09:00">2024-02-04</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">dcworks..너란 녀석.. 어렵다..
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(34)/" rel="permalink">코딩일지(2024-02-03)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-03T00:00:00+09:00">2024-02-03</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">캐글에 가입해보았다!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(33)/" rel="permalink">코딩일지(2024-02-01)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-01T00:00:00+09:00">2024-02-01</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">모터문제를 해결하고 학습을 진행하자!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+  </div>
+
+  
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 YUNSUNGWOONG(JackSmith). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

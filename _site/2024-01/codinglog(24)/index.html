@@ -1,0 +1,1162 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>코딩일지(2024-01-23) | CodingLog(by JackSmith-c)</title>
+<meta name="description" content="라즈베리파이 이미지 설정시 주의할 점과 ssh키 만들기, 행렬미분 공부하기">
+
+
+  <meta name="author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+  <meta property="article:author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="CodingLog(by JackSmith-c)">
+<meta property="og:title" content="코딩일지(2024-01-23)">
+<meta property="og:url" content="http://localhost:4000/2024-01/codinglog(24)/">
+
+
+  <meta property="og:description" content="라즈베리파이 이미지 설정시 주의할 점과 ssh키 만들기, 행렬미분 공부하기">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-01-23T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/2024-01/codinglog(24)/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "YUNSUNGWOONG(JackSmith)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="CodingLog(by JackSmith-c) Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+  onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+</noscript>
+
+
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+<body
+  class="layout--single">
+  <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/002.png" alt="CodingLog(by JackSmith-c)"></a>
+        
+        <a class="site-title" href="/">
+          CodingLog(by JackSmith-c)
+          <span class="site-subtitle">My CodingDiary</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+
+
+        div.clock {
+            position: fixed;
+            top: -22%;
+            left: 0;
+            display: flex;
+            height: 100%;
+            padding: 17px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Awesome Border Animation.css */
+        .border-blur {
+            position: absolute;
+            width: 300px;
+            height: 250px;
+            background: transparent;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: blur(50px);
+        }
+
+        .box {
+            position: relative;
+            width: 206px;
+            height: 135px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .border-blur::before,
+        .border-blur::after {
+            border-radius: 50%;
+            height: 338px !important;
+            width: 215px !important;
+        }
+
+        .box::after,
+        .border-blur::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #fc9e28);
+            /*#d400d4*/
+            animation: animate 4s linear infinite;
+            animation-delay: -2s;
+        }
+
+        .box::before,
+        .border-blur::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #0abf03);
+            /*#00ccff*/
+            animation: animate 4s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box span {
+            position: absolute;
+            inset: 13px;
+            border-radius: 22px;
+            background: #141010;
+            z-index: 1;
+        }
+
+        .box div {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="box">
+            <span></span>
+            <div id="time"></div>
+            <div id="date"></div>
+        </div>
+        <div class="border-blur"></div>
+    </div>
+
+
+</body>
+<script>
+    function setClock() {
+        var dateInfo = new Date();
+        var hour = modifyNumber(dateInfo.getHours());
+        var min = modifyNumber(dateInfo.getMinutes());
+        var sec = modifyNumber(dateInfo.getSeconds());
+        var year = dateInfo.getFullYear();
+        var month = dateInfo.getMonth() + 1; //monthIndex를 반환해주기 때문에 1을 더해준다.
+        var date = dateInfo.getDate();
+        document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec;
+        document.getElementById("date").innerHTML = year + "-" + month + "-" + date;
+    }
+    function modifyNumber(time) {
+        if (parseInt(time) < 10) {
+            return "0" + time;
+        }
+        else
+            return time;
+    }
+    window.onload = function () {
+        setClock();
+        setInterval(setClock, 1000); //1초마다 setClock 함수 실행
+    }
+</script>
+
+</html>
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .tiktok li {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .tiktok li::before {
+        position: absolute;
+        content: '';
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        width: 25px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu-parent {
+        position: fixed;
+        top: 40%;
+        left: 0;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .sidemenu ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        filter: drop-shadow(0 2px 3px #00000054);
+      }
+
+      .sidemenu li {
+        width: 70px;
+        height: 70px;
+        background-color: var(--clr);
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .sidemenu li::before {
+        position: absolute;
+        content: '';
+        background-color: var(--clr);
+        width: 25.3px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu i {
+        height: 60px !important;
+        width: 60px !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        position: absolute;
+      }
+
+      .sidemenu span {
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 600;
+        white-space: nowrap;
+        position: absolute;
+        transform: translateX(60px);
+        padding-left: 10px;
+        color: transparent;
+      }
+
+      .sidemenu li:hover {
+        width: 240px;
+      }
+
+      .sidemenu li:hover span {
+        color: #fff;
+      }
+
+      /* .fa-n:before {
+            font-family: Arial;
+            font-weight: bold;
+            content: 'N';
+        } */
+    </style>
+  </head>
+
+  <body>
+    <ul class="sidemenu sidemenu-parent">
+      <a href="https://github.com/JackSmith-c">
+        <li class="sidemenu" style="--clr: #9b59b6">
+          <i class="fa-brands fa-github sidemenu"></i>
+          <span>Github</span>
+        </li>
+      </a>
+      <a href="https://blog.naver.com/yhon89">
+        <li class="sidemenu" style="--clr: #30ae48">
+          <!-- <i class="fa-brands fa-tiktok sidemenu"></i> -->
+          <i class="fa-solid fa-n sidemenu"></i>
+          <span>Naver</span>
+        </li>
+      </a>
+      <a href="https://www.instagram.com/seongung64/">
+        <li class="sidemenu" style="--clr: #dd2a7b">
+          <i class="fa-brands fa-instagram sidemenu"></i>
+          <span>instagram</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu"
+            style="background: linear-gradient(90deg, rgba(0, 242, 234, 1) 0%, rgba(6, 0, 4, 1) 50%, rgba(255, 0, 79, 1) 100%) !important;">
+            <i class="fa-brands fa-tiktok sidemenu"></i>
+            <span>TikTok</span>
+        </li> -->
+      <a href="https://www.youtube.com/channel/UCB4Xq3yWVgdzujvkxeY_MyA">
+        <li class="sidemenu" style="--clr: #ff0000">
+          <i class="fa-brands fa-youtube sidemenu"></i>
+          <span>youtube</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu" style="--clr: #4fce5d">
+            <i class="fa-brands fa-whatsapp sidemenu"></i>
+            <span class="sidemenu">whatsapp</span>
+        </li> -->
+    </ul>
+  </body>
+</html>
+
+  <div class="initial-content">
+    
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#2024-01" itemprop="item"><span itemprop="name">2024 01</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">코딩일지(2024-01-23)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p></a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Kyungpook National University<br />Department of Electronic Engineering</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Suwon, Gyeonggi-do</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="코딩일지(2024-01-23)">
+    <meta itemprop="description" content="라즈베리파이 이미지 설정시 주의할 점과 ssh키 만들기, 행렬미분 공부하기">
+    <meta itemprop="datePublished" content="2024-01-23T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/2024-01/codinglog(24)/" class="u-url" itemprop="url">코딩일지(2024-01-23)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-01-23T00:00:00+09:00">2024-01-23</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#라즈베리파이-이미지-설정시-주의할-점과-ssh키-만들기-행렬미분-공부하기">라즈베리파이 이미지 설정시 주의할 점과 ssh키 만들기, 행렬미분 공부하기</a><ul><li><a href="#라즈베리파이-이미지-초기설정하면서-느낀것-아이디에는-문자가-들어가게-하자">라즈베리파이 이미지 초기설정하면서 느낀것, 아이디에는 문자가 들어가게 하자!</a><ul><li><a href="#warning-issue-no-session-for-pid-xxx">[warning-issue] No session for pid XXX</a></li><li><a href="#imager-프로그램에서-설정해주는-것보다-초기설정-안해주고-일단-들어가서-설정해주는-걸로-하자">imager 프로그램에서 설정해주는 것보다, 초기설정 안해주고 일단 들어가서 설정해주는 걸로 하자!</a></li><li><a href="#아-참고로-나의-라즈베리파이-계정은-이걸로-고정하겠다">아 참고로 나의 라즈베리파이 계정은 이걸로 고정하겠다.</a></li></ul></li><li><a href="#43-git-서버---ssh-공개키-만들기">4.3 Git 서버 - SSH 공개키 만들기</a></li><li><a href="#83-행렬미분">8.3 행렬미분</a></li><li><a href="#야코비-행렬들의-고유값-계산하기">야코비 행렬들의 고유값 계산하기</a></li><li><a href="#뉴턴-방법으로-2를-구하는-파이썬-코드">뉴턴 방법으로 √2를 구하는 파이썬 코드</a></li><li><a href="#2차원-뉴턴-방법">2차원 뉴턴 방법</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="라즈베리파이-이미지-설정시-주의할-점과-ssh키-만들기-행렬미분-공부하기">라즈베리파이 이미지 설정시 주의할 점과 ssh키 만들기, 행렬미분 공부하기</h1>
+
+<h2 id="라즈베리파이-이미지-초기설정하면서-느낀것-아이디에는-문자가-들어가게-하자">라즈베리파이 이미지 초기설정하면서 느낀것, 아이디에는 문자가 들어가게 하자!</h2>
+
+<h3 id="warning-issue-no-session-for-pid-xxx">[warning-issue] No session for pid XXX</h3>
+
+<p>처음에 이미지를 구울때 계속 <code class="language-plaintext highlighter-rouge">No session for pid XXX</code>라는 경고창이 뜨는 문제가 발생했었다.</p>
+
+<p>모든 버전으로 다 설치를 해봐도 계속 문제가 생겼다. 이 문제를 해결하는데 3~4일은 사용한 것 같다.</p>
+
+<p>나중에는 내 컴퓨터의 문제는 아닐지 sd 카드가 어디 긁혀서 문제가 생긴건 아닌지 하는 생각도 들었다.</p>
+
+<p>이런 생각을 갖고 교수님 연구실에 찾아갔고 결국 해결하였다.</p>
+
+<p>문제는 아이디를 숫자로만 설정해놔서 그런것이었다…</p>
+
+<p>그냥 pi라는 기본 아이디를 사용했으면 애초에 이런문제를 겪지도 않았고, 쓸데없는 에너지 소비도 하지 않았을 것이다. 너무 고통스러웠다. 그래도 해결했으니 다행이라 생각한다.</p>
+
+<p>혹시나 또 이딴 문제가 발생하면 다시 이미지 굽고 사용자 설정에서 문자 말고 숫자고 골고루 들어갔나 확인하자.</p>
+
+<h3 id="imager-프로그램에서-설정해주는-것보다-초기설정-안해주고-일단-들어가서-설정해주는-걸로-하자">imager 프로그램에서 설정해주는 것보다, 초기설정 안해주고 일단 들어가서 설정해주는 걸로 하자!</h3>
+
+<p>교수님께서 RaspberryPi-Imager에서는 버전에 대한 것만 설정해주고, ssh라던가 그런거는 일단 들어가서 설정해주는 방향으로 진행하라고 말씀하셨다.</p>
+
+<h3 id="아-참고로-나의-라즈베리파이-계정은-이걸로-고정하겠다">아 참고로 나의 라즈베리파이 계정은 이걸로 고정하겠다.</h3>
+
+<p>아이디: pi</p>
+
+<p>비밀번호: pi1234</p>
+
+<h2 id="43-git-서버---ssh-공개키-만들기">4.3 Git 서버 - SSH 공개키 만들기</h2>
+
+<p>많은 깃서버들은 ssh공개키를 만든다고 한다(깃버서라는게 있는지 처음 알았다. 깃허브가 깃서버인가? 그냥 클라우드 서버 아니었나?ㄷㄷ?)</p>
+
+<p>궁금해서 GPT형님한테 물어보았다.</p>
+
+<p>이렇게 답해주었다.</p>
+
+<blockquote>
+  <p>깃은 분산-버전-관리 시스템으로서, 여러 사용자가 협업하여 소스코드를 효과적으로 관리하고 추적할 수 있도록 도와줍니다. 깃서버는 여러 사용자가 협업하는 프로젝트에서 중앙 저장소 역할을 하는 서버입니다. 사용자들은 서버에서 소스코드를 가져오고(pull) 서버에다가 변경사항을 업로드(푸쉬)해서 여러 사용자가 프로젝트를 관리할 수 있도록 하는 체계라 볼 수 있습니다.</p>
+
+  <p>그리고 물어보신 깃서버라는 거는요, 여러가지 형태로 존재할 수 있어요.</p>
+
+  <p>가장 유명한 깃서버가 바로 깃허브입니다. 근데 클라우드 서버라 생각하셨던건 이게 바로 클라우드 기반의 깃 저장소 호스팅 플랫폼이라 좀더 정확히 설명할 수 있기 때문입니다. 뿐만 아니라 깃랩도 있고, 지라에서 만든 비트버킷이라는 것도 존재합니다.</p>
+
+  <p>이러한 플랫폼들로 여러분들은 어떤 서비스를 이요할 수 있으냐 하면은,</p>
+
+  <p>프로젝트 관리, 이슈 트래킹, CI/CD(지속적인 통합과 지속적인 배포)등이 있겠습니다. 이게 전부라고 봐도 되긴 합니다ㅎ.</p>
+</blockquote>
+
+<p>이렇게 수많은 깃서버들이 있는데, 한가지 공통점은 모두 보안을 위해 public key로서 SSH를 사용한다. 이 ssh라 불리는 공개키를 사용하려면 일단 공개키를 만들어야 겠다.(참고로 sd카드에 처음으로 라즈비안 이미지를 구우면 <code class="language-plaintext highlighter-rouge">generating ssh public key</code>라는 문구가 뜨는데, 이것은 라즈비안 자체에서 ssh를 기본적으로 발급하고 있다는 뜻이다. 그래서 윈도우 환경처럼 별도로 깃을 설치하는 수고를 안해도 된다. 개꿀!!)</p>
+
+<p>이 ssh키는 보통 <code class="language-plaintext highlighter-rouge">~/.ssh</code>에 저장이 된다. 그래서 만약 라즈베리파이를 열고 해당 경로에 접속하면 이렇게 이미 공개키가 생성된 것을 볼 수 있다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/.sh
+<span class="nv">$ </span><span class="nb">ls
+</span>authorized_keys2	id_dsa	known_hosts
+config				id_dsa.pub
+</code></pre></div></div>
+
+<p>이처럼 .ssh라는 디렉토리에 들어가면 총 5개의 파일이 있는 것을 볼 수 있다.</p>
+
+<p>여기서 <code class="language-plaintext highlighter-rouge">~.pub</code>이 공개키를 의미하고, 그 외에 나머지는 개인키이다. 이처럼 키는 public key와 private key로 이분법적으로 분류된다.</p>
+
+<p>만약 실수로 키를 삭제해버렸으면? 어떡하냐? 뭘 어떡하긴, 다시 만들어야지!</p>
+
+<p><code class="language-plaintext highlighter-rouge">ssh-keygen</code>이라는 프로그램을 통해서 키를 생성한다. (다행히 운영체제 모두 기본으로 탑재되어 있다)</p>
+
+<p>리눅스나 맥 계열에서는 SSH 패키지에 포함되어 있고, 윈도우는 ‘Git for Windows’에 들어있다고 한다.</p>
+
+<blockquote>
+  <p>출처: https://git-scm.com/book/ko/v2/Git-%EC%84%9C%EB%B2%84-SSH-%EA%B3%B5%EA%B0%9C%ED%82%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0</p>
+</blockquote>
+
+<h2 id="83-행렬미분">8.3 행렬미분</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+</code></pre></div></div>
+
+<h2 id="야코비-행렬들의-고유값-계산하기">야코비 행렬들의 고유값 계산하기</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="nf">eig</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]])[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([4., 2.])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="nf">eig</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]])[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([-2.,  2.])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="nf">eig</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">]])[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([-2.+2.j, -2.-2.j])
+</code></pre></div></div>
+
+<h2 id="뉴턴-방법으로-2를-구하는-파이썬-코드">뉴턴 방법으로 √2를 구하는 파이썬 코드</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">2.0</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">x</span>
+<span class="k">def</span> <span class="nf">d</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">x</span>
+
+<span class="n">x</span><span class="o">=</span><span class="mf">1.0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="nf">d</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">%2d: %0.16f</span><span class="sh">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+    
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">NumPy says sqrt(2) = %0.16f for a deviation of %0.16f</span><span class="sh">"</span> <span class="o">%</span>
+     <span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">x</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 1: 1.5000000000000000
+ 2: 1.4166666666666667
+ 3: 1.4142156862745099
+ 4: 1.4142135623746899
+ 5: 1.4142135623730951
+NumPy says sqrt(2) = 1.4142135623730951 for a deviation of 0.0000000000000000
+</code></pre></div></div>
+
+<p>놀랍게도, 단 5회 반복만에 √2를 소수점 이하 16자리까지 정확히 알아냈다. 뉴턴방법은 대단했다!</p>
+
+<h2 id="2차원-뉴턴-방법">2차원 뉴턴 방법</h2>
+
+<p>임계점들이 실제로 도출되는지 확인하기 위해 초기 추측값, x0=[-1 2]를 지정해보았다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x0</span><span class="p">,</span><span class="n">x1</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span><span class="mi">4</span><span class="o">*</span><span class="n">x0</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x0</span><span class="o">*</span><span class="n">x1</span><span class="p">],[</span><span class="mi">2</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="n">x0</span><span class="o">*</span><span class="n">x1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x1</span><span class="o">**</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="k">def</span> <span class="nf">JI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x0</span><span class="p">,</span><span class="n">x1</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="n">x0</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x0</span><span class="o">*</span><span class="n">x1</span>
+    <span class="nf">return </span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span><span class="mi">2</span><span class="o">-</span><span class="n">x0</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x1</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">x0</span><span class="p">],[</span><span class="o">-</span><span class="n">x1</span><span class="p">,</span><span class="mi">4</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x0</span><span class="p">]])</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">x0: </span><span class="sh">"</span><span class="p">))</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">x1: </span><span class="sh">"</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span><span class="n">x0</span><span class="p">],[</span><span class="n">x1</span><span class="p">]])</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="nc">JI</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">@</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nf">if</span><span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">10</span><span class="p">)):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">%4d: (%0.8f, %0.8f)</span><span class="sh">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x0: -1
+x1: 2
+  11: (0.00004807, -1.07511237)
+  12: (0.00001107, -0.61452262)
+  13: (0.00000188, -0.27403667)
+  14: (0.00000019, -0.07568702)
+  15: (0.00000001, -0.00755378)
+  16: (0.00000000, -0.00008442)
+  17: (0.00000000, -0.00000001)
+  18: (0.00000000, -0.00000000)
+  19: (0.00000000, -0.00000000)
+</code></pre></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#shell" class="page__taxonomy-item p-category" rel="tag">shell</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#2024-01" class="page__taxonomy-item p-category" rel="tag">2024-01</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-01-23T00:00:00+09:00">2024-01-23</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%BD%94%EB%94%A9%EC%9D%BC%EC%A7%80%282024-01-23%29%20http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2824%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2824%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2824%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024-01/codinglog(23)/" class="pagination--pager" title="코딩일지(2024-01-22)
+">이전</a>
+    
+    
+      <a href="/2024-01/codinglog(25)/" class="pagination--pager" title="코딩일지(2024-01-24)
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(37)/" rel="permalink">코딩일지(2024-02-22)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-22T00:00:00+09:00">2024-02-22</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오늘 드디어 파이레이서에 학습을 시켰다!!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(36)/" rel="permalink">코딩일지(2024-02-08)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-08T00:00:00+09:00">2024-02-08</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">스로틀링 문제를 해결중이다.
+config.py코드 둘러보기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(35)/" rel="permalink">코딩일지(2024-02-04)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-04T00:00:00+09:00">2024-02-04</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">dcworks..너란 녀석.. 어렵다..
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(34)/" rel="permalink">코딩일지(2024-02-03)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-03T00:00:00+09:00">2024-02-03</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">캐글에 가입해보았다!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+  </div>
+
+  
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 YUNSUNGWOONG(JackSmith). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

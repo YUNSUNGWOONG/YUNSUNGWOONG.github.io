@@ -1,0 +1,1546 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>코딩일지(2024-01-25) | CodingLog(by JackSmith-c)</title>
+<meta name="description" content="동키카를 까는 험난한 여정">
+
+
+  <meta name="author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+  <meta property="article:author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="CodingLog(by JackSmith-c)">
+<meta property="og:title" content="코딩일지(2024-01-25)">
+<meta property="og:url" content="http://localhost:4000/2024-01/codinglog(26)/">
+
+
+  <meta property="og:description" content="동키카를 까는 험난한 여정">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-01-25T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/2024-01/codinglog(26)/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "YUNSUNGWOONG(JackSmith)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="CodingLog(by JackSmith-c) Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+  onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+</noscript>
+
+
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+<body
+  class="layout--single">
+  <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/002.png" alt="CodingLog(by JackSmith-c)"></a>
+        
+        <a class="site-title" href="/">
+          CodingLog(by JackSmith-c)
+          <span class="site-subtitle">My CodingDiary</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+
+
+        div.clock {
+            position: fixed;
+            top: -22%;
+            left: 0;
+            display: flex;
+            height: 100%;
+            padding: 17px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Awesome Border Animation.css */
+        .border-blur {
+            position: absolute;
+            width: 300px;
+            height: 250px;
+            background: transparent;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: blur(50px);
+        }
+
+        .box {
+            position: relative;
+            width: 206px;
+            height: 135px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .border-blur::before,
+        .border-blur::after {
+            border-radius: 50%;
+            height: 338px !important;
+            width: 215px !important;
+        }
+
+        .box::after,
+        .border-blur::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #fc9e28);
+            /*#d400d4*/
+            animation: animate 4s linear infinite;
+            animation-delay: -2s;
+        }
+
+        .box::before,
+        .border-blur::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #0abf03);
+            /*#00ccff*/
+            animation: animate 4s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box span {
+            position: absolute;
+            inset: 13px;
+            border-radius: 22px;
+            background: #141010;
+            z-index: 1;
+        }
+
+        .box div {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="box">
+            <span></span>
+            <div id="time"></div>
+            <div id="date"></div>
+        </div>
+        <div class="border-blur"></div>
+    </div>
+
+
+</body>
+<script>
+    function setClock() {
+        var dateInfo = new Date();
+        var hour = modifyNumber(dateInfo.getHours());
+        var min = modifyNumber(dateInfo.getMinutes());
+        var sec = modifyNumber(dateInfo.getSeconds());
+        var year = dateInfo.getFullYear();
+        var month = dateInfo.getMonth() + 1; //monthIndex를 반환해주기 때문에 1을 더해준다.
+        var date = dateInfo.getDate();
+        document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec;
+        document.getElementById("date").innerHTML = year + "-" + month + "-" + date;
+    }
+    function modifyNumber(time) {
+        if (parseInt(time) < 10) {
+            return "0" + time;
+        }
+        else
+            return time;
+    }
+    window.onload = function () {
+        setClock();
+        setInterval(setClock, 1000); //1초마다 setClock 함수 실행
+    }
+</script>
+
+</html>
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .tiktok li {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .tiktok li::before {
+        position: absolute;
+        content: '';
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        width: 25px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu-parent {
+        position: fixed;
+        top: 40%;
+        left: 0;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .sidemenu ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        filter: drop-shadow(0 2px 3px #00000054);
+      }
+
+      .sidemenu li {
+        width: 70px;
+        height: 70px;
+        background-color: var(--clr);
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .sidemenu li::before {
+        position: absolute;
+        content: '';
+        background-color: var(--clr);
+        width: 25.3px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu i {
+        height: 60px !important;
+        width: 60px !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        position: absolute;
+      }
+
+      .sidemenu span {
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 600;
+        white-space: nowrap;
+        position: absolute;
+        transform: translateX(60px);
+        padding-left: 10px;
+        color: transparent;
+      }
+
+      .sidemenu li:hover {
+        width: 240px;
+      }
+
+      .sidemenu li:hover span {
+        color: #fff;
+      }
+
+      /* .fa-n:before {
+            font-family: Arial;
+            font-weight: bold;
+            content: 'N';
+        } */
+    </style>
+  </head>
+
+  <body>
+    <ul class="sidemenu sidemenu-parent">
+      <a href="https://github.com/JackSmith-c">
+        <li class="sidemenu" style="--clr: #9b59b6">
+          <i class="fa-brands fa-github sidemenu"></i>
+          <span>Github</span>
+        </li>
+      </a>
+      <a href="https://blog.naver.com/yhon89">
+        <li class="sidemenu" style="--clr: #30ae48">
+          <!-- <i class="fa-brands fa-tiktok sidemenu"></i> -->
+          <i class="fa-solid fa-n sidemenu"></i>
+          <span>Naver</span>
+        </li>
+      </a>
+      <a href="https://www.instagram.com/seongung64/">
+        <li class="sidemenu" style="--clr: #dd2a7b">
+          <i class="fa-brands fa-instagram sidemenu"></i>
+          <span>instagram</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu"
+            style="background: linear-gradient(90deg, rgba(0, 242, 234, 1) 0%, rgba(6, 0, 4, 1) 50%, rgba(255, 0, 79, 1) 100%) !important;">
+            <i class="fa-brands fa-tiktok sidemenu"></i>
+            <span>TikTok</span>
+        </li> -->
+      <a href="https://www.youtube.com/channel/UCB4Xq3yWVgdzujvkxeY_MyA">
+        <li class="sidemenu" style="--clr: #ff0000">
+          <i class="fa-brands fa-youtube sidemenu"></i>
+          <span>youtube</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu" style="--clr: #4fce5d">
+            <i class="fa-brands fa-whatsapp sidemenu"></i>
+            <span class="sidemenu">whatsapp</span>
+        </li> -->
+    </ul>
+  </body>
+</html>
+
+  <div class="initial-content">
+    
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#2024-01" itemprop="item"><span itemprop="name">2024 01</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">코딩일지(2024-01-25)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p></a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Kyungpook National University<br />Department of Electronic Engineering</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Suwon, Gyeonggi-do</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="코딩일지(2024-01-25)">
+    <meta itemprop="description" content="동키카를 까는 험난한 여정">
+    <meta itemprop="datePublished" content="2024-01-25T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/2024-01/codinglog(26)/" class="u-url" itemprop="url">코딩일지(2024-01-25)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-01-25T00:00:00+09:00">2024-01-25</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#동키카를-까는-험난한-여정">동키카를 까는 험난한 여정</a><ul><li><a href="#와이파이-연결상태에서-인터넷이-안될때">와이파이 연결상태에서 인터넷이 안될때</a></li><li><a href="#동키카여-제발-좀-깔려라">동키카여! 제발 좀 깔려라!</a><ul><li><a href="#step1-라이브러리-설치하기링크">Step1. 라이브러리 설치하기(링크)</a></li><li><a href="#step2-raspi-config로-임베디드-설정해주기링크">Step2. Raspi-config로 임베디드 설정해주기(링크)</a></li><li><a href="#step3-동키카를-위한-가상환경-구축하기">Step3. 동키카를 위한 가상환경 구축하기</a></li><li><a href="#step4-구축된-환경위에-동키카-설치하기">Step4. (구축된 환경위에) 동키카 설치하기</a></li><li><a href="#cf-ssh-key-로그인링크">cf. ssh key 로그인(링크)</a></li><li><a href="#step5-동키카-위에-시뮬레이터에뮬레이터-설치하기">Step5. (동키카 위에) 시뮬레이터[에뮬레이터] 설치하기</a></li><li><a href="#트러블슈팅">트러블슈팅</a></li><li><a href="#업데이트24-01-29">업데이트(24-01-29)</a></li><li><a href="#미니콘다-환경-구축하기">미니콘다 환경 구축하기</a><ul><li><a href="#1업데이트-받았다">1.업데이트 받았다.</a></li><li><a href="#2다운받았다">2.다운받았다.</a></li><li><a href="#3설치했다">3.설치했다.</a></li></ul></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="동키카를-까는-험난한-여정">동키카를 까는 험난한 여정</h1>
+
+<h2 id="와이파이-연결상태에서-인터넷이-안될때">와이파이 연결상태에서 인터넷이 안될때</h2>
+
+<p>다음과 같이 Configuration에서 Localisation에 들어간다.. 그리고 “Set WLAN Country”선택!</p>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125130653507.png" alt="image-20240125130653507" /></p>
+
+<p>보통 여기서 UK(Britian)으로 되어 있는 경우가 많은데, 그래서 안된거다.(근데 신기한게 와이파이로 원격은 된다. 이뭔????ㄷㄷ???)</p>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125130837919.png" alt="image-20240125130837919" /></p>
+
+<p>쨋든 위와 같이 <code class="language-plaintext highlighter-rouge">KR Korea(South)</code>로 변경해준다.</p>
+
+<p>근데 이렇게 해도 문제가 해결되지 않았다. <del>(그래서 진짜 집에 갈까 진지하게 고민했다ㅅㅂ…)</del></p>
+
+<p>결국 이미지를 다시 깔아서 해결했다. 절대 인터넷접속이 되게 하려면, 초기설정을 라즈베리파이 접속해서 하도록 하자. 그러면 무조건 된다!!</p>
+
+<p>핫스팟 연결을 무조건 라즈베리파이 안에 들어가서 하자!</p>
+
+<p>그리고 다시 동키카를 처음부터 깔기 시작했다.</p>
+
+<h2 id="동키카여-제발-좀-깔려라">동키카여! 제발 좀 깔려라!</h2>
+
+<h3 id="step1-라이브러리-설치하기링크">Step1. 라이브러리 설치하기(<a href="https://www.waveshare.com/wiki/DonkeyCar_for_Pi-Setup_Raspberry_Pi">링크</a>)</h3>
+
+<ul>
+  <li>이미지를 열고 정상적으로 설치되었는지 확인하라. 인터넷 브라우저에서 들어가서 제대로 연결이 된것을 확인하고 나면 아래 라이브러리를 설치해준다.</li>
+</ul>
+
+<pre><code class="language-shelll">sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install build-essential python3 python3-dev python3-pip python3-virtualenv python3-numpy python3-picamera 
+sudo apt-get install python3-pandas python3-rpi.gpio i2c-tools avahi-utils joystick libopenjp2-7-dev libtiff5-dev gfortran 
+sudo apt-get install libatlas-base-dev libopenblas-dev libhdf5-serial-dev git ntp
+</code></pre>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt-get install build-essential python3 python3-dev python3-pip python3-virtualenv python3-numpy python3-picamera </code>: 기본적인 개발도구와 파이썬 DevKit 및 패키지들을 설치해줍니다. <code class="language-plaintext highlighter-rouge">build-essential</code>은 빌드도구이고, 패키지들은 파이썬을 동작시키기 위한 기타 백그라운드 환경이라 보면 된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt-get install python3-pandas python3-rpi.gpio i2c-tools avahi-utils joystick libopenjp2-7-dev libtiff5-dev gfortran</code>: 파이썬과 라즈베리파이를 연동시켜주는 특수 라이브러리입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt-get install libatlas-base-dev libopenblas-dev libhdf5-serial-dev git ntp</code>: 선형대수 관련 라이브러리란다. 그냥 그렇다고 한다ㅇㅇ.</p>
+
+<p>파이썬은 윈도우에서도 돌아간다. 하지만 그 패키지와는 조금 다른데 어쨋든 임베디드에서 돌아가도록 하기 위해 별다른 구축을 따로 해주는 작업이 필요하다.</p>
+
+<h3 id="step2-raspi-config로-임베디드-설정해주기링크">Step2. Raspi-config로 임베디드 설정해주기(<a href="https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/">링크</a>)</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>raspi-config
+</code></pre></div></div>
+
+<ul>
+  <li>[Interface Options]에 들어가서 [I2C]를 활성화해주기</li>
+  <li>[Interface Options]에 들어가서 [legacy Camera]가 비활성화되어 있도록 해준다.</li>
+  <li>[Advanced Options]에 들어가서 [Expand Filesystem]을 선택해준다.</li>
+</ul>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125143936240.png" alt="image-20240125143936240" /></p>
+
+<p>위와 같은 문구가 뜨면 제대로 된거다.</p>
+
+<h3 id="step3-동키카를-위한-가상환경-구축하기">Step3. 동키카를 위한 가상환경 구축하기</h3>
+
+<ul>
+  <li>파이썬 가상환경 생성</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv <span class="nb">env</span> <span class="nt">--system-site-packages</span>
+</code></pre></div></div>
+
+<ul>
+  <li>가상환경 활성화(스크립트)</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> ~/env/bin/activate
+</code></pre></div></div>
+
+<ul>
+  <li>가상환경 즉시 활성화(권장하지 않음, 나중에 정 필요하다 싶으면 할)</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source ~/env/bin/activate"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">source</span> ~/.bashrc
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">echo "source ~/env/bin/activate" &gt;&gt; ~/.bashrc</code>: ~/.bashrc이라는 경로 및 파일을 열어 그 아랫줄에 “source ~/env/bin/activate”를 넣는다는 뜻이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">source ~/.bashrc</code>: <code class="language-plaintext highlighter-rouge">~/.bashrc</code>파일을 현재의 셀 세션에 다시 로드합니다. 이는 주로 사용자가 새로운 환경설정이나 변경사항을 적용하기 위해 사용됩니다.</p>
+
+<blockquote>
+  <p>TMI: 만약 /로 시작하는 경로는 루트에서부터 시작해서 거슬러내려간다는 뜻이고, ~로 시작하는 경로는 home에서부터 시작해서 거슬러 내려간다는 뜻이다.</p>
+</blockquote>
+
+<ul>
+  <li>가상환경을 받쳐줄 참조 라이브러리 설치</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>libcap-dev
+</code></pre></div></div>
+
+<blockquote>
+  <p>참고로 현재는 그냥 쌩(pure) 파이썬에다가 가상환경 구축 후에 동키카를 까는작업이다. 현재 빨간 SD Card에 작업중인데, 나중에 하얀색 SD Card에서 작업할때는 miniconda에서 가상환경 구축후에 작업을 해보려고 한다.</p>
+</blockquote>
+
+<h3 id="step4-구축된-환경위에-동키카-설치하기">Step4. (구축된 환경위에) 동키카 설치하기</h3>
+
+<ul>
+  <li>동키카를 설치하는 방법은 사용자모드설치와 개발자모드설치가 있는데 우리는 후자를 선택한다.(for 확장)</li>
+</ul>
+
+<p>여기서부터는 dcworks로 들어가서 깔아준다. 왜냐하면 기존의 동키카 홉페이지에 있는 라이브러리를 <code class="language-plaintext highlighter-rouge">pip install -e .[pi]</code> 통해서 깔아주었을때 “setup.py”가 없어 깔리지 않는 문제가 발생했기 때문이다.</p>
+
+<p>그래서 소공방에 있는 git경로로 시도해보았다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:sogongbang/dcworks.git
+</code></pre></div></div>
+
+<p>하지만 ssh key 로그인이 안되서 퍼미션이 거부되는 이슈가 발생했다.</p>
+
+<h3 id="cf-ssh-key-로그인링크">cf. ssh key 로그인(<a href="https://m.blog.naver.com/sthox18/221698562421">링크</a>)</h3>
+
+<p>1)SSH KEY 생성하기</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> rsa
+</code></pre></div></div>
+
+<p>뭐 입력하고 두번 뜰텐데 그냥 엔터 눌러서 무시해주자!</p>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125161037973.png" alt="image-20240125161037973" /></p>
+
+<p>2)키 생성 확인</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-al</span> ~/.ssh/
+</code></pre></div></div>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125161013035.png" alt="image-20240125161013035" /></p>
+
+<p>3)authorized_keys 생성</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/.ssh
+<span class="nb">cp</span> <span class="nt">-rp</span> id_rsa.pub authorized_keys
+<span class="nb">ls</span> <span class="nt">-al</span> ~/.ssh/
+</code></pre></div></div>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125160941974.png" alt="image-20240125160941974" /></p>
+
+<p>4)SSH 디렉토리 권한 변경</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>700 ~/.ssh
+<span class="nb">chmod </span>600 ~/.ssh/id_rsa
+<span class="nb">chmod </span>644 ~/.ssh/id_rsa.pub
+<span class="nb">chmod </span>644 ~/.ssh/authorized_keys
+</code></pre></div></div>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125160913417.png" alt="image-20240125160913417" /></p>
+
+<blockquote>
+  <p>.ssh 디렉토리는 매우 중요한 보안정보가 담긴 디렉토리이기 때문에 퍼미션 설정을 꼭 해줘야 합니다.</p>
+</blockquote>
+
+<p>5)ssh config 파일 수정</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/ssh/sshd_config
+</code></pre></div></div>
+
+<p>아래와 같이 주석해제를 해준다.</p>
+
+<ul>
+  <li>PubkeyAuthentication yes</li>
+  <li>AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2</li>
+</ul>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125161510315.png" alt="image-20240125161510315" /></p>
+
+<p>6)ssh 재시작</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service sshd restart
+</code></pre></div></div>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125161632861.png" alt="image-20240125161632861" /></p>
+
+<hr />
+
+<p>여기까지 먼 고생을 했다. 이제 키가 제대로 만들어졌을 것이다. 이 키를 나의 깃허브 계정에 등록해놓으면 권한이 인정된다. 즉 라즈베리파이에서 접근하려 할때 이미 키를 등록해놨기 때문에 프리패스라는 거다.</p>
+
+<p>키를 등록해보자!</p>
+
+<p>7)SSH 공개키 등록</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>xclip
+<span class="nb">cat</span> ~/.ssh/id_rsa.pub | xclip <span class="nt">-selection</span> clipboard
+</code></pre></div></div>
+
+<p>xclip이라는 라즈비안 전용 모듈을 설치했다. 클립보드 기능이라 보면 된다.</p>
+
+<p>그리고 cat명령어를 통해 생성된 공개키를 출력하고 이를 클립보드에 저장한다.</p>
+
+<p>그리고 깃허브 웹사이트에 나의 계정으로 들어가준다.</p>
+
+<ul>
+  <li>오른쪽 상단의 프로필 사진을 클릭 후,</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">Settings</code> -&gt; <code class="language-plaintext highlighter-rouge">SSH and GPG keys</code>로 이동한다.</p>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125164937028.png" alt="image-20240125164937028" /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">New SSH key</code> 또는 <code class="language-plaintext highlighter-rouge">Add SSH key</code>를 클릭하고, 클립보드에 복사한 SSH 공개키를 붙여넣자.</li>
+</ul>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125165053951.png" alt="image-20240125165053951" /></p>
+
+<p>그러면 정상적으로 <code class="language-plaintext highlighter-rouge">git-clone</code>이 될것이다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:sogongbang/dcworks.git
+</code></pre></div></div>
+
+<p>이후, dcworks에 들어가 다음 명령어 수행!!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd dcworks
+git submodule update --init
+</code></pre></div></div>
+
+<p>이는 깃 저장소 내의 서브모듈을 초기화하고 업데이트하는 거란다.</p>
+
+<p>서브모듈이라는 것 뭐냐면, 다른 깃 저장소를 현재의 깃프로젝트에 포함시키는 작업이라고 한다.</p>
+
+<p>이에 대해서는 설명이 힘들어서 그림을 그렸다ㅋㅋ</p>
+
+<p>일단 라즈베리파이의 주요 디렉토리 구조이다.</p>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125165643130.png" alt="image-20240125165643130" /></p>
+
+<p>우리는 git으로 dcworks를 복제해서 받았다. 그리고 이번에는 깃허브(sogonbang)에 있는 dcworks의 내부 구조이다.</p>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125165735464.png" alt="image-20240125165735464" /></p>
+
+<p>음… 좀 어지럽긴 한데ㅋㅋ 여기서</p>
+
+<ul>
+  <li>{donkeycar}</li>
+  <li>{donkeycar_wrapper}</li>
+  <li>{gym_dokeycar}</li>
+  <li>{stable-baseline3}</li>
+  <li>{ubinos}</li>
+</ul>
+
+<p>위와 같이 중과호 쳐져있는 것들이 모두 서브모듈들이다.</p>
+
+<p>이것들은 다른 깃허브주소에 프로젝트단위로 묶여있다. 이것들으 서브모듈로서 초기화랑 업데이트해주는 작업을 해주는 것이라 보면된다.</p>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125171153344.png" alt="image-20240125171153344" /></p>
+
+<p>위 빨간박스처럼 서브모듈들을 받고 있는 것을 볼수가 있다.</p>
+
+<blockquote>
+  <p>아뿔사!! 가상환경에서 설치해야 한다는 것을 잊어버리고 실수로 일반 사용자환경에서 설치해버렸다! 그래서 일단 지우고 다시 깔아보자!</p>
+</blockquote>
+
+<p>그래서ㅜㅠ 다시 아래와 같이 절차를 수행했다.</p>
+
+<ol>
+  <li>가상환경생성(이건 이미 한거임)</li>
+  <li>가상환경진입</li>
+  <li>projects 디렉토리 진입</li>
+  <li>git으로 dcworks 받아오기</li>
+  <li>dcworks 디렉토리 진입</li>
+  <li>dcworks에 물려있는 서브모들 초기화 및 업데이트 받아오기</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1&gt; python3 <span class="nt">-m</span> venv <span class="nb">env</span> <span class="nt">--system-site-packages</span>
+2&gt; <span class="nb">source</span> ~/env/bin/activate
+3&gt; <span class="nb">cd </span>projects
+4&gt; git clone git@github.com:sogongbang/dcworks.git
+5&gt; <span class="nb">cd </span>dcworks
+6&gt; git submodule update <span class="nt">--init</span>
+</code></pre></div></div>
+
+<p>이후 텐서플로우를 설치해준다.(지금 동키카 공식위키랑 소공방문서를 번갈아보면서 하니까 헷갈린다ㅜㅠㅠ)</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>tensorflow
+python <span class="nt">-c</span> <span class="s2">"import tensorflow; print(tensorflow.__version__)"</span>
+</code></pre></div></div>
+
+<p>그 다음 파이썬 패키지 관리자(pip)를 업그레이드하는 명령어와 setuptools을 업그레이드하는 명령어, 그리고 donkeycar_wrapper안에서 requirements.txt안에 있는 라이브러리 내역들을 다운로드하는 명령어들을 다운받아 준다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--upgrade</span> pip
+pip <span class="nb">install</span> <span class="nt">--upgrade</span> wheel setuptools
+<span class="nb">cd </span>library/donkeycar_wrapper
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<p>근데 중간에 잘 깔리다가 이슈가 터졌는데,,</p>
+
+<p>jupyterlab이 깔리지 않았다.</p>
+
+<p>그래서 다음 조치를 취했다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">jupyterlab</span><span class="o">==</span>4.0.11
+<span class="nb">rm</span> <span class="nt">-rf</span> <span class="nv">$HOME</span>/.cache/pip
+pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="nt">--force-reinstall</span> https://www.piwheels.org/simple/jupyterlab/jupyterlab-4.0.11-py3-none-any.whl
+</code></pre></div></div>
+
+<p>근데 이슈는 해결되지 않았고, 오히려 다른 이슈가 떴다. 그래서 다음 조치를 취했다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip download <span class="nt">--no-deps</span> <span class="nt">--no-binary</span> :all: <span class="nv">jupyterlab</span><span class="o">==</span>4.0.11
+</code></pre></div></div>
+
+<p>하지만 이후 <code class="language-plaintext highlighter-rouge">tesorflow-dataset</code>에 대해서 또다시 해시 충돌 이슈가 발생했다.</p>
+
+<p>그래서 아까와 같은 방식으로 이슈를 해결했다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensorflow-datasets<span class="o">==</span>4.9.3
+<span class="nb">rm</span> <span class="nt">-rf</span> <span class="nv">$HOME</span>/.cache/pip
+pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="nt">--force-reinstall</span> https://www.piwheels.org/simple/tensorflow-datasets/tensorflow_datasets-4.9.3-py3-none-any.whl
+pip download <span class="nt">--no-deps</span> <span class="nt">--no-binary</span> :all: tensorflow-datasets<span class="o">==</span>4.9.3
+</code></pre></div></div>
+
+<p>하지만 이후 <code class="language-plaintext highlighter-rouge">tesorflow-dataset</code>에 대해서 또!! 또!! 다시 해시 충돌 이슈가 발생했다.</p>
+
+<p>이번에는 <code class="language-plaintext highlighter-rouge">piwheels.org</code> 대신 TensorFlow-Datasets를 공식 PyPI에서 직접 다운로드하여 설치할 수 있다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> <span class="nt">-rf</span> <span class="nv">$HOME</span>/.cache/pip
+pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="nt">--force-reinstall</span> tensorflow-datasets<span class="o">==</span>4.9.3
+</code></pre></div></div>
+
+<p>하지만 이후 의존패키지인 wrapt라이브러리의 버전이 너무 높아서 다운그레이드를 하라고 떴다.</p>
+
+<p>즉 충돌이 발생한 것이었다. 충돌로 인해 패키지 간의 의존성 버전이 맞지 않은 것이었다.</p>
+
+<p>해결책으로서,</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">wrapt</code> 버전 다운그레이드</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span><span class="nv">wrapt</span><span class="o">==</span>1.15.0
+</code></pre></div></div>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">tensorflow-cpu-aws</code> 업그레이드</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--upgrade</span> tensorflow-cpu-aws
+</code></pre></div></div>
+
+<p>그리고 chatGPT를 통해서 찾아봤을때 더 복잡한 프로젝트에서는 <code class="language-plaintext highlighter-rouge">pip-tools</code>나 <code class="language-plaintext highlighter-rouge">conda</code>와 같은 패키지 관리가 되는 도구들을 써서 명시적인 의존성 관리를 수행하는 것이 좋을 것 같다. 이렇게 하면 의존성 버전이 일관되게 유지된다고 한다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># pip-tools 설치</span>
+pip <span class="nb">install </span>pip-tools
+
+<span class="c"># requirements.in 파일에 필요한 패키지 명시</span>
+<span class="nb">echo</span> <span class="s2">"tensorflow-cpu-aws"</span> <span class="o">&gt;</span> requirements.in
+
+<span class="c"># requirements.txt 파일 생성</span>
+pip-compile <span class="nt">--output-file</span><span class="o">=</span>requirements.txt requirements.in
+
+<span class="c"># 생성된 requirements.txt 파일을 이용하여 패키지 설치</span>
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<ol>
+  <li>pip-tools 설치</li>
+</ol>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125201042451.png" alt="image-20240125201042451" /></p>
+
+<ol>
+  <li>requirements.in 파일에 필요한 패키지 명시</li>
+</ol>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125201145089.png" alt="image-20240125201145089" /></p>
+
+<ol>
+  <li>requirements.txt 파일 생성</li>
+</ol>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125201713874.png" alt="image-20240125201713874" /></p>
+
+<ol>
+  <li>생성된 requirements.txt 파일을 이용하여 패키지 설치</li>
+</ol>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125202031517.png" alt="image-20240125202031517" /></p>
+
+<p>이렇게 또한번 버전충돌이 발생하여, chatGPT의 도움을 한번 더 받았다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>absl-py<span class="o">==</span>0.11.0 <span class="nv">protobuf</span><span class="o">==</span>3.20.3
+pip <span class="nb">install</span> <span class="nt">--upgrade</span> tensorflow-metadata
+</code></pre></div></div>
+
+<p>그리고 dcworks에 있는 순서대로 설치했다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-U</span> <span class="nv">setuptools</span><span class="o">==</span>66
+pip <span class="nb">install</span> <span class="nt">-U</span> <span class="nv">wheel</span><span class="o">==</span>0.38.4
+</code></pre></div></div>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125202445288.png" alt="image-20240125202445288" /></p>
+
+<p>이렇게 계속해서 문제가 생겼다. 그래서 의존성 관리를 위해 conda를 깔아야 하는 필요성을 절실히 느꼈다.그리고 동키카사이트에 과거 라즈베리파이 이미지가 있던데 그걸로 깔걸을 후회했다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--upgrade</span> absl-py
+pip <span class="nb">install </span>tensorflow-cpu-aws<span class="o">==</span>2.15.0
+</code></pre></div></div>
+
+<p>그리고 본격적으로 동키카 프로젝트의 패키지들을 설치했다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ..
+<span class="nb">cd </span>donkeycar
+pip <span class="nb">install</span> <span class="nt">-e</span> <span class="nb">.</span>
+
+<span class="nb">cd</span> ..
+<span class="nb">cd </span>gym-donkeycar
+pip <span class="nb">install</span> <span class="nt">-e</span> <span class="nb">.</span>
+
+<span class="nb">cd</span> ..
+<span class="nb">cd </span>stable-baselines3
+pip <span class="nb">install</span> <span class="nt">-e</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125203744350.png" alt="image-20240125203744350" /></p>
+
+<p>근데 statble-baseline3에서 의존성 패키지를 설치할때 문제가 생겼다.</p>
+
+<p>다음 절차를 진행했다.</p>
+
+<ol>
+  <li>휠파일 재다운로드</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="nt">--force-reinstall</span> https://www.piwheels.org/simple/sympy/sympy-1.12-py3-none-any.whl
+</code></pre></div></div>
+
+<ol>
+  <li>Sympy 패키지 직접 설치</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="nt">--force-reinstall</span> sympy
+</code></pre></div></div>
+
+<ol>
+  <li>SymPy 패키지 업그레이드</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="nt">--upgrade</span> sympy
+</code></pre></div></div>
+
+<ol>
+  <li>패키지 소스 설치</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="nt">--force-reinstall</span> git+https://github.com/sympy/sympy.git
+</code></pre></div></div>
+
+<ol>
+  <li>패키지 삭제후 재설치</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip uninstall sympy
+pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> sympy
+</code></pre></div></div>
+
+<ol>
+  <li>패키지 관리자를 이용한 설치</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>python3-sympy
+</code></pre></div></div>
+
+<blockquote>
+  <p>열번찍어서 안넘어가는 나무가 없다는 말이 있듯이, 이것도 처음에 install명령어 쳤을때는 안되고 두번째에도 안되다가 세번째로 쳤는데 성공하는 경우가 있다.(이 뭔??)</p>
+
+  <p>명령어 토시 하나 안바꿨는데도 말이다.</p>
+</blockquote>
+
+<h3 id="step5-동키카-위에-시뮬레이터에뮬레이터-설치하기">Step5. (동키카 위에) 시뮬레이터[에뮬레이터] 설치하기</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://github.com/tawnkramer/gym-donkeycar/releases/download/v22.11.06/DonkeySimWin.zip
+unzip DonkeySimWin.zip
+</code></pre></div></div>
+
+<h3 id="트러블슈팅">트러블슈팅</h3>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125211937688.png" alt="image-20240125211937688" /></p>
+
+<p>위와 같이 모듈이 안깔렸다는 것은 서브모듈들에 대해서,</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-e</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>이 제대로 먹히지 않았다는 뜻이다.</p>
+
+<p><img src="http://localhost:4000/images/2024-01-25-codinglog(26)/image-20240125212130156.png" alt="image-20240125212130156" /></p>
+
+<p>참고로 donkeycar_wrapper디렉토리에는 <code class="language-plaintext highlighter-rouge">setup.py</code>파일이 없기 때문에 의존성 패키지 설치가 불가능하다.</p>
+
+<h3 id="업데이트24-01-29">업데이트(24-01-29)</h3>
+
+<p>원래는 29일자 코딩일지에 써야 하는데 귀찮기도하고 여기에 적어야 보기도 편해서 여기다가 이어서 쓰려고 한다.</p>
+
+<hr />
+
+<p>얘가 python manage.py drive를 해줘도 작동을 안하길래 projects에서 workspace로 디렉토리명을 바꿔줬다.</p>
+
+<p>이후 가상환경을 다시 껐다가 다시 켰다. 확인해보니 지금까지 다른 pi디렉토리 바로 아래의 env가상환경에서 작업하고 있었다. 일단 deactivate로 비활성화시키고 dcworks로 들어가 그 안에 있는 env가상환경으로 다시 구동시켜서 작업하게 되었다.</p>
+
+<p><img src="../images/2024-01-25-codinglog(26)/image-20240129185333550.png" alt="image-20240129185333550" /></p>
+
+<p>도저히 안되어서 다른 SD카드에 다시 설치해보려고 한다. 이번에는 콘다환경에서 패키지 버전관리 받으면서 설치해야 겠다.</p>
+
+<h3 id="미니콘다-환경-구축하기">미니콘다 환경 구축하기</h3>
+
+<h4 id="1업데이트-받았다">1.업데이트 받았다.</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get upgrade
+</code></pre></div></div>
+
+<h4 id="2다운받았다">2.다운받았다.</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#환경 확인</span>
+<span class="nb">uname</span> <span class="nt">-m</span>
+
+<span class="c">#for 32bit</span>
+wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh
+
+<span class="c">#for 64bit</span>
+wget https://repo.anaconda.com/miniconda/Miniconda3-py38_4.10.3-Linux-aarch64.sh
+</code></pre></div></div>
+
+<h4 id="3설치했다">3.설치했다.</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> bzip2
+<span class="nb">sudo md5sum </span>Miniconda3-latest-Linux-armv7l.sh
+<span class="nb">sudo</span> /bin/bash Miniconda3-latest-Linux-armv7l.sh
+</code></pre></div></div>
+
+<p>bzip2는 압축을 md5 해시파일을 해제할때 필요한 것 같다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo md5sum Miniconda3-latest-Linux-armv7l.sh</code>는 설치스크립트 파일의 MD5해시를 확인하는 명령어라 한다. MD5는 파일이 손상되지 않았음을 보장하기 위해 사용된다고 한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo /bin/bash Miniconda3-latest-Linux-armv7l.sh</code>에서부터 실제로 miniconda3가 시스템에 설치가 된다고 한다.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#shell" class="page__taxonomy-item p-category" rel="tag">shell</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#2024-01" class="page__taxonomy-item p-category" rel="tag">2024-01</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-01-25T00:00:00+09:00">2024-01-25</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%BD%94%EB%94%A9%EC%9D%BC%EC%A7%80%282024-01-25%29%20http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2826%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2826%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2826%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024-01/codinglog(25)/" class="pagination--pager" title="코딩일지(2024-01-24)
+">이전</a>
+    
+    
+      <a href="/2024-01/codinglog(27)/" class="pagination--pager" title="코딩일지(2024-01-26)
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(37)/" rel="permalink">코딩일지(2024-02-22)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-22T00:00:00+09:00">2024-02-22</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오늘 드디어 파이레이서에 학습을 시켰다!!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(36)/" rel="permalink">코딩일지(2024-02-08)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-08T00:00:00+09:00">2024-02-08</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">스로틀링 문제를 해결중이다.
+config.py코드 둘러보기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(35)/" rel="permalink">코딩일지(2024-02-04)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-04T00:00:00+09:00">2024-02-04</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">dcworks..너란 녀석.. 어렵다..
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(34)/" rel="permalink">코딩일지(2024-02-03)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-03T00:00:00+09:00">2024-02-03</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">캐글에 가입해보았다!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+  </div>
+
+  
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 YUNSUNGWOONG(JackSmith). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

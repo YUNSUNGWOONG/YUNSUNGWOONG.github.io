@@ -1,0 +1,1382 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>코딩일지(2024-01-13) | CodingLog(by JackSmith-c)</title>
+<meta name="description" content="구조체 선언방식의 차이">
+
+
+  <meta name="author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+  <meta property="article:author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="CodingLog(by JackSmith-c)">
+<meta property="og:title" content="코딩일지(2024-01-13)">
+<meta property="og:url" content="http://localhost:4000/2024-01/codinglog(17)/">
+
+
+  <meta property="og:description" content="구조체 선언방식의 차이">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-01-13T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/2024-01/codinglog(17)/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "YUNSUNGWOONG(JackSmith)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="CodingLog(by JackSmith-c) Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+  onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+</noscript>
+
+
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+<body
+  class="layout--single">
+  <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/002.png" alt="CodingLog(by JackSmith-c)"></a>
+        
+        <a class="site-title" href="/">
+          CodingLog(by JackSmith-c)
+          <span class="site-subtitle">My CodingDiary</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+
+
+        div.clock {
+            position: fixed;
+            top: -22%;
+            left: 0;
+            display: flex;
+            height: 100%;
+            padding: 17px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Awesome Border Animation.css */
+        .border-blur {
+            position: absolute;
+            width: 300px;
+            height: 250px;
+            background: transparent;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: blur(50px);
+        }
+
+        .box {
+            position: relative;
+            width: 206px;
+            height: 135px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .border-blur::before,
+        .border-blur::after {
+            border-radius: 50%;
+            height: 338px !important;
+            width: 215px !important;
+        }
+
+        .box::after,
+        .border-blur::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #fc9e28);
+            /*#d400d4*/
+            animation: animate 4s linear infinite;
+            animation-delay: -2s;
+        }
+
+        .box::before,
+        .border-blur::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #0abf03);
+            /*#00ccff*/
+            animation: animate 4s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box span {
+            position: absolute;
+            inset: 13px;
+            border-radius: 22px;
+            background: #141010;
+            z-index: 1;
+        }
+
+        .box div {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="box">
+            <span></span>
+            <div id="time"></div>
+            <div id="date"></div>
+        </div>
+        <div class="border-blur"></div>
+    </div>
+
+
+</body>
+<script>
+    function setClock() {
+        var dateInfo = new Date();
+        var hour = modifyNumber(dateInfo.getHours());
+        var min = modifyNumber(dateInfo.getMinutes());
+        var sec = modifyNumber(dateInfo.getSeconds());
+        var year = dateInfo.getFullYear();
+        var month = dateInfo.getMonth() + 1; //monthIndex를 반환해주기 때문에 1을 더해준다.
+        var date = dateInfo.getDate();
+        document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec;
+        document.getElementById("date").innerHTML = year + "-" + month + "-" + date;
+    }
+    function modifyNumber(time) {
+        if (parseInt(time) < 10) {
+            return "0" + time;
+        }
+        else
+            return time;
+    }
+    window.onload = function () {
+        setClock();
+        setInterval(setClock, 1000); //1초마다 setClock 함수 실행
+    }
+</script>
+
+</html>
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .tiktok li {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .tiktok li::before {
+        position: absolute;
+        content: '';
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        width: 25px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu-parent {
+        position: fixed;
+        top: 40%;
+        left: 0;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .sidemenu ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        filter: drop-shadow(0 2px 3px #00000054);
+      }
+
+      .sidemenu li {
+        width: 70px;
+        height: 70px;
+        background-color: var(--clr);
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .sidemenu li::before {
+        position: absolute;
+        content: '';
+        background-color: var(--clr);
+        width: 25.3px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu i {
+        height: 60px !important;
+        width: 60px !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        position: absolute;
+      }
+
+      .sidemenu span {
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 600;
+        white-space: nowrap;
+        position: absolute;
+        transform: translateX(60px);
+        padding-left: 10px;
+        color: transparent;
+      }
+
+      .sidemenu li:hover {
+        width: 240px;
+      }
+
+      .sidemenu li:hover span {
+        color: #fff;
+      }
+
+      /* .fa-n:before {
+            font-family: Arial;
+            font-weight: bold;
+            content: 'N';
+        } */
+    </style>
+  </head>
+
+  <body>
+    <ul class="sidemenu sidemenu-parent">
+      <a href="https://github.com/JackSmith-c">
+        <li class="sidemenu" style="--clr: #9b59b6">
+          <i class="fa-brands fa-github sidemenu"></i>
+          <span>Github</span>
+        </li>
+      </a>
+      <a href="https://blog.naver.com/yhon89">
+        <li class="sidemenu" style="--clr: #30ae48">
+          <!-- <i class="fa-brands fa-tiktok sidemenu"></i> -->
+          <i class="fa-solid fa-n sidemenu"></i>
+          <span>Naver</span>
+        </li>
+      </a>
+      <a href="https://www.instagram.com/seongung64/">
+        <li class="sidemenu" style="--clr: #dd2a7b">
+          <i class="fa-brands fa-instagram sidemenu"></i>
+          <span>instagram</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu"
+            style="background: linear-gradient(90deg, rgba(0, 242, 234, 1) 0%, rgba(6, 0, 4, 1) 50%, rgba(255, 0, 79, 1) 100%) !important;">
+            <i class="fa-brands fa-tiktok sidemenu"></i>
+            <span>TikTok</span>
+        </li> -->
+      <a href="https://www.youtube.com/channel/UCB4Xq3yWVgdzujvkxeY_MyA">
+        <li class="sidemenu" style="--clr: #ff0000">
+          <i class="fa-brands fa-youtube sidemenu"></i>
+          <span>youtube</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu" style="--clr: #4fce5d">
+            <i class="fa-brands fa-whatsapp sidemenu"></i>
+            <span class="sidemenu">whatsapp</span>
+        </li> -->
+    </ul>
+  </body>
+</html>
+
+  <div class="initial-content">
+    
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#2024-01" itemprop="item"><span itemprop="name">2024 01</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">코딩일지(2024-01-13)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p></a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Kyungpook National University<br />Department of Electronic Engineering</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Suwon, Gyeonggi-do</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="코딩일지(2024-01-13)">
+    <meta itemprop="description" content="구조체 선언방식의 차이">
+    <meta itemprop="datePublished" content="2024-01-13T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/2024-01/codinglog(17)/" class="u-url" itemprop="url">코딩일지(2024-01-13)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-01-13T00:00:00+09:00">2024-01-13</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#구조체-선언방식의-차이">구조체 선언방식의 차이</a><ul><li><a href="#1struct-account">1.struct account:</a></li><li><a href="#2typedef-struct--accout">2.typedef struct {...} accout:</a></li></ul></li><li><a href="#직접주소연산자는-문자열을-지정해줄때-이외에는-모두-사용한다">직접주소연산자(&amp;)는 문자열을 지정해줄때 이외에는 모두 사용한다.</a><ul><li><a href="#1문자열-입력s">1.문자열 입력(%s):</a></li><li><a href="#2정수-입력d">2.정수 입력(%d):</a></li></ul></li><li><a href="#paperclip-크기를-출력할때는-zu를-쓰자">:paperclip: 크기를 출력할때는 %zu를 쓰자!</a></li><li><a href="#구조체-변수의-대입과-동등비교">구조체 변수의 대입과 동등비교</a></li><li><a href="#구조체에서의-문자열의-입출력">구조체에서의 문자열의 입출력</a></li><li><a href="#구조체에서-포인터-활용하기">구조체에서 포인터 활용하기</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="구조체-선언방식의-차이">구조체 선언방식의 차이</h2>
+
+<p><code class="language-plaintext highlighter-rouge">struct account</code>와 ‘typdef struct {…} account’는 구조체를 정의하는 두가지 방식이다. 여기까지만 차이가 존재하면 그냥 줄중에 보기 편한거 하나만 고정적으로 사용하면 되는데, 이러면 나중에 main안에서 선언하는 방식도 달라지기 떄문에, 제대로 짚고 넘어가는게 좋을 것 같아 정리한다.</p>
+
+<h3 id="1struct-account">1.<code class="language-plaintext highlighter-rouge">struct account</code>:</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">account</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">12</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">actnum</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">balance</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>이 방식은 구조체를 정의하고 이름이 <code class="language-plaintext highlighter-rouge">struct account</code> 인 타입을 만듭니다. 즉, <code class="language-plaintext highlighter-rouge">struct</code>키워드를 사용하여 구조체의 명시되어 있습니다.</p>
+
+<p>맨 윗줄에 이렇게 struct라는 키워드를 사용하게 되면 선언할때 이렇게 됩니다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">account</span> <span class="n">myAccount</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>즉 typdef가 안오면 위와 같이 변수룰 선언해준다 보시면 됩니다.</p>
+
+<h3 id="2typedef-struct--accout">2.<code class="language-plaintext highlighter-rouge">typedef struct {...} accout</code>:</h3>
+
+<p>여기서는 특이하게 구조체명을 맨 뒤에 넣어줍니다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">12</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">actnum</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">balance</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">account</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>이렇게 하면 구조체의 이름을 직접 사용하지 않고 새로운 타입으로 선언할 수 있습니다(무슨소리지??ㄷㄷ??)</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">account</span> <span class="n">myAccount</span><span class="p">;</span>
+</code></pre></div></div>
+<p>즉, <code class="language-plaintext highlighter-rouge">typedef</code>를 사용하면 ‘struct’ 키워드 없이도 구조체 타입을 직접 사용할 수 있게 됩니다.</p>
+
+<p>둘 다 기능적으로 동일하며, 어떤 것을 사용할지는 코딩스타일이나 프로젝트 규칙에 따라 다를 수 있습니다. <code class="language-plaintext highlighter-rouge">typedef</code>를 사용하면 코드가 더 간결해지고 편리해질 수 있지만, 코드의 가독성이나 유지보수성을 고려하여 선택해야 합니다.</p>
+
+<blockquote>
+  <p>오픈소스들을 보면 후자의 방식을 많이 사용하는 것 같다.나도 이제부터 저 <code class="language-plaintext highlighter-rouge">typedef</code>를 넣는 방식에 익숙해지려고 한다.</p>
+</blockquote>
+<hr />
+
+<h2 id="직접주소연산자는-문자열을-지정해줄때-이외에는-모두-사용한다">직접주소연산자(&amp;)는 문자열을 지정해줄때 이외에는 모두 사용한다.</h2>
+<p>다음예시는 계좌정보를 입력하여 구조체에 저장하고, 구조체로부터 값을 출력하는 코드이다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define _CRT_SECURE_NO_WARNINGS
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="c1">//은행계좌 구조체</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">12</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">actnum</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">balance</span><span class="p">;</span>
+<span class="p">}</span><span class="n">account</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">account</span> <span class="n">accounts</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"계좌주인이름: "</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">accounts</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"계좌 번호: "</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">accounts</span><span class="p">.</span><span class="n">actnum</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"계좌 잔고: "</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%lf"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">accounts</span><span class="p">.</span><span class="n">balance</span><span class="p">);</span>
+
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[%s]-[%10d]-[%10.2f]"</span><span class="p">,</span> <span class="n">accounts</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">accounts</span><span class="p">.</span><span class="n">actnum</span><span class="p">,</span> <span class="n">accounts</span><span class="p">.</span><span class="n">balance</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>output&gt;</p>
+
+<blockquote>
+  <p>계좌주인이름: 윤성웅
+계좌 번호: 1000021
+계좌 잔고: 100000
+[윤성웅]-[   1000021]-[ 100000.00]</p>
+</blockquote>
+
+<p>다음 의문이 생겼다. <b>“왜 문자열에 입력할때에는 따로 직접주소연산자를 지정해주지 않는가?”</b><br /></p>
+
+<p>scanf()에서 %s와 %d/%f형식지정자를 사용하는 경우에 있어서 차이는 해당 자료형의 데이터 처리 방식의 차이이다.</p>
+
+<h3 id="1문자열-입력s">1.문자열 입력(%s):</h3>
+
+<p>문자열은 문자형배열에 저장된다. 즉 문자열을 입력받으면 자동으로 배열에 표현이 되는데, 이때 배열의 이름 자체가  해당 배열의 주소를 나타내게 된다.</p>
+
+<p>에를 들어 array[2]={0, };이 있을때, array를 출력하면 이 배열의 주소가 출력이 되고, array[0]이나 array[1]처럼 뒤에 대괄호와 인덱스값까지 나와야 비로소 그 배열 속 원소의 값이 추출된다.</p>
+
+<p>그래서 배열 이름만 덩그러니 등장하면 그 배열에 있는 값들이 떠올라야 하는게 아니라, 그 배열의 주소가 떠올라아 한다.</p>
+
+<h3 id="2정수-입력d">2.정수 입력(%d):</h3>
+
+<p>정수입력에 대해서는 이전처럼 변수이름이 왔을때 그 변수에 저장된 값이 떠오르면 된다.</p>
+
+<h2 id="paperclip-크기를-출력할때는-zu를-쓰자">:paperclip: 크기를 출력할때는 <code class="language-plaintext highlighter-rouge">%zu</code>를 쓰자!</h2>
+
+<p>다음 코드는 구조체의 크기를 계산하는 예시코드이다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define _CRT_SECURE_NO_WARNINGS
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">12</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">actnum</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">balance</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">account</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">account</span> <span class="n">me</span> <span class="o">=</span> <span class="p">{</span><span class="s">"홍길동"</span><span class="p">,</span> <span class="mi">1001</span><span class="p">,</span> <span class="mi">300000</span><span class="p">};</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"구조체 크기: %zu</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">me</span><span class="p">));</span>
+    <span class="c1">//12(char) + 4(int) + 8(double) = 24(byte)</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>구조체의 크기는 그 안에 필드의 총합이다(참고로 공용체의 크기는 그 안에 있는 가장 큰 필드의 자료형의 크기이다.)</p>
+
+<p>따라서 24바이트가 출력된다고 예상해볼 수 있다.</p>
+
+<h2 id="구조체-변수의-대입과-동등비교">구조체 변수의 대입과 동등비교</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define _CRT_SECURE_NO_WARNINGS
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span>
+<span class="c1">//학생을 위한 구조체</span>
+<span class="k">typedef</span> <span class="k">struct</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">snum</span><span class="p">;</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">dept</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">12</span><span class="p">];</span>
+<span class="p">}</span><span class="n">student</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	
+	<span class="n">student</span> <span class="n">hong</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">202200001</span><span class="p">,</span> <span class="s">"컴퓨터공학과"</span><span class="p">,</span> <span class="s">"홍길동"</span> <span class="p">};</span>
+	<span class="n">student</span> <span class="n">na</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">202200002</span> <span class="p">};</span>
+	<span class="n">student</span> <span class="n">you</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">202200003</span> <span class="p">};</span>
+
+	<span class="c1">//학생이름 입력</span>
+	<span class="n">scanf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">na</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+	<span class="n">na</span><span class="p">.</span><span class="n">dept</span> <span class="o">=</span> <span class="s">"컴퓨터정보공학과"</span><span class="p">;</span>
+	<span class="n">you</span><span class="p">.</span><span class="n">dept</span> <span class="o">=</span> <span class="s">"기계공학과"</span><span class="p">;</span>
+	<span class="c1">//memcpy(you.name, "홍길동", 7);</span>
+	<span class="c1">//strcpy(you.name, "홍길동");</span>
+	<span class="n">strcpy_s</span><span class="p">(</span><span class="n">you</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s">"홍길동"</span><span class="p">);</span>
+
+	<span class="n">printf</span><span class="p">(</span><span class="s">"[%d, %s, %s]</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">hong</span><span class="p">.</span><span class="n">snum</span><span class="p">,</span> <span class="n">hong</span><span class="p">.</span><span class="n">dept</span><span class="p">,</span> <span class="n">hong</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"[%d, %s, %s]</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">na</span><span class="p">.</span><span class="n">snum</span><span class="p">,</span> <span class="n">na</span><span class="p">.</span><span class="n">dept</span><span class="p">,</span> <span class="n">na</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"[%d, %s, %s]</span><span class="se">\n\n</span><span class="s">"</span><span class="p">,</span> <span class="n">you</span><span class="p">.</span><span class="n">snum</span><span class="p">,</span> <span class="n">you</span><span class="p">.</span><span class="n">dept</span><span class="p">,</span> <span class="n">you</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+
+	<span class="n">student</span> <span class="n">one</span><span class="o">=</span><span class="n">you</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">one</span><span class="p">.</span><span class="n">snum</span> <span class="o">==</span> <span class="n">you</span><span class="p">.</span><span class="n">snum</span><span class="p">)</span> 
+		<span class="n">printf</span><span class="p">(</span><span class="s">"학번이 %d로 동일합니다.</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">one</span><span class="p">.</span><span class="n">snum</span><span class="p">);</span>
+	
+	<span class="k">if</span> <span class="p">(</span><span class="n">one</span><span class="p">.</span><span class="n">snum</span> <span class="o">==</span> <span class="n">you</span><span class="p">.</span><span class="n">snum</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="n">one</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">you</span><span class="p">.</span><span class="n">name</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="n">one</span><span class="p">.</span><span class="n">dept</span><span class="p">,</span> <span class="n">you</span><span class="p">.</span><span class="n">dept</span><span class="p">))</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"내용이 같은 구조체입니다.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>output&gt;</p>
+
+<blockquote>
+  <p>김현식
+[202200001, 컴퓨터공학과, 홍길동]
+[202200002, 컴퓨터정보공학과, 김현식]
+[202200003, 기계공학과, 홍길동]</p>
+
+  <p>학번이 202200003로 동일합니다.
+내용이 같은 구조체입니다.</p>
+</blockquote>
+
+<h2 id="구조체에서의-문자열의-입출력">구조체에서의 문자열의 입출력</h2>
+
+<p>이번에는 구조체에서의 문자열의 입출력에 대해 좀더 알아 보겠습니다.</p>
+
+<p>학교번호,학교명,학교위치,총장을 받는 School이라는 구조체를 만들어보겠습니다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define _CRT_SECURE_NO_WARNINGS
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="kt">int</span> <span class="n">schoolNum</span><span class="p">;</span>
+	<span class="kt">char</span> <span class="n">schoolName</span><span class="p">[</span><span class="mi">12</span><span class="p">];</span>
+	<span class="kt">char</span> <span class="n">schoolLoc</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+	<span class="kt">char</span> <span class="n">president</span><span class="p">[</span><span class="mi">12</span><span class="p">];</span>
+<span class="p">}</span> <span class="n">School</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">School</span> <span class="n">knu</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">101</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="s">""</span> <span class="p">};</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">knu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="s">"경북대학교"</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">knu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="s">"대구"</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">knu</span><span class="p">.</span><span class="n">president</span><span class="p">,</span> <span class="s">"홍원화"</span><span class="p">);</span>
+
+	<span class="n">School</span> <span class="n">pnu</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">102</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="s">""</span> <span class="p">};</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">pnu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="s">"부산대학교"</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">pnu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="s">"부산"</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">pnu</span><span class="p">.</span><span class="n">president</span><span class="p">,</span> <span class="s">"차정인"</span><span class="p">);</span>
+
+	<span class="n">printf</span><span class="p">(</span><span class="s">"학교번호: %d, 학교명: %s, 학교위치: %s, 총장:%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">schoolNum</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">president</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"학교번호: %d, 학교명: %s, 학교위치: %s, 총장:%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">schoolNum</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">president</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>여기서 구조체를 선언하는 부분을 보면, 모두 문자열을 입력받기 위해 문자형배열 방식을 사용하였습니다. 그래서 이에 맞춰, strcpy()를 사용해주었습니다.</p>
+
+<p>이번에는 다른방식으로 구조체를 선언해보겠습니다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define _CRT_SECURE_NO_WARNINGS
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="kt">int</span> <span class="n">schoolNum</span><span class="p">;</span>
+	<span class="kt">char</span><span class="o">*</span> <span class="n">schoolName</span><span class="p">;</span>
+	<span class="kt">char</span><span class="o">*</span> <span class="n">schoolLoc</span><span class="p">;</span>
+	<span class="kt">char</span><span class="o">*</span> <span class="n">president</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">School</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">School</span> <span class="n">knu</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">101</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">knu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="s">"경북대학교"</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">knu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="s">"대구"</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">knu</span><span class="p">.</span><span class="n">president</span><span class="p">,</span> <span class="s">"홍원화"</span><span class="p">);</span>
+
+	<span class="n">School</span> <span class="n">pnu</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">102</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">pnu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="s">"부산대학교"</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">pnu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="s">"부산"</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">pnu</span><span class="p">.</span><span class="n">president</span><span class="p">,</span> <span class="s">"차정인"</span><span class="p">);</span>
+
+	<span class="n">printf</span><span class="p">(</span><span class="s">"학교번호: %d, 학교명: %s, 학교위치: %s, 총장:%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">schoolNum</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">president</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"학교번호: %d, 학교명: %s, 학교위치: %s, 총장:%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">schoolNum</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">president</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>여기서는 문자열 포인터를 선언해주었습니다. 하지만 이럴경우에 기본적으로 포인터가 널로 초기화되어 있어, 특정 값을 가져올수가 없습니다,</p>
+
+<p>그래서 바로 복사하는 방식은 불가능하고, 값이 들어갈 공간을 확보해주고, 거기다가 값을 넣어주어야 합니다.</p>
+
+<p>그러면 키보드에서 입력받은 문자열 값이 입력버퍼에 들어가고 입력버퍼에서 동적할당 된 메모리에 값이 복사되어 들어갑니다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define _CRT_SECURE_NO_WARNINGS
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="kt">int</span> <span class="n">schoolNum</span><span class="p">;</span>
+	<span class="kt">char</span><span class="o">*</span> <span class="n">schoolName</span><span class="p">;</span>
+	<span class="kt">char</span><span class="o">*</span> <span class="n">schoolLoc</span><span class="p">;</span>
+	<span class="kt">char</span><span class="o">*</span> <span class="n">president</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">School</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">School</span> <span class="n">knu</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">101</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span>
+	<span class="n">knu</span><span class="p">.</span><span class="n">schoolName</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="s">"경북대학교"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">knu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="s">"경북대학교"</span><span class="p">);</span>
+
+	<span class="n">knu</span><span class="p">.</span><span class="n">schoolLoc</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="s">"대구"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">knu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="s">"대구"</span><span class="p">);</span>
+
+	<span class="n">knu</span><span class="p">.</span><span class="n">president</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="s">"홍원화"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">knu</span><span class="p">.</span><span class="n">president</span><span class="p">,</span> <span class="s">"홍원화"</span><span class="p">);</span>
+
+
+	<span class="n">School</span> <span class="n">pnu</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">102</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span>
+	<span class="n">pnu</span><span class="p">.</span><span class="n">schoolName</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="s">"부산대학교"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">pnu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="s">"부산대학교"</span><span class="p">);</span>
+
+	<span class="n">pnu</span><span class="p">.</span><span class="n">schoolLoc</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="s">"부산"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">pnu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="s">"부산"</span><span class="p">);</span>
+
+	<span class="n">pnu</span><span class="p">.</span><span class="n">president</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="s">"차정인"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="n">strcpy</span><span class="p">(</span><span class="n">pnu</span><span class="p">.</span><span class="n">president</span><span class="p">,</span> <span class="s">"차정인"</span><span class="p">);</span>
+	
+
+	<span class="n">printf</span><span class="p">(</span><span class="s">"학교번호: %d, 학교명: %s, 학교위치: %s, 총장:%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">schoolNum</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">president</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"학교번호: %d, 학교명: %s, 학교위치: %s, 총장:%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">schoolNum</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">president</span><span class="p">);</span>
+
+	<span class="c1">// 동적으로 할당된 메모리 해제</span>
+	<span class="n">free</span><span class="p">(</span><span class="n">knu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">);</span>
+	<span class="n">free</span><span class="p">(</span><span class="n">knu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">);</span>
+	<span class="n">free</span><span class="p">(</span><span class="n">knu</span><span class="p">.</span><span class="n">president</span><span class="p">);</span>
+
+	<span class="n">free</span><span class="p">(</span><span class="n">pnu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">);</span>
+	<span class="n">free</span><span class="p">(</span><span class="n">pnu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">);</span>
+	<span class="n">free</span><span class="p">(</span><span class="n">pnu</span><span class="p">.</span><span class="n">president</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>여기서 주목할 점은 strcpy()를 쓰기전에 사용한 malloc()함수입니다. 이를 통해 동적으로 메모리를 확보해서 사용할수가 있겠습니다.</p>
+
+<p>저 함수를 사용하려면 사전에 <code class="language-plaintext highlighter-rouge">#include &lt;stdlib.h&gt;</code>가 필요합니다.</p>
+
+<p>근데 말이죠! 위와 같이 출력하는 것이 목적이라면 다음과 같이 간소화시켜서 구현해줄수도 있습니다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define _CRT_SECURE_NO_WARNINGS
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="kt">int</span> <span class="n">schoolNum</span><span class="p">;</span>
+	<span class="kt">char</span><span class="o">*</span> <span class="n">schoolName</span><span class="p">;</span>
+	<span class="kt">char</span><span class="o">*</span> <span class="n">schoolLoc</span><span class="p">;</span>
+	<span class="kt">char</span><span class="o">*</span> <span class="n">president</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">School</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">School</span> <span class="n">knu</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">101</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span>
+	<span class="n">knu</span><span class="p">.</span><span class="n">schoolName</span> <span class="o">=</span> <span class="s">"경북대학교"</span><span class="p">;</span>
+	<span class="n">knu</span><span class="p">.</span><span class="n">schoolLoc</span> <span class="o">=</span> <span class="s">"대구"</span><span class="p">;</span>
+	<span class="n">knu</span><span class="p">.</span><span class="n">president</span> <span class="o">=</span> <span class="s">"홍원화"</span><span class="p">;</span>
+
+	<span class="n">School</span> <span class="n">pnu</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">102</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">};</span>
+	<span class="n">pnu</span><span class="p">.</span><span class="n">schoolName</span> <span class="o">=</span> <span class="s">"부산대학교"</span><span class="p">;</span>
+	<span class="n">pnu</span><span class="p">.</span><span class="n">schoolLoc</span> <span class="o">=</span> <span class="s">"부산"</span><span class="p">;</span>
+	<span class="n">pnu</span><span class="p">.</span><span class="n">president</span> <span class="o">=</span> <span class="s">"차정인"</span><span class="p">;</span>
+
+	<span class="n">printf</span><span class="p">(</span><span class="s">"학교번호: %d, 학교명: %s, 학교위치: %s, 총장:%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">schoolNum</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="n">knu</span><span class="p">.</span><span class="n">president</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"학교번호: %d, 학교명: %s, 학교위치: %s, 총장:%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">schoolNum</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">schoolName</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">schoolLoc</span><span class="p">,</span> <span class="n">pnu</span><span class="p">.</span><span class="n">president</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="구조체에서-포인터-활용하기">구조체에서 포인터 활용하기</h2>
+
+<p>다음은 사전에 입력된 도서정보를 출력하는 프로그램입니다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">month</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">date</span><span class="p">;</span>
+
+<span class="c1">//도서정보 구조체(제목, 작가, 년도, 가격)</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">title</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+    <span class="kt">char</span> <span class="n">author</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+    <span class="n">date</span> <span class="n">date</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">price</span><span class="p">;</span> <span class="c1">//dollar</span>
+<span class="p">}</span> <span class="n">Book</span><span class="p">;</span>
+
+<span class="c1">//도서정보를 출력하는 함수</span>
+<span class="kt">void</span> <span class="nf">printBookInfo</span><span class="p">(</span><span class="k">const</span> <span class="n">Book</span><span class="o">*</span> <span class="n">book</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Title: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">book</span><span class="o">-&gt;</span><span class="n">title</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Author: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">book</span><span class="o">-&gt;</span><span class="n">author</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Year: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">book</span><span class="o">-&gt;</span><span class="n">date</span><span class="p">.</span><span class="n">year</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Price: %.1f$ </span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">book</span><span class="o">-&gt;</span><span class="n">price</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">//Book이라는 구조체를 가져와서 book1,book2라는 변수 만들기</span>
+    <span class="n">Book</span> <span class="n">book1</span> <span class="o">=</span> <span class="p">{</span> <span class="s">"경북대를 향해서"</span><span class="p">,</span> <span class="s">"홍원화"</span><span class="p">,{</span><span class="mi">2002</span><span class="p">,</span><span class="mi">3</span> <span class="p">},</span> <span class="mi">2</span><span class="p">.</span><span class="mi">5</span> <span class="p">};</span>
+
+    <span class="n">printBookInfo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">book1</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#c" class="page__taxonomy-item p-category" rel="tag">C</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#2024-01" class="page__taxonomy-item p-category" rel="tag">2024-01</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-01-13T00:00:00+09:00">2024-01-13</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%BD%94%EB%94%A9%EC%9D%BC%EC%A7%80%282024-01-13%29%20http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2817%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2817%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2817%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024-01/codinglog(16)/" class="pagination--pager" title="코딩일지(2024-01-12)
+">이전</a>
+    
+    
+      <a href="/2024-01/codinglog(18)/" class="pagination--pager" title="코딩일지(2024-01-14)
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(37)/" rel="permalink">코딩일지(2024-02-22)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-22T00:00:00+09:00">2024-02-22</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오늘 드디어 파이레이서에 학습을 시켰다!!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(36)/" rel="permalink">코딩일지(2024-02-08)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-08T00:00:00+09:00">2024-02-08</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">스로틀링 문제를 해결중이다.
+config.py코드 둘러보기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(35)/" rel="permalink">코딩일지(2024-02-04)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-04T00:00:00+09:00">2024-02-04</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">dcworks..너란 녀석.. 어렵다..
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(34)/" rel="permalink">코딩일지(2024-02-03)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-03T00:00:00+09:00">2024-02-03</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">캐글에 가입해보았다!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+  </div>
+
+  
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 YUNSUNGWOONG(JackSmith). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

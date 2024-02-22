@@ -1,0 +1,1761 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>코딩일지(2024-01-08) | CodingLog(by JackSmith-c)</title>
+<meta name="description" content="계절학기-후반부 스케줄">
+
+
+  <meta name="author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+  <meta property="article:author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="CodingLog(by JackSmith-c)">
+<meta property="og:title" content="코딩일지(2024-01-08)">
+<meta property="og:url" content="http://localhost:4000/2024-01/codinglog(12)/">
+
+
+  <meta property="og:description" content="계절학기-후반부 스케줄">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-01-08T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/2024-01/codinglog(12)/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "YUNSUNGWOONG(JackSmith)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="CodingLog(by JackSmith-c) Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+  onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+</noscript>
+
+
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+<body
+  class="layout--single">
+  <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/002.png" alt="CodingLog(by JackSmith-c)"></a>
+        
+        <a class="site-title" href="/">
+          CodingLog(by JackSmith-c)
+          <span class="site-subtitle">My CodingDiary</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+
+
+        div.clock {
+            position: fixed;
+            top: -22%;
+            left: 0;
+            display: flex;
+            height: 100%;
+            padding: 17px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Awesome Border Animation.css */
+        .border-blur {
+            position: absolute;
+            width: 300px;
+            height: 250px;
+            background: transparent;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: blur(50px);
+        }
+
+        .box {
+            position: relative;
+            width: 206px;
+            height: 135px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .border-blur::before,
+        .border-blur::after {
+            border-radius: 50%;
+            height: 338px !important;
+            width: 215px !important;
+        }
+
+        .box::after,
+        .border-blur::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #fc9e28);
+            /*#d400d4*/
+            animation: animate 4s linear infinite;
+            animation-delay: -2s;
+        }
+
+        .box::before,
+        .border-blur::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #0abf03);
+            /*#00ccff*/
+            animation: animate 4s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box span {
+            position: absolute;
+            inset: 13px;
+            border-radius: 22px;
+            background: #141010;
+            z-index: 1;
+        }
+
+        .box div {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="box">
+            <span></span>
+            <div id="time"></div>
+            <div id="date"></div>
+        </div>
+        <div class="border-blur"></div>
+    </div>
+
+
+</body>
+<script>
+    function setClock() {
+        var dateInfo = new Date();
+        var hour = modifyNumber(dateInfo.getHours());
+        var min = modifyNumber(dateInfo.getMinutes());
+        var sec = modifyNumber(dateInfo.getSeconds());
+        var year = dateInfo.getFullYear();
+        var month = dateInfo.getMonth() + 1; //monthIndex를 반환해주기 때문에 1을 더해준다.
+        var date = dateInfo.getDate();
+        document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec;
+        document.getElementById("date").innerHTML = year + "-" + month + "-" + date;
+    }
+    function modifyNumber(time) {
+        if (parseInt(time) < 10) {
+            return "0" + time;
+        }
+        else
+            return time;
+    }
+    window.onload = function () {
+        setClock();
+        setInterval(setClock, 1000); //1초마다 setClock 함수 실행
+    }
+</script>
+
+</html>
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .tiktok li {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .tiktok li::before {
+        position: absolute;
+        content: '';
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        width: 25px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu-parent {
+        position: fixed;
+        top: 40%;
+        left: 0;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .sidemenu ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        filter: drop-shadow(0 2px 3px #00000054);
+      }
+
+      .sidemenu li {
+        width: 70px;
+        height: 70px;
+        background-color: var(--clr);
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .sidemenu li::before {
+        position: absolute;
+        content: '';
+        background-color: var(--clr);
+        width: 25.3px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu i {
+        height: 60px !important;
+        width: 60px !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        position: absolute;
+      }
+
+      .sidemenu span {
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 600;
+        white-space: nowrap;
+        position: absolute;
+        transform: translateX(60px);
+        padding-left: 10px;
+        color: transparent;
+      }
+
+      .sidemenu li:hover {
+        width: 240px;
+      }
+
+      .sidemenu li:hover span {
+        color: #fff;
+      }
+
+      /* .fa-n:before {
+            font-family: Arial;
+            font-weight: bold;
+            content: 'N';
+        } */
+    </style>
+  </head>
+
+  <body>
+    <ul class="sidemenu sidemenu-parent">
+      <a href="https://github.com/JackSmith-c">
+        <li class="sidemenu" style="--clr: #9b59b6">
+          <i class="fa-brands fa-github sidemenu"></i>
+          <span>Github</span>
+        </li>
+      </a>
+      <a href="https://blog.naver.com/yhon89">
+        <li class="sidemenu" style="--clr: #30ae48">
+          <!-- <i class="fa-brands fa-tiktok sidemenu"></i> -->
+          <i class="fa-solid fa-n sidemenu"></i>
+          <span>Naver</span>
+        </li>
+      </a>
+      <a href="https://www.instagram.com/seongung64/">
+        <li class="sidemenu" style="--clr: #dd2a7b">
+          <i class="fa-brands fa-instagram sidemenu"></i>
+          <span>instagram</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu"
+            style="background: linear-gradient(90deg, rgba(0, 242, 234, 1) 0%, rgba(6, 0, 4, 1) 50%, rgba(255, 0, 79, 1) 100%) !important;">
+            <i class="fa-brands fa-tiktok sidemenu"></i>
+            <span>TikTok</span>
+        </li> -->
+      <a href="https://www.youtube.com/channel/UCB4Xq3yWVgdzujvkxeY_MyA">
+        <li class="sidemenu" style="--clr: #ff0000">
+          <i class="fa-brands fa-youtube sidemenu"></i>
+          <span>youtube</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu" style="--clr: #4fce5d">
+            <i class="fa-brands fa-whatsapp sidemenu"></i>
+            <span class="sidemenu">whatsapp</span>
+        </li> -->
+    </ul>
+  </body>
+</html>
+
+  <div class="initial-content">
+    
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#2024-01" itemprop="item"><span itemprop="name">2024 01</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">코딩일지(2024-01-08)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p></a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Kyungpook National University<br />Department of Electronic Engineering</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Suwon, Gyeonggi-do</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="코딩일지(2024-01-08)">
+    <meta itemprop="description" content="계절학기-후반부 스케줄">
+    <meta itemprop="datePublished" content="2024-01-08T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/2024-01/codinglog(12)/" class="u-url" itemprop="url">코딩일지(2024-01-08)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-01-08T00:00:00+09:00">2024-01-08</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#계절학기-후반부-스케줄">계절학기-후반부 스케줄</a><ul><li><a href="#이수-과정">이수 과정</a></li><li><a href="#시험관련">시험관련</a></li></ul></li><li><a href="#이름과-성적-정보-내용으로-간단한-파일basictxt-생성하기">이름과 성적 정보 내용으로 간단한 파일(basic.txt) 생성하기</a><ul><li><a href="#file-fs에서-이-file이라는-구조체는-뭘까">FILE* fs에서 이 FILE이라는 구조체는 뭘까?</a></li><li><a href="#이름과-성적-정보-내용으로-간단한-파일basictxt-생성하기최종본">이름과 성적 정보 내용으로 간단한 파일(basic.txt) 생성하기(최종본)</a></li></ul></li><li><a href="#한개의-이름과-두개의-성적을-입력해-그-내용을-파일에-쓰고-다시-읽어내기">한개의 이름과 두개의 성적을 입력해 그 내용을 파일에 쓰고 다시 읽어내기</a><ul><li><a href="#다양한-키워드">다양한 키워드!</a></li><li><a href="#feoffile-stream-파일의-끝에-도달했는지-여부를-확인할">feof(FILE* stream): 파일의 끝에 도달했는지 여부를 확인할</a></li><li><a href="#fgets-데이터를-라인단위로-읽어들임">fgets(): 데이터를 라인단위로 읽어들임</a></li><li><a href="#get관련-정리">get관련 정리</a></li><li><a href="#put관련-정리">put관련 정리</a></li></ul></li><li><a href="#여러-줄에-걸쳐-이름-성적을-입력하여-지정된-이름의-파일에-그-내용을-모두-저장">여러 줄에 걸쳐 이름, 성적을 입력하여 지정된 이름의 파일에 그 내용을 모두 저장</a></li><li><a href="#지정한-파일-05flistcc파일의-내용을-행-번호를-붙여-표준출력으로-그대로-출력하는-프로그램">지정한 파일 “05flist.c”(c파일)의 내용을 행 번호를 붙여 표준출력으로 그대로 출력하는 프로그램</a></li><li><a href="#문자를-숫자로-바꿔주는-법">문자를 숫자로 바꿔주는 법</a></li><li><a href="#파일에서-읽은-문자를-가지고-대소문자-변환후-다른파일에-써보기">파일에서 읽은 문자를 가지고 대소문자 변환후 다른파일에 써보기</a></li><li><a href="#메모리-주소-연산자와-주소-출력">메모리 주소 연산자와 주소 출력</a></li><li><a href="#포인터-변수와-간접연산자-를-이용한-간접참조">포인터 변수와 간접연산자 *를 이용한 간접참조</a></li><li><a href="#포인터를-이용하여-두수의-값을-교환해보기">포인터를 이용하여 두수의 값을 교환해보기</a></li><li><a href="#실습문제2참조코드">실습문제2)참조코드</a><ul><li><a href="#참조1">참조1)</a></li><li><a href="#참조2">참조2</a></li><li><a href="#최종-ci코드">최종 CI코드</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="계절학기-후반부-스케줄">계절학기-후반부 스케줄</h2>
+
+<h3 id="이수-과정">이수 과정</h3>
+
+<p>1_15.파일처리 - 텍스트파일(1)</p>
+
+<p>2_11. 포인터 기초(1)</p>
+
+<hr />
+
+<p>3_11.포인터 기초(2)</p>
+
+<p>4_16. 동적할당(1)</p>
+
+<hr />
+
+<p>5_14. 함수와 포인터 활용</p>
+
+<hr />
+
+<p>6_12. 문자와 문자열</p>
+
+<hr />
+
+<p>7_13. 구조체와 공용체</p>
+
+<hr />
+
+<p>8_15. 파일처리 - 이진파일(2)</p>
+
+<p>9_16. 동적할당(2) - 연결리스트, 전처리</p>
+
+<h3 id="시험관련">시험관련</h3>
+
+<blockquote>
+  <p>16일날 시험봄</p>
+
+  <p>필기 50분</p>
+
+  <p>실기 2시간</p>
+
+  <p>하 ㅅㅂ… 족보부터 돌려야 겠다.</p>
+</blockquote>
+
+<h1 id="파일처리1">파일처리(1)</h1>
+
+<h2 id="이름과-성적-정보-내용으로-간단한-파일basictxt-생성하기">이름과 성적 정보 내용으로 간단한 파일(basic.txt) 생성하기</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    FILE* f;
+    char* fname = "basic.txt";
+
+    char name[30] = "손혜진";
+    int point = 100;
+    f = open(fname, "w");
+    if (f == NULL)
+    {
+        printf("파일이 열리지 않습니다.\n");
+        exit(1); //프로그램 종료
+    }
+    
+    fprintf(f, "이름 %s 학생의 성적은 %d 입니다.\n", name, point);
+    fclose(f);
+
+    
+    printf("이름 %s 학생의 성적은 %d 입니다.\n");
+    puts("프로젝트 폴더에서 파일 basic.txt를 메모장으로 열어보세요.");
+
+    return 0;
+}
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define MAX_LEN 100
+#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    FILE* fs;
+    fs = fopen("basic.txt", "r");
+    char str[MAX_LEN];
+    fgets(str, MAX_LEN, fs);//파일의 내용을 데이터로 읽어서 버퍼에 넣어줌
+    printf("%s", str);//버퍼에 있는 데이터를 콘솔에 출력
+    return 0;
+}
+</code></pre></div></div>
+
+<p>코드리뷰::</p>
+
+<p><b>Q1. #pragma warning(disable:4996)는 왜 썼는지?</b></p>
+
+<p><b>Q2. fgets은 왜썼는지?</b></p>
+
+<p>콘솔창에서 데이터를 출력해줄때, 해당 데이터를 버퍼에서 긁어오는 방식이라서 버퍼에 데이터를 채워주어야 함. 이 동작을 fgets()가 해줌.</p>
+
+<p><img src="http://localhost:4000/images/2024-01-08-codinglog(12)/image-20240108113002335.png" alt="image-20240108113002335" /></p>
+
+<p><b>이슈: 파일에 한글이 있을때만 깨져서 출력됨.</b></p>
+
+<p>이는 인코딩 방식의 설정을 잘못해줘서 발생한 문제이다. 영어만 쓸꺼면 <code class="language-plaintext highlighter-rouge">UTF-8</code>을 사용해주면 되지만, 그 외에 한글도 쓰고 싶다면 둘다 가능한 <code class="language-plaintext highlighter-rouge">ANSI</code>방식으로 인코딩처리방식을 변환해주어야 한다.</p>
+
+<h3 id="file-fs에서-이-file이라는-구조체는-뭘까">FILE* fs에서 이 FILE이라는 구조체는 뭘까?</h3>
+
+<p>라이브러리를 뒤져보니 <corecrt_wstdio.h>라는 헤더파일에 있었다. 근데 그러면 왜 이거를 쓸뗴는 해당 헤더파일을 가져올 필요가 없는 걸까? 기본적으로 무조건 가져오는 헤더파일이라서 따로 가져올 필요가 없는 건가? 아니면 <stdio.h>헤더파일안에서 위 헤더파일도 가져오도록 이미 물려있는 건가?</stdio.h></corecrt_wstdio.h></p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//corecrt_wstdio.h</span>
+<span class="c1">//....</span>
+<span class="c1">//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span>
+<span class="c1">//</span>
+<span class="c1">// Stream I/O Declarations Required by this Header</span>
+<span class="c1">//</span>
+<span class="c1">//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span>
+<span class="cp">#ifndef _FILE_DEFINED
+</span>    <span class="cp">#define _FILE_DEFINED
+</span>    <span class="k">typedef</span> <span class="k">struct</span> <span class="n">_iobuf</span>
+    <span class="p">{</span>
+        <span class="kt">void</span><span class="o">*</span> <span class="n">_Placeholder</span><span class="p">;</span>
+    <span class="p">}</span> <span class="kt">FILE</span><span class="p">;</span>
+<span class="cp">#endif
+</span></code></pre></div></div>
+
+<h3 id="이름과-성적-정보-내용으로-간단한-파일basictxt-생성하기최종본">이름과 성적 정보 내용으로 간단한 파일(basic.txt) 생성하기(최종본)</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define MAX_LEN 100
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">FILE</span><span class="o">*</span> <span class="n">fs</span><span class="p">;</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">fname</span> <span class="o">=</span> <span class="s">"basic.txt"</span><span class="p">;</span>
+    <span class="n">fs</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+    <span class="c1">//예외처리</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">fs</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"파일이 열리지 않습니다.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">//파일에 read(before)</span>
+    <span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="n">MAX_LEN</span><span class="p">];</span>
+    <span class="n">fgets</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">MAX_LEN</span><span class="p">,</span> <span class="n">fs</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"파일에 적혀있던 내용입니다.&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+
+    <span class="c1">//파일에 write</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="s">"손혜진"</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="s">"이름: %s  학생의 성적: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">score</span><span class="p">);</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">fs</span><span class="p">);</span>
+
+    <span class="c1">//파일에 write(after)</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n\n</span><span class="s">새롭게 편집된 내용입니다&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"이름 %s 학생의 성적은 %d입니다.</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">score</span><span class="p">);</span>
+    <span class="n">puts</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">프로젝트 폴더에서 파일 basic.txt를 메모장으로 열어보세요.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>result&gt;</p>
+
+<blockquote>
+  <p>파일에 적혀있던 내용입니다.&gt;
+학생입니다</p>
+
+  <p>새롭게 편집된 내용입니다&gt;
+이름 손혜진 학생의 성적은 100입니다.</p>
+
+  <p>프로젝트 폴더에서 파일 basic.txt를 메모장으로 열어보세요.</p>
+</blockquote>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define MAX_LEN 100
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">FILE</span><span class="o">*</span> <span class="n">f</span><span class="p">;</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"myinfo.txt"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">f</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"파일이 열리지 않습니다.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">char</span> <span class="n">tel</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="s">"010-3018-3824"</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">add</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="s">"서초구 대정로 557"</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">22</span><span class="p">;</span>
+
+    <span class="c1">//파일 "basic.txt"에 쓰기</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s">"전화번호: %s, 주소: %s, 나이: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">tel</span><span class="p">,</span> <span class="n">add</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+
+    <span class="n">fclose</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"전화번호: %s, 주소: %s, 나이: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">tel</span><span class="p">,</span> <span class="n">add</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+    <span class="n">puts</span><span class="p">(</span><span class="s">"프로젝트 폴더에서 파일 myinfo.txt를 메모장으로 열어 보세요."</span><span class="p">);</span>
+
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>※고찰</p>
+
+<p>애초에 해당 파일을 생성해야만 거기다가 적을 수 있는 줄 알았는데, 그게 아니라, 그냥 입력데이터를 버퍼에 넣고 파일을 알아서 생성하고 버퍼에 저장된 내용을 발로 텍스트 파일에 넣어주는 것 같다.</p>
+
+<h2 id="한개의-이름과-두개의-성적을-입력해-그-내용을-파일에-쓰고-다시-읽어내기">한개의 이름과 두개의 성적을 입력해 그 내용을 파일에 쓰고 다시 읽어내기</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define MAX_LEN 100
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">fname</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"grade.txt"</span><span class="p">;</span>
+    <span class="kt">FILE</span><span class="o">*</span> <span class="n">f</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">30</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">,</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">fopen_s</span><span class="p">(</span><span class="o">&amp;</span><span class="n">f</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"파일이 열리지 않습니다. </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"이름과 성적(중간, 기말)을 입력하세요.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%s %d %d"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">point1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">point2</span><span class="p">);</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s">"%d %s %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">++</span><span class="n">cnt</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">);</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">fopen_s</span><span class="p">(</span><span class="o">&amp;</span><span class="n">f</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"파일이 열리지 않습니다.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">//파일 "grade.txt"에서 읽기</span>
+    <span class="n">fscanf</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s">"%d %s %d %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">cnt</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">point1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">point2</span><span class="p">);</span>
+
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">"</span><span class="se">\n</span><span class="s">%6s%16s%10s%8s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="s">"번호"</span><span class="p">,</span> <span class="s">"이름"</span><span class="p">,</span> <span class="s">"중간"</span><span class="p">,</span> <span class="s">"기말"</span><span class="p">);</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">"%5d%18s%8d%8d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">);</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>이름과 성적(중간, 기말)을 입력하세요.
+윤성웅 98 87</p>
+
+  <p>번호            이름      중간    기말
+    1            윤성웅      98      87</p>
+</blockquote>
+
+<h3 id="다양한-키워드">다양한 키워드!</h3>
+
+<h3 id="feoffile-stream-파일의-끝에-도달했는지-여부를-확인할">feof(FILE* stream): 파일의 끝에 도달했는지 여부를 확인할</h3>
+
+<p>파일의 끝에 도달하면 1을 반환, 그렇지 않으면 0 반환</p>
+
+<h3 id="fgets-데이터를-라인단위로-읽어들임">fgets(): 데이터를 라인단위로 읽어들임</h3>
+
+<h3 id="get관련-정리">get관련 정리</h3>
+
+<p>1.getchar()</p>
+
+<p>2.fgets()</p>
+
+<h3 id="put관련-정리">put관련 정리</h3>
+
+<p>1.putchar()</p>
+
+<p>2.fputs()</p>
+
+<h2 id="여러-줄에-걸쳐-이름-성적을-입력하여-지정된-이름의-파일에-그-내용을-모두-저장">여러 줄에 걸쳐 이름, 성적을 입력하여 지정된 이름의 파일에 그 내용을 모두 저장</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define MAX_LEN 100
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span>  <span class="n">fname</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"grade.txt"</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">names</span><span class="p">[</span><span class="mi">80</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">FILE</span><span class="o">*</span> <span class="n">f</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">fopen_s</span><span class="p">(</span><span class="o">&amp;</span><span class="n">f</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"파일이 열리지 않습니다.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">};</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"이름과 성적(중간,기말)을 입력하세요.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">fgets</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+
+    <span class="c1">//콘솔에 이름 중간 기말 입력하고 Enter 치고</span>
+    <span class="c1">//계속 여러 줄에 걸쳐 여러 학생의 성적을 입력하다가</span>
+    <span class="c1">//종료하고 싶을 때 새로운 줄 처음에 ctrl + z누르고 Enter 치면 종료</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">feof</span><span class="p">(</span><span class="n">stdin</span><span class="p">))</span>
+    <span class="p">{</span>   <span class="c1">//파일 "grade.txt"에 쓰기</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s">"%d "</span><span class="p">,</span> <span class="o">++</span><span class="n">cnt</span><span class="p">);</span>
+        <span class="n">fputs</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+        <span class="n">fgets</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">fclose</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>이름과 성적(중간,기말)을 입력하세요.
+윤성웅 89 100
+최준수 60 100
+김민수 98 89
+^Z</p>
+</blockquote>
+
+<p>위와 같이 콘솔창에 입력하면(^Z는 콘솔창 종료) grade.txt라는 파일이 생성되고 거기에 해당 내용이 저장된다.</p>
+
+<p>참고로, 위 while문은 아래와 같이 조건형태를 바꿔볼수도 있다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while (fgets(names, 80, stdin))
+    {   //파일 "grade.txt"에 쓰기
+        fprintf(f, "%d ", ++cnt);
+        fputs(names, f);
+        fgets(names, 80, stdin);
+    }
+</code></pre></div></div>
+
+<p>위와 같이 바꿀수 있는 이유에 대해서는 공식문서를 참고하자!(<a href="https://cplusplus.com/reference/cstdio/fgets/?kw=fgets">링크</a>)</p>
+
+<p><img src="http://localhost:4000/images/2024-01-08-codinglog(12)/image-20240108104338293.png" alt="image-20240108104338293" /></p>
+
+<p>좋은 코드를 레퍼런스하려고 신경쓰자!</p>
+
+<h2 id="지정한-파일-05flistcc파일의-내용을-행-번호를-붙여-표준출력으로-그대로-출력하는-프로그램">지정한 파일 “05flist.c”(c파일)의 내용을 행 번호를 붙여 표준출력으로 그대로 출력하는 프로그램</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define MAX_LEN 100
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(void)
+{
+    FILE* f;
+    if (fopen_s(&amp;f, "05flist.c", "r") != 0)
+    {
+        printf("파일이 열리지 않습니다. \n");
+        exit(1);
+    }
+    int ch, cnt = 0;
+    printf("%4d: ", ++cnt);
+    while ((ch = fgetc(f)) != EOF)
+    {
+        putchar(ch);
+        if (ch == '\n')
+            printf("%4d: ", ++cnt);
+    }
+    printf("\n");
+    fclose(f);
+
+    return 0;
+}
+</code></pre></div></div>
+
+<p>위 코드를 실행해보면 다음과 같이 텍스트 c파일의 코드들으 모조리 가져와 주는 것을 알수가 있었다.</p>
+
+<p><img src="http://localhost:4000/images/2024-01-08-codinglog(12)/image-20240108105501540.png" alt="image-20240108105501540" /></p>
+
+<p>더 나아가서 c언어로 텍스트 에디터도 만들수 있지 않을까 하는 생각이 든다.그러면?</p>
+
+<ol>
+  <li>엘리베이터 만들기</li>
+  <li>테트리스 만들기</li>
+  <li>C언어로 Editor만들기</li>
+</ol>
+
+<p>이렇게 될수가 있겠다 ㅋㅋㅋ</p>
+
+<h2 id="문자를-숫자로-바꿔주는-법">문자를 숫자로 바꿔주는 법</h2>
+
+<p>‘1’-‘0’ -&gt; (int)1</p>
+
+<p>‘0’-‘0’ -&gt; (int)0</p>
+
+<h2 id="파일에서-읽은-문자를-가지고-대소문자-변환후-다른파일에-써보기">파일에서 읽은 문자를 가지고 대소문자 변환후 다른파일에 써보기</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//main.c</span>
+<span class="cp">#pragma warning(disable:4996)
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;ctype.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">FILE</span><span class="o">*</span> <span class="n">f1</span><span class="p">,</span> <span class="o">*</span> <span class="n">f2</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">f1</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"main.c"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"cannot open this file </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">f2</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"convertchar.c"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"cannot open this file</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">fclose</span><span class="p">(</span><span class="n">f1</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">char</span> <span class="n">a</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">((</span><span class="n">a</span> <span class="o">=</span> <span class="n">getc</span><span class="p">(</span><span class="n">f1</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">isalpha</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">islower</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">toupper</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">isupper</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">tolower</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+        <span class="n">putc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">f2</span><span class="p">);</span> <span class="c1">//fputc(a, f2)</span>
+    <span class="p">}</span>
+
+    <span class="n">fclose</span><span class="p">(</span><span class="n">f1</span><span class="p">);</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">f2</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"File convertchar.c is created!!!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>고찰: 처음에 파일 이름은 main.c인데, <code class="language-plaintext highlighter-rouge">if ((f1 = fopen("main.c", "r")) == NULL)</code>부분에서 실행코드의 파일명을 잘못 기입하여 디버그 에러가 발생했다.</p>
+
+<p>코드의 본래의도를 파악하지 못해서 발생한 이슈였다. 코드리뷰를 해보자면, 현재 실행파일의 코드를 긁어와서</p>
+
+<p>그래서 convertchar.c파일을 확인해보면 모두 대문자로 바뀌어 있는 것을 알수가 있다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//convertchar.c</span>
+<span class="cp">#PRAGMA WARNING(DISABLE:4996)
+#INCLUDE &lt;STDIO.H&gt;
+#INCLUDE &lt;STDLIB.H&gt;
+#INCLUDE &lt;CTYPE.H&gt;
+</span>
+<span class="n">INT</span> <span class="nf">MAIN</span><span class="p">(</span><span class="n">VOID</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">file</span><span class="o">*</span> <span class="n">F1</span><span class="p">,</span> <span class="o">*</span> <span class="n">F2</span><span class="p">;</span>
+    <span class="n">IF</span> <span class="p">((</span><span class="n">F1</span> <span class="o">=</span> <span class="n">FOPEN</span><span class="p">(</span><span class="s">"MAIN.C"</span><span class="p">,</span> <span class="s">"R"</span><span class="p">))</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">PRINTF</span><span class="p">(</span><span class="s">"CANNOT OPEN THIS FILE \N"</span><span class="p">);</span>
+        <span class="n">EXIT</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">IF</span> <span class="p">((</span><span class="n">F2</span> <span class="o">=</span> <span class="n">FOPEN</span><span class="p">(</span><span class="s">"CONVERTCHAR.C"</span><span class="p">,</span> <span class="s">"W"</span><span class="p">))</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">PRINTF</span><span class="p">(</span><span class="s">"CANNOT OPEN THIS FILE\N"</span><span class="p">);</span>
+        <span class="n">FCLOSE</span><span class="p">(</span><span class="n">F1</span><span class="p">);</span>
+        <span class="n">EXIT</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">CHAR</span> <span class="n">A</span><span class="p">;</span>
+    <span class="n">WHILE</span> <span class="p">((</span><span class="n">A</span> <span class="o">=</span> <span class="n">GETC</span><span class="p">(</span><span class="n">F1</span><span class="p">))</span> <span class="o">!=</span> <span class="n">eof</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">IF</span> <span class="p">(</span><span class="n">ISALPHA</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+            <span class="n">IF</span> <span class="p">(</span><span class="n">ISLOWER</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+                <span class="n">A</span> <span class="o">=</span> <span class="n">TOUPPER</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+            <span class="n">ELSE</span> <span class="n">IF</span> <span class="p">(</span><span class="n">ISUPPER</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+                <span class="n">A</span> <span class="o">=</span> <span class="n">TOLOWER</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+        <span class="n">PUTC</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">F2</span><span class="p">);</span> <span class="c1">//FPUTC(A, F2)</span>
+    <span class="p">}</span>
+
+    <span class="n">FCLOSE</span><span class="p">(</span><span class="n">F1</span><span class="p">);</span>
+    <span class="n">FCLOSE</span><span class="p">(</span><span class="n">F2</span><span class="p">);</span>
+    <span class="n">PRINTF</span><span class="p">(</span><span class="s">"fILE CONVERTCHAR.C IS CREATED!!!\N"</span><span class="p">);</span>
+
+    <span class="n">RETURN</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+<hr />
+
+<h1 id="포인터-기초1">포인터 기초(1)</h1>
+
+<h2 id="메모리-주소-연산자와-주소-출력">메모리 주소 연산자와 주소 출력</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//main.c
+#pragma warning(disable:4996)
+#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int input;
+
+    printf("정수 입력: ");
+    scanf("%d", &amp;input);
+    printf("입력 값: %d\n", input);
+    printf("주소값: %p(16진수)\n", &amp;input);
+    printf("주소값: %llu(10진수)\n", (uintptr_t)&amp;input);
+
+    printf("주소값 크기: %zu\n", sizeof(&amp;input)); //%zd도 가능
+
+    return 0;
+}
+</code></pre></div></div>
+
+<blockquote>
+  <p>정수 입력: 100
+입력 값: 100
+주소값: 000000C1E68FF914(16진수)
+주소값: 832796883220(10진수)
+주소값 크기: 8</p>
+</blockquote>
+
+<p>참고로 변수를 기본값 0으로 초기화하듯이,  포인터는 기본값 NULL로 초기화한다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>물론 이렇게라고 안하면 포인터가 쓰레기 주소값을 저장하게 되니까,, 좀… 그렇다ㅋㅋ(그냥 좋지는 않음ㅇㅇ)</p>
+
+<p>그래서 위와 같이 해주는 건데 좀 귀찮다 싶으면 매크로 상수를 써주면 편하다.일일이 NULL로 초기화해줄 필요가 없다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define NULL ((void *)0)
+</span></code></pre></div></div>
+
+<h2 id="포인터-변수와-간접연산자-를-이용한-간접참조">포인터 변수와 간접연산자 *를 이용한 간접참조</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//main.c
+#pragma warning(disable:4996)
+#include &lt;stdio.h&gt;
+
+int main(void)
+{
+    int i = 100;
+    char c = 'A';
+
+    int* pi = &amp;i;
+    char* pc = &amp;c;
+    printf("간접참조 출력: %d %c\n", *pi, *pc);
+
+    *pi = 200; //*pi가 가리키는 곳(i)에 200을 넣어줌
+    *pc = 'B'; //*pc가 가리키는 곳(c)에 문자'B'를 넣어줌
+    printf("직접참조 출력: %d %c\n", i, c);
+
+    //만약 이렇게 되면 200은 메모리 상에 아직 남아있는지?
+    //아니면 메모리가 해제되는지?
+    pi = NULL;
+    
+
+    return 0;
+}
+</code></pre></div></div>
+
+<p>위와 같이 마지막줄에 <code class="language-plaintext highlighter-rouge">pi = NULL</code>를 써주면 메모리가 해제되는지 궁금해서 여쭤보았다.</p>
+
+<p>헷갈린게 이렇게 하면 i에 200이 들어가 있는 꼴이니 <code class="language-plaintext highlighter-rouge">pi=NULL</code>을 해주든 안해주든 상관없다.</p>
+
+<h2 id="포인터를-이용하여-두수의-값을-교환해보기">포인터를 이용하여 두수의 값을 교환해보기</h2>
+
+<blockquote>
+  <p>함수는 기본적으로 하나밖에 반환을 못해준다.</p>
+
+  <p>그럴때 우리는 포인터를 활용해서 여러개를 반환해주는 게 가능하다.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//main.c
+#pragma warning(disable:4996)
+#include &lt;stdio.h&gt;
+
+void swap(int* x, int* y)
+{
+    int t;
+    t = *x;
+    *x = *y;
+    *y = t;
+}
+
+
+int main(void)
+{
+    int num1, num2;
+    scanf_s("%d%d", &amp;num1, &amp;num2);
+
+    swap(&amp;num1, &amp;num2);
+
+    printf("%d %d\n", num1, num2);
+
+    return 0;
+}
+</code></pre></div></div>
+
+<h2 id="실습문제2참조코드">실습문제2)참조코드</h2>
+
+<h3 id="참조1">참조1)</h3>
+
+<p>“f3.txt”파일에서 숫자를 추출하여 총합을 계산하는 C언어 코드입니다. 코드는 파일을 읽어온 후, 문자열에서 숫잘를 추출하고 총합을 계산합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define MAX_LEN 100
+
+int main(void)
+{
+    FILE* f;
+    if (fopen_s(&amp;f, "f3.txt", "r") != 0)
+    {
+        printf("파일이 열리지 않습니다. \n");
+        exit(1);
+    }
+
+    char inputStr[MAX_LEN];
+    int numbers[MAX_LEN];
+    int numbersCount = 0;
+
+    // 파일 내용 읽기
+    if (fgets(inputStr, MAX_LEN, f) == NULL)
+    {
+        printf("파일 내용을 읽을 수 없습니다.\n");
+        fclose(f);
+        exit(1);
+    }
+
+    fclose(f);
+
+    // 숫자 추출 및 합 계산
+    int sum = 0;
+    const char* currentPos = inputStr;
+
+    while (*currentPos != '\0')
+    {
+        if (isdigit(*currentPos))
+        {
+            printf("number&gt; %d\n", atoi(currentPos));
+            numbers[numbersCount++] = atoi(currentPos);
+            while (isdigit(*currentPos))
+                currentPos++;
+        }
+        else
+        {
+            currentPos++;
+        }
+    }
+
+    // 출력
+    printf("추출된 숫자 배열: ");
+    for (int i = 0; i &lt; numbersCount; i++)
+    {
+        printf("%d ", numbers[i]);
+        sum += numbers[i];
+    }
+    printf("\n");
+
+    printf("숫자의 총 합: %d\n", sum);
+
+    return 0;
+}
+</code></pre></div></div>
+
+<h3 id="참조2">참조2</h3>
+
+<p>파일에 있는 숫자들을 일의자리씩 추출해서 모두 더하여 출력합니다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span>
+<span class="cp">#define MAX_LEN 100
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">FILE</span><span class="o">*</span> <span class="n">f</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">fopen_s</span><span class="p">(</span><span class="o">&amp;</span><span class="n">f</span><span class="p">,</span> <span class="s">"f3.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"파일이 열리지 않습니다. </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">ch</span><span class="p">,</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">countOne</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="n">fgetc</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">digit</span> <span class="o">=</span> <span class="n">ch</span> <span class="o">-</span> <span class="sc">'0'</span><span class="p">;</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">digit: %d "</span><span class="p">,</span> <span class="n">digit</span><span class="p">);</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">digit</span><span class="p">;</span>
+            
+
+            <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"숫자의 총 합: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="최종-ci코드">최종 CI코드</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma warning(disable:4996)
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span>
+<span class="cp">#define MAX_LEN 100
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">FILE</span><span class="o">*</span> <span class="n">f</span><span class="p">,</span><span class="o">*</span><span class="n">file_export</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">fopen_s</span><span class="p">(</span><span class="o">&amp;</span><span class="n">f</span><span class="p">,</span> <span class="s">"f3.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"파일이 열리지 않습니다. </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">file_export</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"f3out.txt"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"cannot open this file</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">fclose</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">ch</span><span class="p">,</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">countOne</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="n">fgetc</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">digit</span> <span class="o">=</span> <span class="n">ch</span> <span class="o">-</span> <span class="sc">'0'</span><span class="p">;</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">digit</span><span class="p">;</span>
+            
+            <span class="n">putc</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">file_export</span><span class="p">);</span>
+            
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+
+    <span class="n">fclose</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">file_export</span><span class="p">);</span>
+    
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#c" class="page__taxonomy-item p-category" rel="tag">C</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#2024-01" class="page__taxonomy-item p-category" rel="tag">2024-01</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-01-08T00:00:00+09:00">2024-01-08</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%BD%94%EB%94%A9%EC%9D%BC%EC%A7%80%282024-01-08%29%20http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2812%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2812%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2812%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024-01/codinglog(11)/" class="pagination--pager" title="코딩일지(2024-01-07)
+">이전</a>
+    
+    
+      <a href="/2024-01/codinglog(13)/" class="pagination--pager" title="코딩일지(2024-01-09)
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(37)/" rel="permalink">코딩일지(2024-02-22)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-22T00:00:00+09:00">2024-02-22</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오늘 드디어 파이레이서에 학습을 시켰다!!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(36)/" rel="permalink">코딩일지(2024-02-08)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-08T00:00:00+09:00">2024-02-08</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">스로틀링 문제를 해결중이다.
+config.py코드 둘러보기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(35)/" rel="permalink">코딩일지(2024-02-04)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-04T00:00:00+09:00">2024-02-04</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">dcworks..너란 녀석.. 어렵다..
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(34)/" rel="permalink">코딩일지(2024-02-03)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-03T00:00:00+09:00">2024-02-03</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">캐글에 가입해보았다!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+  </div>
+
+  
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 YUNSUNGWOONG(JackSmith). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

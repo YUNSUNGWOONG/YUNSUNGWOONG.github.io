@@ -1,0 +1,1160 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>코딩일지(2024-01-21) | CodingLog(by JackSmith-c)</title>
+<meta name="description" content="RaspberryPi 4B에서 Python 버전충돌없이 TensorFlow 설치하기">
+
+
+  <meta name="author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+  <meta property="article:author" content="YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p>">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="CodingLog(by JackSmith-c)">
+<meta property="og:title" content="코딩일지(2024-01-21)">
+<meta property="og:url" content="http://localhost:4000/2024-01/codinglog(22)/">
+
+
+  <meta property="og:description" content="RaspberryPi 4B에서 Python 버전충돌없이 TensorFlow 설치하기">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-01-21T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/2024-01/codinglog(22)/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "YUNSUNGWOONG(JackSmith)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="CodingLog(by JackSmith-c) Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style"
+  onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+</noscript>
+
+
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+<body
+  class="layout--single">
+  <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/002.png" alt="CodingLog(by JackSmith-c)"></a>
+        
+        <a class="site-title" href="/">
+          CodingLog(by JackSmith-c)
+          <span class="site-subtitle">My CodingDiary</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+
+
+        div.clock {
+            position: fixed;
+            top: -22%;
+            left: 0;
+            display: flex;
+            height: 100%;
+            padding: 17px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Awesome Border Animation.css */
+        .border-blur {
+            position: absolute;
+            width: 300px;
+            height: 250px;
+            background: transparent;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: blur(50px);
+        }
+
+        .box {
+            position: relative;
+            width: 206px;
+            height: 135px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .border-blur::before,
+        .border-blur::after {
+            border-radius: 50%;
+            height: 338px !important;
+            width: 215px !important;
+        }
+
+        .box::after,
+        .border-blur::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #fc9e28);
+            /*#d400d4*/
+            animation: animate 4s linear infinite;
+            animation-delay: -2s;
+        }
+
+        .box::before,
+        .border-blur::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #0abf03);
+            /*#00ccff*/
+            animation: animate 4s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box span {
+            position: absolute;
+            inset: 13px;
+            border-radius: 22px;
+            background: #141010;
+            z-index: 1;
+        }
+
+        .box div {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="box">
+            <span></span>
+            <div id="time"></div>
+            <div id="date"></div>
+        </div>
+        <div class="border-blur"></div>
+    </div>
+
+
+</body>
+<script>
+    function setClock() {
+        var dateInfo = new Date();
+        var hour = modifyNumber(dateInfo.getHours());
+        var min = modifyNumber(dateInfo.getMinutes());
+        var sec = modifyNumber(dateInfo.getSeconds());
+        var year = dateInfo.getFullYear();
+        var month = dateInfo.getMonth() + 1; //monthIndex를 반환해주기 때문에 1을 더해준다.
+        var date = dateInfo.getDate();
+        document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec;
+        document.getElementById("date").innerHTML = year + "-" + month + "-" + date;
+    }
+    function modifyNumber(time) {
+        if (parseInt(time) < 10) {
+            return "0" + time;
+        }
+        else
+            return time;
+    }
+    window.onload = function () {
+        setClock();
+        setInterval(setClock, 1000); //1초마다 setClock 함수 실행
+    }
+</script>
+
+</html>
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .tiktok li {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .tiktok li::before {
+        position: absolute;
+        content: '';
+        background: linear-gradient(
+          90deg,
+          rgba(0, 242, 234, 1) 0%,
+          rgba(6, 0, 4, 1) 50%,
+          rgba(255, 0, 79, 1) 100%
+        ) !important;
+        width: 25px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu-parent {
+        position: fixed;
+        top: 40%;
+        left: 0;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .sidemenu ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        filter: drop-shadow(0 2px 3px #00000054);
+      }
+
+      .sidemenu li {
+        width: 70px;
+        height: 70px;
+        background-color: var(--clr);
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 300ms;
+        color: #fff;
+        transform-origin: left center;
+      }
+
+      .sidemenu li::before {
+        position: absolute;
+        content: '';
+        background-color: var(--clr);
+        width: 25.3px;
+        height: 100%;
+        right: -25px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+
+      .sidemenu i {
+        height: 60px !important;
+        width: 60px !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        position: absolute;
+      }
+
+      .sidemenu span {
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 600;
+        white-space: nowrap;
+        position: absolute;
+        transform: translateX(60px);
+        padding-left: 10px;
+        color: transparent;
+      }
+
+      .sidemenu li:hover {
+        width: 240px;
+      }
+
+      .sidemenu li:hover span {
+        color: #fff;
+      }
+
+      /* .fa-n:before {
+            font-family: Arial;
+            font-weight: bold;
+            content: 'N';
+        } */
+    </style>
+  </head>
+
+  <body>
+    <ul class="sidemenu sidemenu-parent">
+      <a href="https://github.com/JackSmith-c">
+        <li class="sidemenu" style="--clr: #9b59b6">
+          <i class="fa-brands fa-github sidemenu"></i>
+          <span>Github</span>
+        </li>
+      </a>
+      <a href="https://blog.naver.com/yhon89">
+        <li class="sidemenu" style="--clr: #30ae48">
+          <!-- <i class="fa-brands fa-tiktok sidemenu"></i> -->
+          <i class="fa-solid fa-n sidemenu"></i>
+          <span>Naver</span>
+        </li>
+      </a>
+      <a href="https://www.instagram.com/seongung64/">
+        <li class="sidemenu" style="--clr: #dd2a7b">
+          <i class="fa-brands fa-instagram sidemenu"></i>
+          <span>instagram</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu"
+            style="background: linear-gradient(90deg, rgba(0, 242, 234, 1) 0%, rgba(6, 0, 4, 1) 50%, rgba(255, 0, 79, 1) 100%) !important;">
+            <i class="fa-brands fa-tiktok sidemenu"></i>
+            <span>TikTok</span>
+        </li> -->
+      <a href="https://www.youtube.com/channel/UCB4Xq3yWVgdzujvkxeY_MyA">
+        <li class="sidemenu" style="--clr: #ff0000">
+          <i class="fa-brands fa-youtube sidemenu"></i>
+          <span>youtube</span>
+        </li>
+      </a>
+      <!-- <li class="sidemenu" style="--clr: #4fce5d">
+            <i class="fa-brands fa-whatsapp sidemenu"></i>
+            <span class="sidemenu">whatsapp</span>
+        </li> -->
+    </ul>
+  </body>
+</html>
+
+  <div class="initial-content">
+    
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#2024-01" itemprop="item"><span itemprop="name">2024 01</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">코딩일지(2024-01-21)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">YUNSUNGWOONG<br><p>기억보다 기록을 추구하는 나의 코딩일지</p></a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Kyungpook National University<br />Department of Electronic Engineering</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Suwon, Gyeonggi-do</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="코딩일지(2024-01-21)">
+    <meta itemprop="description" content="RaspberryPi 4B에서 Python 버전충돌없이 TensorFlow 설치하기">
+    <meta itemprop="datePublished" content="2024-01-21T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/2024-01/codinglog(22)/" class="u-url" itemprop="url">코딩일지(2024-01-21)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-01-21T00:00:00+09:00">2024-01-21</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#raspberrypi-4b에서-python-버전충돌없이-tensorflow-설치하기">RaspberryPi 4B에서 Python 버전충돌없이 TensorFlow 설치하기</a><ul><li><a href="#몇가지-명령어를-더-알아보자">몇가지 명령어를 더 알아보자</a></li><li><a href="#세성에서-제일-킹받는-일은-파이썬-버전-다운그레이드인-것-같다">세성에서 제일 킹받는 일은 파이썬 버전 다운그레이드인 것 같다..</a><ul><li><a href="#0가상환경-구축-그리고-다시-빠져나오기">0.가상환경 구축, 그리고 다시 빠져나오기</a></li><li><a href="#1동키카-git으로-받기-dcwork로-받자공식문서-아니여도-상관없을듯">1.동키카 git으로 받기-&gt;dcwork로 받자(공식문서 아니여도 상관없을듯?</a></li><li><a href="#2이거에-물려있는-서브모듈들-받고-업데이트-진행하라는데-파이썬-모듈이-아닌-깃-서브모듈을-받는거라-파이썬과의-충돌우려는-아에-생각할-필요없다">2.이거에 물려있는 서브모듈들 받고 업데이트 진행하라는데 파이썬 모듈이 아닌 깃 서브모듈을 받는거라 파이썬과의 충돌우려는 아에 생각할 필요없다.</a></li><li><a href="#3msys2는-리눅스에서-설치할-필요-없어서-그냥-무시하자">3.msys2는 리눅스에서 설치할 필요 없어서 그냥 무시하자</a></li><li><a href="#4이제-파이썬-가상환경에-필요한-파이썬-패키지-설치하기">4.이제 파이썬 가상환경에 필요한 파이썬 패키지 설치하기</a></li><li><a href="#1-파이썬-버전-39가-아닌-37로-맞추고-가상환경-구축하기">1. 파이썬 버전 3.9가 아닌 3.7로 맞추고 가상환경 구축하기</a></li><li><a href="#2-opencv를-위한-라이브러리-설치하기">2. OpenCV를 위한 라이브러리 설치하기</a></li><li><a href="#3-동키카-코드-받아오기">3. 동키카 코드 받아오기</a></li><li><a href="#4파이썬-주변모듈이랑-텐서플로우-받고-넘파이-업그레이드-하기">4.파이썬 주변모듈이랑 텐서플로우 받고 넘파이 업그레이드 하기</a></li><li><a href="#tensorflow깔렸는지-확인하기">(tensorflow)깔렸는지 확인하기!</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="raspberrypi-4b에서-python-버전충돌없이-tensorflow-설치하기">RaspberryPi 4B에서 Python 버전충돌없이 TensorFlow 설치하기</h2>
+
+<p>텐서플로우 2.5 이상은 python3.9부터 지원을 한다. 하지만 내가 갖고 있는 라즈베리파이에는 텐서플로우 2.4버전까지만 설치하기 쉽게 도와주는 whl파일이 있었다. 그런데 텐서플로우 2.4버전까지는 파이썬 3.7까지만 지원이 되었다. <b>그런데!!</b> 파이썬은 보통 라즈비안 OS를 설치시 기본 설치되어서 나오기 때문에 OS버전을 제대로 먼저 확인을 하고 설치를 해야 한다.</p>
+
+<p>파이썬 버전확인 명령어는 다음과 같다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">--version</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Python 3.9.2</p>
+
+  <p>(env) js@1:~$</p>
+</blockquote>
+
+<h3 id="몇가지-명령어를-더-알아보자">몇가지 명령어를 더 알아보자</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout master
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">git checkout master</code>명령어는 Git 저장소에서 <code class="language-plaintext highlighter-rouge">master</code> 브랜치로 전환하는 명령어다.</p>
+
+<p>이 명령어를 실행하면 현재 작업중인 브랜치가 <code class="language-plaintext highlighter-rouge">master</code> 브랜치로 변경되는 기능이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">git checkout</code> 명령어는 다양한 용도로 사용되는데, 여기서는 브랜치를 변경하는 용도로 쓰이는데, 이때 각 브랜치를 독립적으로 코드를 저장하고 변경할 수있다는 측면에서 버전관리에 매우 효과적이라 볼 수 있다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-e</span> .[pi]
+</code></pre></div></div>
+
+<p>위 명령어는 파이썬 패키지를 설치하는 명령어다. 여기서 <code class="language-plaintext highlighter-rouge">-e</code>가 어떻게 쓰이는지 궁금했는데, “editable”모드를 의미하는 것이었다. 현재 디렉토리의 소스 코드를 직접 참조하여 패키지를 설치하겠다는 것을 나타낸다. 즉, 개발중인 패키지를 수정하면 해당 변경사항이 바로 적용되도록 하는 것이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">.[pi]</code> 부분은 “추가의존성”을 설치하기 위한 옵션이라 볼 수 있다. 보통 패키지 개발 또는 사용에 필요한 추가적인 의존성이 있을때 사용된다. 여기서 <code class="language-plaintext highlighter-rouge">[pi]</code>는 여러 “추가 의존성” 중에서 <code class="language-plaintext highlighter-rouge">pi</code>라는 그룹을 의미한다 볼 수 있겠다.</p>
+
+<p>예를 들어보자. 만약 해당 패키지가 일반사용자를 위한 패키지와 라즈베리파이 사용자를 위한 패키지로 나눠져 있다고 보자.</p>
+
+<p>이때 <code class="language-plaintext highlighter-rouge">pi</code>라는 추가의존성에는 라즈베리파이에서만 필요한 패키지들이 포함된다고 볼 수 있곘다. 이를 함께 설치하고 싶다면 위에서와 같이 <code class="language-plaintext highlighter-rouge">.[pi]</code> 와 같은 형식으로 명시할 수 있겠다.</p>
+
+<h3 id="세성에서-제일-킹받는-일은-파이썬-버전-다운그레이드인-것-같다">세성에서 제일 킹받는 일은 파이썬 버전 다운그레이드인 것 같다..</h3>
+
+<p>지금 나의 파이썬 버전은 3.9.2이다.</p>
+
+<p>하지만 텐서프로우를 안정적으로 깔기위해서는 3.7을 깔라고 한다. 그래서 울며 겨자먹기로 다운그레이드를 하기로 했다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<p>지금 위에껄로 안되어서, 일단 새롭게 독립적인 가상환경을 구축하고,</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv myenv
+<span class="nb">source </span>myenv/bin/activate
+</code></pre></div></div>
+
+<p>pyenv를 사용하여 python을 설치하는 방식으로 다시 적용해보았다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>build-essential libssl-dev zlib1g-dev libbz2-dev <span class="se">\</span>
+                 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev <span class="se">\</span>
+                 libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
+</code></pre></div></div>
+
+<p>이후 pyenv를 쓰기 위한 설정용 명령어를 처주고,</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://pyenv.run | bash
+</code></pre></div></div>
+
+<p>아래 명령어로 bash쉘을 설정해준다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'export PATH="$HOME/.pyenv/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">echo</span> <span class="s1">'eval "$(pyenv init --path)"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">echo</span> <span class="s1">'eval "$(pyenv virtualenv-init -)"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">source</span> ~/.bashrc
+</code></pre></div></div>
+
+<p>이후 파이썬을 일반으로 설치하려면 이 명령어를,</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv <span class="nb">install </span>3.7.9
+</code></pre></div></div>
+
+<p>파이썬을 전역으로 설치하고 싶다면 이 명령어를,</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv global 3.7.9
+</code></pre></div></div>
+
+<p>파이썬을 지역으로 설치하고 싶다면 이 명령어를 쳐준다.(나는 이거 했음)</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv <span class="nb">local </span>3.7.9
+</code></pre></div></div>
+
+<p>참고로 설치는 다음과 같이 (env)라는 곳에 했다.</p>
+
+<p><img src="http://localhost:4000/images/2024-01-21-codinglog(22)/image-20240121212220540.png" alt="image-20240121212220540" /></p>
+
+<p>머 대충은 맞춘것 같다. 근데 내가 아직 파이썬 가상환경에 대한 이해가 부족한 실정이라ㅜ 일단 이 부분을 이해하고 넘어가려고 한다.</p>
+
+<p>전략을 수정하기로 했다. 원래는 PiRacer의 공식문서를 따라가려고 했는데, 부분적으로는 교수님의 메뉴얼을 따라가기로 했다. 쉽게 말해서 나만의 메뉴얼을 만드는 방식으로 새롭게 구축해보려고 한다.</p>
+
+<p>뭐 이러면서 환경에 대한 이해도 하고 그러는거 아니겠는가?</p>
+
+<h4 id="0가상환경-구축-그리고-다시-빠져나오기">0.가상환경 구축, 그리고 다시 빠져나오기</h4>
+
+<h4 id="1동키카-git으로-받기-dcwork로-받자공식문서-아니여도-상관없을듯">1.동키카 git으로 받기-&gt;dcwork로 받자(공식문서 아니여도 상관없을듯?</h4>
+
+<h4 id="2이거에-물려있는-서브모듈들-받고-업데이트-진행하라는데-파이썬-모듈이-아닌-깃-서브모듈을-받는거라-파이썬과의-충돌우려는-아에-생각할-필요없다">2.이거에 물려있는 서브모듈들 받고 업데이트 진행하라는데 파이썬 모듈이 아닌 깃 서브모듈을 받는거라 파이썬과의 충돌우려는 아에 생각할 필요없다.</h4>
+
+<h4 id="3msys2는-리눅스에서-설치할-필요-없어서-그냥-무시하자">3.msys2는 리눅스에서 설치할 필요 없어서 그냥 무시하자</h4>
+
+<h4 id="4이제-파이썬-가상환경에-필요한-파이썬-패키지-설치하기">4.이제 파이썬 가상환경에 필요한 파이썬 패키지 설치하기</h4>
+
+<p>근데 생각해보니 dcworks로 까는게 안된다. 권한이 없다. 그래서 권한을 주는 방식으로 깔건지, 아니면 정석대로 깔되, 파이썬 버전을 텐서플로우에 맞게 맞춰주는 방향으로 해야 할지 정해야 하는데, 나는 후자를 정했다. 아래 명령어를 따르자.</p>
+
+<h4 id="1-파이썬-버전-39가-아닌-37로-맞추고-가상환경-구축하기">1. 파이썬 버전 3.9가 아닌 3.7로 맞추고 가상환경 구축하기</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt update
+sudo apt install build-essential libssl-dev zlib1g-dev libbz2-dev \
+                 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+                 libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
+
+curl https://pyenv.run | bash
+
+echo 'export PATH="$HOME/.pyenv/bin:$PATH"' &gt;&gt; ~/.bashrc
+echo 'eval "$(pyenv init --path)"' &gt;&gt; ~/.bashrc
+echo 'eval "$(pyenv virtualenv-init -)"' &gt;&gt; ~/.bashrc
+source ~/.bashrc
+
+pyenv local 3.7.9
+</code></pre></div></div>
+
+<h4 id="2-opencv를-위한-라이브러리-설치하기">2. OpenCV를 위한 라이브러리 설치하기</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>libilmbase-dev libopenexr-dev libgstreamer1.0-dev libjasper-dev libwebp-dev 
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>libatlas-base-dev libavcodec-dev libavformat-dev libswscale-dev libqtgui4 libqt4-test
+</code></pre></div></div>
+
+<h4 id="3-동키카-코드-받아오기">3. 동키카 코드 받아오기</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>projects
+<span class="nb">cd</span> ~/projects
+git clone https://github.com/waveshare/donkeycar
+<span class="nb">cd </span>donkeycar
+git checkout master
+</code></pre></div></div>
+
+<h4 id="4파이썬-주변모듈이랑-텐서플로우-받고-넘파이-업그레이드-하기">4.파이썬 주변모듈이랑 텐서플로우 받고 넘파이 업그레이드 하기</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pip <span class="nb">install</span> <span class="nt">--upgrade</span> pip
+<span class="nb">sudo </span>pip <span class="nb">install</span> <span class="nt">-e</span> .[pi]
+<span class="nb">sudo </span>pip <span class="nb">install </span><span class="nv">tensorflow</span><span class="o">==</span>1.13.1
+<span class="nb">sudo </span>pip <span class="nb">install </span>numpy <span class="nt">--upgrade</span>
+</code></pre></div></div>
+
+<h4 id="tensorflow깔렸는지-확인하기">(tensorflow)깔렸는지 확인하기!</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-c</span> <span class="s2">"import tensorflow"</span>
+</code></pre></div></div>
+
+<p>위 작업의 전제로는 pyenv를 사용해야 한다고 했었다. 이거는 내일 정리하자!</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#shell" class="page__taxonomy-item p-category" rel="tag">shell</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#2024-01" class="page__taxonomy-item p-category" rel="tag">2024-01</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-01-21T00:00:00+09:00">2024-01-21</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%BD%94%EB%94%A9%EC%9D%BC%EC%A7%80%282024-01-21%29%20http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2822%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2822%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2024-01%2Fcodinglog%2822%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2024-01/codinglog(21)/" class="pagination--pager" title="코딩일지(2024-01-20)
+">이전</a>
+    
+    
+      <a href="/2024-01/codinglog(23)/" class="pagination--pager" title="코딩일지(2024-01-22)
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(37)/" rel="permalink">코딩일지(2024-02-22)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-22T00:00:00+09:00">2024-02-22</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오늘 드디어 파이레이서에 학습을 시켰다!!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(36)/" rel="permalink">코딩일지(2024-02-08)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-08T00:00:00+09:00">2024-02-08</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">스로틀링 문제를 해결중이다.
+config.py코드 둘러보기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(35)/" rel="permalink">코딩일지(2024-02-04)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-04T00:00:00+09:00">2024-02-04</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">dcworks..너란 녀석.. 어렵다..
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024-02/codinglog(34)/" rel="permalink">코딩일지(2024-02-03)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-02-03T00:00:00+09:00">2024-02-03</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">캐글에 가입해보았다!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+  </div>
+
+  
+
+  <div id="footer" class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 YUNSUNGWOONG(JackSmith). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
